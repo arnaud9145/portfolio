@@ -99,8 +99,14 @@ Single-page, ancres en navigation, scannable en < 1 min. Ordre :
   d'Arnaud (CV déjà public depuis des années, obfuscation sans bénéfice réel).
 - **Ne jamais publier** : adresse postale complète.
 - Sur la **page HTML** : contact principal = formulaire + LinkedIn + email obfusqué.
-  Numéro non affiché en HTML par défaut (il reste dans le PDF) — à ajouter si Arnaud
-  le souhaite. LinkedIn et GitHub en liens directs.
+- **Bouton « Révéler le numéro »** : le numéro n'est PAS dans le HTML ni le bundle JS.
+  Il est stocké en variable d'env serveur (`PHONE_NUMBER`) et renvoyé par une **route
+  API** uniquement au clic. Rate-limiting léger sur la route. LinkedIn et GitHub en
+  liens directs.
+  - Protection **partielle assumée** : la route API est publique et le numéro reste
+    présent dans le CV PDF public (décision d'Arnaud). Le bouton réduit le scraping
+    naïf de la page mais ne ferme pas totalement l'accès. Ligne retenue : confort UX +
+    réduction du scraping de la page, sans retirer le numéro du PDF.
 
 ## 6. Design / ton
 
@@ -152,8 +158,8 @@ Le repo GitHub est **public**. Ne JAMAIS committer :
 - prétentions / attentes salariales ;
 - adresse postale complète ;
   (Le numéro de téléphone, lui, est assumé public — présent dans le CV PDF, cf. §5.)
-- clé API Resend et tout secret → dans `.env.local` (**gitignoré**), configurés comme
-  variables d'environnement sur Vercel ;
+- clé API Resend, `PHONE_NUMBER` et tout secret → dans `.env.local` (**gitignoré**),
+  configurés comme variables d'environnement sur Vercel ;
 - toute métrique confidentielle qu'un employeur/client n'autoriserait pas à publier
   (vérifier avec Arnaud avant de chiffrer publiquement).
 
