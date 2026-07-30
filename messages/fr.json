@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "summary": "En bref",
+    "apps": "Apps",
+    "experience": "Expériences",
+    "stack": "Stack",
+    "education": "Formation",
+    "contact": "Contact"
+  },
+  "actions": {
+    "downloadCv": "Télécharger le CV",
+    "revealPhone": "Révéler le numéro",
+    "revealing": "Chargement…",
+    "toggleTheme": "Changer de thème"
+  },
+  "contact": {
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer",
+    "sending": "Envoi…",
+    "success": "Message envoyé, merci.",
+    "error": "Une erreur est survenue. Réessaie ou écris-moi sur LinkedIn."
+  },
+  "sections": {
+    "apps": "Apps en production",
+    "experience": "Expériences",
+    "stack": "Stack technique",
+    "education": "Formation & débuts",
+    "languages": "Langues",
+    "contact": "Contact"
+  }
+}

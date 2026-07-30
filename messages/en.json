@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "summary": "Summary",
+    "apps": "Apps",
+    "experience": "Experience",
+    "stack": "Stack",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "actions": {
+    "downloadCv": "Download CV",
+    "revealPhone": "Reveal phone number",
+    "revealing": "Loading…",
+    "toggleTheme": "Toggle theme"
+  },
+  "contact": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending…",
+    "success": "Message sent, thank you.",
+    "error": "Something went wrong. Try again or reach me on LinkedIn."
+  },
+  "sections": {
+    "apps": "Shipped apps",
+    "experience": "Experience",
+    "stack": "Tech stack",
+    "education": "Education & beginnings",
+    "languages": "Languages",
+    "contact": "Contact"
+  }
+}
