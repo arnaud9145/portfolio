@@ -2,7 +2,11 @@ import { vi } from "vitest";
 
 export function createNavigation() {
   return {
-    Link: vi.fn(({ children, href }: any) => children),
+    Link: vi.fn(({ children, href, ...rest }: any) => (
+      <a href={href} {...rest}>
+        {children}
+      </a>
+    )),
     redirect: vi.fn(),
     usePathname: vi.fn(() => "/"),
     useRouter: vi.fn(() => ({
