@@ -95,9 +95,12 @@ Single-page, ancres en navigation, scannable en < 1 min. Ordre :
 - Formulaire → route API Next.js → Resend. Champs : nom, email, message. Validation
   + protection anti-spam (honeypot au minimum).
 - **Bouton Télécharger le CV** → CV à jour copié depuis le dossier Téléchargements
-  vers `/public`.
-- **Ne jamais publier** : adresse postale complète, numéro de téléphone en clair.
-- Email obfusqué contre le scraping. LinkedIn et GitHub en liens directs.
+  vers `/public`. Le PDF **conserve le numéro de téléphone** : décision explicite
+  d'Arnaud (CV déjà public depuis des années, obfuscation sans bénéfice réel).
+- **Ne jamais publier** : adresse postale complète.
+- Sur la **page HTML** : contact principal = formulaire + LinkedIn + email obfusqué.
+  Numéro non affiché en HTML par défaut (il reste dans le PDF) — à ajouter si Arnaud
+  le souhaite. LinkedIn et GitHub en liens directs.
 
 ## 6. Design / ton
 
@@ -147,7 +150,8 @@ Single-page, ancres en navigation, scannable en < 1 min. Ordre :
 Le repo GitHub est **public**. Ne JAMAIS committer :
 
 - prétentions / attentes salariales ;
-- numéro de téléphone, adresse postale complète ;
+- adresse postale complète ;
+  (Le numéro de téléphone, lui, est assumé public — présent dans le CV PDF, cf. §5.)
 - clé API Resend et tout secret → dans `.env.local` (**gitignoré**), configurés comme
   variables d'environnement sur Vercel ;
 - toute métrique confidentielle qu'un employeur/client n'autoriserait pas à publier
