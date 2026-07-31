@@ -22,6 +22,7 @@ export interface ProjectItem {
   contribution: Contribution;
   tagline: string;
   metrics: string[];             // vide si inconnu
+  tech?: string[];               // stack technique — réelle si connue, minimale sinon
   link?: { href: string; label: string };
   status?: string;
 }

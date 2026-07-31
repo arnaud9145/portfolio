@@ -1,5 +1,10 @@
 import { describe, it, expect } from "vitest";
-import { personJsonLd, buildMetadata, localizedUrl } from "@/lib/seo";
+import {
+  personJsonLd,
+  buildMetadata,
+  buildProjectsMetadata,
+  localizedUrl,
+} from "@/lib/seo";
 
 describe("seo", () => {
   it("génère un JSON-LD Person cohérent", () => {
@@ -34,6 +39,17 @@ describe("seo", () => {
     expect(languages?.fr).toBe("https://arnaud.dev");
     expect(languages?.en).toBe("https://arnaud.dev/en");
     expect(languages?.["x-default"]).toBe("https://arnaud.dev");
+  });
+
+  it("génère une metadata dédiée /projets avec canonical et hreflang", () => {
+    const m = buildProjectsMetadata("fr");
+    expect(m.title).toContain("Projets");
+    expect(m.description).toBeTruthy();
+    expect(m.alternates?.canonical).toBe("https://arnaud.dev/projets");
+    const languages = m.alternates?.languages;
+    expect(languages?.fr).toBe("https://arnaud.dev/projets");
+    expect(languages?.en).toBe("https://arnaud.dev/en/projets");
+    expect(languages?.["x-default"]).toBe("https://arnaud.dev/projets");
   });
 
   it("normalise localizedUrl quel que soit le format du pathname", () => {

@@ -51,6 +51,46 @@ export function buildMetadata(locale: Locale, pathname = ""): Metadata {
   };
 }
 
+const PROJECTS_TITLE: Record<Locale, string> = {
+  fr: "Projets — Arnaud Dufour, ingénieur mobile React Native",
+  en: "Projects — Arnaud Dufour, React Native mobile engineer",
+};
+
+const PROJECTS_DESCRIPTION: Record<Locale, string> = {
+  fr: "Sept ans d'applications React Native : Unlockt (1,2 M d'utilisateurs), Exposed (~500k/mois), Disorder, Movizer, et du conseil chez BAM. Le portfolio mobile d'Arnaud Dufour.",
+  en: "Seven years of React Native apps: Unlockt (1.2M users), Exposed (~500k/month), Disorder, Movizer, and agency work at BAM. The mobile portfolio of Arnaud Dufour.",
+};
+
+export function buildProjectsMetadata(locale: Locale): Metadata {
+  const path = "projets";
+  const title = PROJECTS_TITLE[locale];
+  const description = PROJECTS_DESCRIPTION[locale];
+  const canonical = localizedUrl(locale, path);
+  const otherLocale = locale === "fr" ? "en" : "fr";
+  return {
+    metadataBase: new URL(SITE_URL),
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages: {
+        fr: localizedUrl("fr", path),
+        en: localizedUrl("en", path),
+        "x-default": localizedUrl("fr", path),
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: canonical,
+      locale: locale === "fr" ? "fr_FR" : "en_US",
+      alternateLocale: otherLocale === "fr" ? "fr_FR" : "en_US",
+    },
+    twitter: { card: "summary_large_image", title, description },
+  };
+}
+
 export function personJsonLd(locale: Locale, url: string) {
   const c = getContent(locale);
   return {
