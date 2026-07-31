@@ -39,7 +39,7 @@ export function ContactForm() {
         <label htmlFor="message" className="block text-sm font-medium">{t("message")}</label>
         <textarea id="message" name="message" required rows={5} className="mt-1 w-full rounded-md border border-border bg-transparent px-3 py-2" />
       </div>
-      <button type="submit" disabled={status === "sending"} className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-white disabled:opacity-60">
+      <button type="submit" disabled={status === "sending"} className="rounded-md bg-accent px-4 py-2 text-sm font-semibold text-bg disabled:opacity-60">
         {status === "sending" ? t("sending") : t("send")}
       </button>
       {status === "ok" && <p className="text-sm text-accent" role="status">{t("success")}</p>}
