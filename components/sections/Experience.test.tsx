@@ -40,4 +40,30 @@ describe("Experience", () => {
     fireEvent.click(btn);
     expect(btn).toHaveAttribute("aria-expanded", "false");
   });
+
+  it("rend le panneau inert (hors du DOM d'accessibilité et du tab order) quand il est replié, et le réactive à l'ouverture", () => {
+    wrap();
+    const btn = screen.getAllByRole("button", { expanded: false })[0];
+    const panelId = btn.getAttribute("aria-controls");
+    const panel = document.getElementById(panelId!) as HTMLElement;
+
+    // replié : l'attribut HTML inert doit être posé sur le panneau
+    // (jsdom ne reflète pas encore la propriété IDL HTMLElement.inert,
+    // donc on vérifie l'attribut réellement rendu dans le DOM)
+    expect(panel.getAttribute("inert")).not.toBeNull();
+
+    fireEvent.click(btn);
+
+    // déplié : le panneau redevient interactif/accessible
+    expect(panel.getAttribute("inert")).toBeNull();
+  });
+
+  it("ne rend pas de lien LinkedIn pour une entreprise dont l'URL est le placeholder '#'", () => {
+    wrap();
+    const btn = screen.getAllByRole("button", { expanded: false })[0];
+    fireEvent.click(btn);
+    expect(
+      screen.queryByRole("link", { name: /LinkedIn|linkedin/i })
+    ).not.toBeInTheDocument();
+  });
 });

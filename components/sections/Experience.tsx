@@ -87,6 +87,7 @@ function ExperienceRow({ xp }: { xp: ExperienceItem }) {
         role="region"
         aria-labelledby={headId}
         className={`acc-panel${open ? " open" : ""}`}
+        inert={!open}
       >
         <div className="acc-inner">
           <div className="pt-5">
@@ -97,7 +98,7 @@ function ExperienceRow({ xp }: { xp: ExperienceItem }) {
                 ))}
               </ul>
             )}
-            {xp.companyUrl && (
+            {xp.companyUrl && xp.companyUrl !== "#" && (
               <a
                 href={xp.companyUrl}
                 target="_blank"
