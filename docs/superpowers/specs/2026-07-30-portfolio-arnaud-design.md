@@ -74,7 +74,7 @@ Single-page, ancres en navigation, scannable en < 1 min. Ordre :
 4. **Expériences** — timeline, avec réalisations chiffrées :
    - Unlockt.me — Senior Mobile Engineer — sept. 2024 → aujourd'hui
    - Le Collectionist — Senior Mobile Engineer — mai → sept. 2024
-   - Roger Senior — Mobile Engineer — févr. 2023 → avr. 2024
+   - Roger — Mobile Engineer — févr. 2023 → avr. 2024
    - Happliness (Movizer) — CTO & cofondateur — nov. 2021 → févr. 2023
    - BAM — Mobile Engineer — févr. 2020 → nov. 2021 (clients : Ornikar, Biogen, Lita,
      Jutheau-Husson)

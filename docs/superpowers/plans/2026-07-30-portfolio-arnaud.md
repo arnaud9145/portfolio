@@ -299,7 +299,7 @@ export const fr: CvContent = {
   experience: [
     { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "sept. 2024 → aujourd'hui", summary: "", highlights: [] },
     { id: "collectionist", company: "Le Collectionist", role: "Senior Mobile Engineer", period: "mai → sept. 2024", summary: "", highlights: [] },
-    { id: "roger", company: "Roger Senior", role: "Mobile Engineer", period: "févr. 2023 → avr. 2024", summary: "", highlights: [] },
+    { id: "roger", company: "Roger", role: "Mobile Engineer", period: "févr. 2023 → avr. 2024", summary: "", highlights: [] },
     { id: "happliness", company: "Happliness (Movizer)", role: "CTO & cofondateur", period: "nov. 2021 → févr. 2023", summary: "", highlights: [] },
     { id: "bam", company: "BAM", role: "Mobile Engineer", period: "févr. 2020 → nov. 2021", summary: "", highlights: [], clients: ["Ornikar", "Biogen", "Lita", "Jutheau-Husson"] },
   ],
@@ -352,7 +352,7 @@ export const en: CvContent = {
   experience: [
     { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "Sep. 2024 → present", summary: "", highlights: [] },
     { id: "collectionist", company: "Le Collectionist", role: "Senior Mobile Engineer", period: "May → Sep. 2024", summary: "", highlights: [] },
-    { id: "roger", company: "Roger Senior", role: "Mobile Engineer", period: "Feb. 2023 → Apr. 2024", summary: "", highlights: [] },
+    { id: "roger", company: "Roger", role: "Mobile Engineer", period: "Feb. 2023 → Apr. 2024", summary: "", highlights: [] },
     { id: "happliness", company: "Happliness (Movizer)", role: "CTO & co-founder", period: "Nov. 2021 → Feb. 2023", summary: "", highlights: [] },
     { id: "bam", company: "BAM", role: "Mobile Engineer", period: "Feb. 2020 → Nov. 2021", summary: "", highlights: [], clients: ["Ornikar", "Biogen", "Lita", "Jutheau-Husson"] },
   ],
