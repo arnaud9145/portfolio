@@ -1,8 +1,8 @@
 {
   "nav": {
     "summary": "En bref",
-    "apps": "Apps",
     "experience": "Expériences",
+    "projets": "Projets",
     "stack": "Stack",
     "education": "Formation",
     "contact": "Contact"
@@ -11,7 +11,8 @@
     "downloadCv": "Télécharger le CV",
     "revealPhone": "Révéler le numéro",
     "revealing": "Chargement…",
-    "toggleTheme": "Changer de thème"
+    "toggleTheme": "Changer de thème",
+    "viewCompany": "Voir l'entreprise sur LinkedIn"
   },
   "contact": {
     "name": "Nom",
@@ -20,13 +21,14 @@
     "send": "Envoyer",
     "sending": "Envoi…",
     "success": "Message envoyé, merci.",
-    "error": "Une erreur est survenue. Réessaie ou écris-moi sur LinkedIn."
+    "error": "Une erreur est survenue. Réessaie ou écris-moi sur LinkedIn.",
+    "lead": "Un poste, un projet mobile ambitieux, ou juste envie d'échanger ? Écris-moi — je réponds vite."
   },
   "sections": {
     "apps": "Applications développées",
     "experience": "Expériences",
     "stack": "Stack technique",
-    "education": "Formation & débuts",
+    "education": "Formation",
     "languages": "Langues",
     "contact": "Contact"
   }

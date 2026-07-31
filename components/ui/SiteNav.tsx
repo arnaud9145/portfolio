@@ -1,9 +1,24 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { LocaleSwitch } from "@/components/ui/LocaleSwitch";
 
-const SECTIONS = ["summary", "apps", "experience", "stack", "education", "contact"] as const;
+// On-page anchors (scroll-spy). "projets" is a separate cross-page route.
+const SECTIONS = ["summary", "experience", "stack", "education", "contact"] as const;
+
+type NavItem =
+  | { kind: "anchor"; id: (typeof SECTIONS)[number] }
+  | { kind: "route"; id: "projets"; href: string };
+
+const NAV: NavItem[] = [
+  { kind: "anchor", id: "summary" },
+  { kind: "anchor", id: "experience" },
+  { kind: "route", id: "projets", href: "/projets" },
+  { kind: "anchor", id: "stack" },
+  { kind: "anchor", id: "education" },
+  { kind: "anchor", id: "contact" },
+];
 
 export function SiteNav() {
   const t = useTranslations("nav");
@@ -45,17 +60,25 @@ export function SiteNav() {
           AD
         </a>
         <ul className="nav-scroller flex flex-1 items-center gap-5 overflow-x-auto sm:gap-7">
-          {SECTIONS.map((id) => (
-            <li key={id} className="shrink-0">
-              <a
-                href={`#${id}`}
-                className={`nav-link${active === id ? " active" : ""}`}
-                aria-current={active === id ? "true" : undefined}
-              >
-                {t(id)}
-              </a>
-            </li>
-          ))}
+          {NAV.map((item) =>
+            item.kind === "anchor" ? (
+              <li key={item.id} className="shrink-0">
+                <a
+                  href={`#${item.id}`}
+                  className={`nav-link${active === item.id ? " active" : ""}`}
+                  aria-current={active === item.id ? "true" : undefined}
+                >
+                  {t(item.id)}
+                </a>
+              </li>
+            ) : (
+              <li key={item.id} className="shrink-0">
+                <Link href={item.href} className="nav-link">
+                  {t(item.id)}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
         <div className="shrink-0">
           <LocaleSwitch />

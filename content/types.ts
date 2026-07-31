@@ -1,5 +1,8 @@
 export type Locale = "fr" | "en";
 
+/** Poids de la contribution d'Arnaud sur un projet — pilote l'emphase visuelle. */
+export type Contribution = "lead" | "major" | "minor";
+
 export interface AppItem {
   id: string;
   name: string;
@@ -10,14 +13,34 @@ export interface AppItem {
   status?: string;       // ex: "Retirée du store (2024)"
 }
 
+/** Projet unique — consommé par la page dédiée /projets. Id stable en kebab-case. */
+export interface ProjectItem {
+  id: string;
+  name: string;
+  context?: string;              // entreprise / via qui
+  role?: string;
+  contribution: Contribution;
+  tagline: string;
+  metrics: string[];             // vide si inconnu
+  link?: { href: string; label: string };
+  status?: string;
+}
+
+/** Tag d'app affiché sous une expérience → lien vers /projets#<projectId>. */
+export interface AppTag {
+  label: string;
+  projectId: string;
+}
+
 export interface ExperienceItem {
   id: string;
   company: string;
   role: string;
   period: string;        // ex: "sept. 2024 → aujourd'hui"
   summary: string;
-  highlights: string[];  // réalisations chiffrées — vide si inconnu
-  clients?: string[];
+  highlights: string[];  // missions détaillées (dépliées dans l'accordéon) — PLACEHOLDER pour l'instant
+  companyUrl?: string;   // page LinkedIn entreprise — "#" placeholder
+  appTags?: AppTag[];    // apps liées → /projets#<projectId>
 }
 
 export interface StackGroup {
@@ -42,9 +65,9 @@ export interface CvContent {
   };
   summary: { title: string; body: string }[]; // les 3 arguments
   apps: AppItem[];
+  projects: ProjectItem[]; // catalogue complet — page /projets
   experience: ExperienceItem[];
   stack: StackGroup[];
   education: EducationItem[];
-  associative: EducationItem[]; // UNG
   languages: { name: string; level: string }[];
 }

@@ -18,10 +18,10 @@ describe("Stack & Education", () => {
     expect(screen.getByText("React Native")).toBeInTheDocument();
     expect(screen.getByText("NestJS")).toBeInTheDocument();
   });
-  it("rend formation, UNG et langues", () => {
+  it("rend les diplômes et les langues, sans l'associatif UNG (déplacé en Expériences)", () => {
     wrap(<Education content={getContent("fr")} />);
     expect(screen.getAllByText(/Université de Technologie de Troyes/)[0]).toBeInTheDocument();
-    expect(screen.getByText(/UNG/)).toBeInTheDocument();
     expect(screen.getByText(/Espagnol/)).toBeInTheDocument();
+    expect(screen.queryByText(/UNG/)).not.toBeInTheDocument();
   });
 });

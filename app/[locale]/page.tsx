@@ -3,7 +3,6 @@ import { getContent, type Locale } from "@/content";
 import { personJsonLd, localizedUrl } from "@/lib/seo";
 import { Hero } from "@/components/sections/Hero";
 import { Summary } from "@/components/sections/Summary";
-import { Apps } from "@/components/sections/Apps";
 import { Experience } from "@/components/sections/Experience";
 import { Stack } from "@/components/sections/Stack";
 import { Education } from "@/components/sections/Education";
@@ -29,11 +28,10 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       <main>
         <Hero content={content} />
         <Summary content={content} />
-        <Apps content={content} />
         <Experience content={content} />
         <Stack content={content} />
         <Education content={content} />
-        <Contact linkedin={LINKEDIN} github={GITHUB} />
+        <Contact content={content} linkedin={LINKEDIN} github={GITHUB} />
       </main>
     </>
   );

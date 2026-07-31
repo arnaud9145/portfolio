@@ -1,8 +1,8 @@
 {
   "nav": {
     "summary": "Summary",
-    "apps": "Apps",
     "experience": "Experience",
+    "projets": "Projects",
     "stack": "Stack",
     "education": "Education",
     "contact": "Contact"
@@ -11,7 +11,8 @@
     "downloadCv": "Download CV",
     "revealPhone": "Reveal phone number",
     "revealing": "Loading…",
-    "toggleTheme": "Toggle theme"
+    "toggleTheme": "Toggle theme",
+    "viewCompany": "View company on LinkedIn"
   },
   "contact": {
     "name": "Name",
@@ -20,13 +21,14 @@
     "send": "Send",
     "sending": "Sending…",
     "success": "Message sent, thank you.",
-    "error": "Something went wrong. Try again or reach me on LinkedIn."
+    "error": "Something went wrong. Try again or reach me on LinkedIn.",
+    "lead": "A role, an ambitious mobile project, or just want to talk? Drop me a line — I reply fast."
   },
   "sections": {
     "apps": "Apps I've built",
     "experience": "Experience",
     "stack": "Tech stack",
-    "education": "Education & beginnings",
+    "education": "Education",
     "languages": "Languages",
     "contact": "Contact"
   }
