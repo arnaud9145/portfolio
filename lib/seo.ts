@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import { getContent, type Locale } from "@/content";
 
+// Kept ≤155 chars so Google doesn't truncate the SERP snippet.
 const DESCRIPTION: Record<Locale, string> = {
   fr: "Arnaud Dufour, ingénieur mobile senior spécialisé React Native — React Native depuis 2018, ex-CTO & cofondateur, AI-Native. Basé à Reims, à 45 minutes de Paris.",
-  en: "Arnaud Dufour, senior mobile engineer specialized in React Native — building React Native apps since 2018, former CTO & co-founder, AI-Native. Based in Reims, 45 minutes from Paris.",
+  en: "Arnaud Dufour, senior React Native mobile engineer since 2018, former CTO & co-founder, AI-Native. Based in Reims, 45 min from Paris.",
 };
 
 export const SITE_URL = "https://arnaud.dev";
 
-const LINKEDIN_URL = "https://www.linkedin.com/in/arnaud-dufour/";
-const GITHUB_URL = "https://github.com/arnaud9145";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/arnaud-dufour/";
+export const GITHUB_URL = "https://github.com/arnaud9145";
 
 // Locale URLs under the "as-needed" prefix strategy: fr (default) is
 // unprefixed, en carries a /en prefix. Keep in sync with i18n/routing.ts.

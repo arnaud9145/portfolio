@@ -591,6 +591,45 @@ body {
   filter: blur(18px);
   z-index: 0;
 }
+/* Real screenshots that already bake in their own device frame (pre-rendered
+   marketing shots, e.g. Movizer) — rendered as plain fanned images instead of
+   the CSS phone bezel used for raw in-app captures (Roger). */
+.device-fan {
+  position: relative;
+  width: 14rem;
+  max-width: 62vw;
+  margin: 0 auto;
+}
+.device-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.device-shot--front {
+  position: relative;
+  z-index: 3;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.55));
+}
+.device-shot--left {
+  position: absolute;
+  top: 4%;
+  left: -20%;
+  width: 76%;
+  z-index: 1;
+  transform: rotate(-9deg);
+  opacity: 0.82;
+  filter: saturate(0.92) brightness(0.85) drop-shadow(0 24px 46px rgba(0, 0, 0, 0.5));
+}
+.device-shot--right {
+  position: absolute;
+  top: 4%;
+  right: -20%;
+  width: 76%;
+  z-index: 2;
+  transform: rotate(9deg);
+  opacity: 0.86;
+  filter: saturate(0.92) brightness(0.88) drop-shadow(0 24px 46px rgba(0, 0, 0, 0.5));
+}
 .phone-initial {
   position: relative;
   z-index: 1;
@@ -778,7 +817,8 @@ body {
     opacity: 0;
     transform: translate(48px, 26px) scale(0.92);
   }
-  .js .visual-slide .phone-fan { width: 16rem; }
+  .js .visual-slide .phone-fan,
+  .js .visual-slide .device-fan { width: 16rem; }
 }
 
 /* ---- Reduced motion ---------------------------------------- */

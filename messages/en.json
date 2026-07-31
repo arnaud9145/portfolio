@@ -11,6 +11,7 @@
     "downloadCv": "Download CV",
     "revealPhone": "Reveal phone number",
     "revealing": "Loading…",
+    "revealError": "Something went wrong, please try again.",
     "toggleTheme": "Toggle theme",
     "viewCompany": "View company on LinkedIn"
   },

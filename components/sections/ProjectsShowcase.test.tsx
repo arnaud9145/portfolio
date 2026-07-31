@@ -44,6 +44,14 @@ describe("ProjectsShowcase", () => {
     expect(rogerImg).toBeTruthy();
   });
 
+  it("utilise les vraies captures Movizer (données dans project.screenshots)", () => {
+    wrap();
+    const srcs = screen.getAllByRole("img").map((img) => img.getAttribute("src") ?? "");
+    expect(srcs.some((s) => s.includes("movizer-1"))).toBe(true);
+    expect(srcs.some((s) => s.includes("movizer-2"))).toBe(true);
+    expect(srcs.some((s) => s.includes("movizer-3"))).toBe(true);
+  });
+
   it("affiche les tech tags réels d'un projet", () => {
     wrap();
     // "Reanimated" appears on several projects; "Veriff (KYC)" is Unlockt-only.
@@ -58,7 +66,7 @@ describe("ProjectsShowcase", () => {
 
   it("marque les mockups placeholder d'une légende 'aperçu à venir'", () => {
     wrap();
-    // Movizer has no screenshots → phone mockup with the preview caption.
+    // Le Collectionist (entre autres) n'a pas encore de captures réelles → mockup avec légende.
     expect(screen.getAllByText("aperçu à venir").length).toBeGreaterThan(0);
   });
 

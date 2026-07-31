@@ -40,6 +40,53 @@ function RogerVisual({ locale }: { locale: Locale }) {
   );
 }
 
+/**
+ * Real screenshots driven by project data (`project.screenshots`).
+ * Unlike Roger's raw in-app captures, these assets already bake in their own
+ * device frame/drop-shadow (pre-rendered marketing shots), so they render as
+ * plain images (object-fit: contain, no extra CSS phone bezel) fanned out:
+ * the first screenshot is the hero front shot, the next two fan out behind it.
+ */
+function ScreenshotsVisual({
+  screenshots,
+}: {
+  screenshots: NonNullable<ProjectItem["screenshots"]>;
+}) {
+  const [front, left, right] = screenshots;
+  return (
+    <div className="device-fan">
+      {left && (
+        <Image
+          src={left.src}
+          alt={left.alt}
+          width={left.width}
+          height={left.height}
+          sizes="200px"
+          className="device-shot device-shot--left"
+        />
+      )}
+      {right && (
+        <Image
+          src={right.src}
+          alt={right.alt}
+          width={right.width}
+          height={right.height}
+          sizes="200px"
+          className="device-shot device-shot--right"
+        />
+      )}
+      <Image
+        src={front.src}
+        alt={front.alt}
+        width={front.width}
+        height={front.height}
+        sizes="220px"
+        className="device-shot device-shot--front"
+      />
+    </div>
+  );
+}
+
 /** Styled placeholder device for projects without real screenshots. */
 function PhoneMockup({
   project,
@@ -75,6 +122,9 @@ function ProjectVisual({
   previewSoon: string;
 }) {
   if (project.id === "roger") return <RogerVisual locale={locale} />;
+  if (project.screenshots && project.screenshots.length > 0) {
+    return <ScreenshotsVisual screenshots={project.screenshots} />;
+  }
   return <PhoneMockup project={project} previewSoon={previewSoon} />;
 }
 

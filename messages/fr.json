@@ -11,6 +11,7 @@
     "downloadCv": "Télécharger le CV",
     "revealPhone": "Révéler le numéro",
     "revealing": "Chargement…",
+    "revealError": "Une erreur est survenue, réessaie.",
     "toggleTheme": "Changer de thème",
     "viewCompany": "Voir l'entreprise sur LinkedIn"
   },

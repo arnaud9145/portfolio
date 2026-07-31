@@ -1,15 +1,12 @@
 import { setRequestLocale } from "next-intl/server";
 import { getContent, type Locale } from "@/content";
-import { personJsonLd, localizedUrl } from "@/lib/seo";
+import { personJsonLd, localizedUrl, LINKEDIN_URL, GITHUB_URL } from "@/lib/seo";
 import { Hero } from "@/components/sections/Hero";
 import { Summary } from "@/components/sections/Summary";
 import { Experience } from "@/components/sections/Experience";
 import { Stack } from "@/components/sections/Stack";
 import { Education } from "@/components/sections/Education";
 import { Contact } from "@/components/sections/Contact";
-
-const LINKEDIN = "https://www.linkedin.com/in/arnaud-dufour/";
-const GITHUB = "https://github.com/arnaud9145";
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -31,7 +28,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <Experience content={content} />
         <Stack content={content} />
         <Education content={content} />
-        <Contact content={content} linkedin={LINKEDIN} github={GITHUB} />
+        <Contact content={content} linkedin={LINKEDIN_URL} github={GITHUB_URL} />
       </main>
     </>
   );

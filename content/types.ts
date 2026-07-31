@@ -13,6 +13,14 @@ export interface AppItem {
   status?: string;       // ex: "Retirée du store (2024)"
 }
 
+/** Capture d'écran réelle d'un projet — dimensions intrinsèques fournies pour éviter le CLS. */
+export interface ProjectScreenshot {
+  src: string;    // chemin public, ex: "/projects/movizer/movizer-1.png"
+  alt: string;    // texte alternatif descriptif, localisé
+  width: number;  // largeur intrinsèque du fichier (px)
+  height: number; // hauteur intrinsèque du fichier (px)
+}
+
 /** Projet unique — consommé par la page dédiée /projets. Id stable en kebab-case. */
 export interface ProjectItem {
   id: string;
@@ -25,6 +33,7 @@ export interface ProjectItem {
   tech?: string[];               // stack technique — réelle si connue, minimale sinon
   link?: { href: string; label: string };
   status?: string;
+  screenshots?: ProjectScreenshot[]; // captures réelles — sinon mockup placeholder générique
 }
 
 /** Tag d'app affiché sous une expérience → lien vers /projets#<projectId>. */
