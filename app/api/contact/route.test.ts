@@ -42,4 +42,16 @@ describe("POST /api/contact", () => {
     const res = await POST(post({ name: "Jean", email: "pasunemail", message: "Bonjour", website: "" }));
     expect(res.status).toBe(400);
   });
+
+  it("rejette un body JSON valide mais non-objet (ex: null) sans planter", async () => {
+    const res = await POST(post(null));
+    expect(res.status).toBe(400);
+    const data = await res.json();
+    expect(data.error).toBe("invalid");
+  });
+
+  it("rejette un body JSON valide mais non-objet (ex: string) sans planter", async () => {
+    const res = await POST(post("hello"));
+    expect(res.status).toBe(400);
+  });
 });

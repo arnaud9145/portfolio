@@ -19,6 +19,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "invalid_json" }, { status: 400 });
   }
 
+  if (!body || typeof body !== "object") {
+    return NextResponse.json({ error: "invalid" }, { status: 400 });
+  }
+
   const { name, email, message, website } = body;
   // Honeypot : un vrai humain ne remplit pas ce champ caché.
   if (website) return NextResponse.json({ error: "spam" }, { status: 400 });
