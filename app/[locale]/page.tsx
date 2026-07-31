@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { getContent, type Locale } from "@/content";
-import { personJsonLd } from "@/lib/seo";
+import { personJsonLd, localizedUrl } from "@/lib/seo";
 import { Hero } from "@/components/sections/Hero";
 import { Summary } from "@/components/sections/Summary";
 import { Apps } from "@/components/sections/Apps";
@@ -21,7 +21,9 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(personJsonLd(locale as Locale, "https://arnaud.dev")),
+          __html: JSON.stringify(
+            personJsonLd(locale as Locale, localizedUrl(locale as Locale)),
+          ),
         }}
       />
       <main>
