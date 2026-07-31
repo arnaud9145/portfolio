@@ -6,4 +6,8 @@ describe("routing", () => {
     expect(routing.locales).toEqual(["fr", "en"]);
     expect(routing.defaultLocale).toBe("fr");
   });
+
+  it("n'affiche pas de préfixe pour la locale par défaut (as-needed)", () => {
+    expect(routing.localePrefix).toBe("as-needed");
+  });
 });

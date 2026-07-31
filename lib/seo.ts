@@ -8,13 +8,29 @@ const DESCRIPTION: Record<Locale, string> = {
 
 const SITE_URL = "https://arnaud.dev";
 
-export function buildMetadata(locale: Locale): Metadata {
+// Locale URLs under the "as-needed" prefix strategy: fr (default) is
+// unprefixed, en carries a /en prefix. Keep in sync with i18n/routing.ts.
+function localizedUrl(locale: Locale, pathname: string): string {
+  const prefix = locale === "fr" ? "" : `/${locale}`;
+  return `${SITE_URL}${prefix}${pathname}`;
+}
+
+export function buildMetadata(locale: Locale, pathname = ""): Metadata {
   const c = getContent(locale);
   const title = `${c.hero.name} — ${c.hero.title}`;
+  const canonical = localizedUrl(locale, pathname);
   return {
     metadataBase: new URL(SITE_URL),
     title,
     description: DESCRIPTION[locale],
+    alternates: {
+      canonical,
+      languages: {
+        fr: localizedUrl("fr", pathname),
+        en: localizedUrl("en", pathname),
+        "x-default": localizedUrl("fr", pathname),
+      },
+    },
     openGraph: {
       title,
       description: DESCRIPTION[locale],
