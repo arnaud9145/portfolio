@@ -62,7 +62,7 @@ export const en: CvContent = {
     { label: "Infra & Tooling", items: ["AWS", "RevenueCat", "Sentry", "Firebase", "GitHub Actions"] },
   ],
   education: [
-    { title: "Network & Telecommunications Engineering degree", org: "University of Technology of Troyes", period: "2020", details: "Mobile technologies and embedded systems." },
+    { title: "Engineering degree, SRT — Systems, Networks & Telecommunications", org: "University of Technology of Troyes", period: "2020", details: "TMSE specialization — Mobile Technologies & Embedded Systems." },
     { title: "Master's in Information Systems Security", org: "University of Technology of Troyes", period: "2020" },
   ],
   languages: [

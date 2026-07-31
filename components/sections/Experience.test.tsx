@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, within } from "@testing-library/react";
 import { NextIntlClientProvider } from "next-intl";
 import messages from "@/messages/fr.json";
 import { getContent } from "@/content";
@@ -65,5 +65,25 @@ describe("Experience", () => {
     expect(
       screen.queryByRole("link", { name: /LinkedIn|linkedin/i })
     ).not.toBeInTheDocument();
+  });
+
+  it("le clic sur n'importe quelle zone de l'en-tête (période, chevron) déplie l'accordéon", () => {
+    wrap();
+    const btn = screen.getAllByRole("button", { expanded: false })[0];
+    // Cliquer sur un nœud enfant profond de l'en-tête (le texte de la période)
+    // doit remonter (bubbling) jusqu'au bouton et déclencher le toggle.
+    const period = within(btn).getByText(/sept\. 2024/);
+    fireEvent.click(period);
+    expect(btn).toHaveAttribute("aria-expanded", "true");
+  });
+
+  it("les tags d'apps restent des liens séparés, hors du bouton, et ne déplient pas l'accordéon", () => {
+    wrap();
+    const btn = screen.getAllByRole("button", { expanded: false })[0];
+    const tag = screen.getByRole("link", { name: /Unlockt/ });
+    // Le lien ne doit jamais être un descendant du bouton (pas de <a> dans <button>).
+    expect(btn.contains(tag)).toBe(false);
+    fireEvent.click(tag);
+    expect(btn).toHaveAttribute("aria-expanded", "false");
   });
 });

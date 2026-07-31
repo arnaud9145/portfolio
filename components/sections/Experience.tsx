@@ -43,16 +43,18 @@ function ExperienceRow({ xp }: { xp: ExperienceItem }) {
         aria-controls={panelId}
         onClick={() => setOpen((v) => !v)}
       >
-        <span className="min-w-0">
-          <span className="block font-display text-lg font-semibold text-fg">
-            {xp.company}
+        <span className="flex w-full items-start justify-between gap-4">
+          <span className="min-w-0">
+            <span className="block font-display text-lg font-semibold text-fg">
+              {xp.company}
+            </span>
+            <span className="mt-1 block text-sm">
+              <span className="text-gold-hi">{xp.role}</span>
+              <span className="text-muted"> · {xp.period}</span>
+            </span>
           </span>
-          <span className="mt-1 block text-sm">
-            <span className="text-gold-hi">{xp.role}</span>
-            <span className="text-muted"> · {xp.period}</span>
-          </span>
+          <Chevron />
         </span>
-        <Chevron />
       </button>
 
       {xp.appTags && xp.appTags.length > 0 && (

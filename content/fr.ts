@@ -62,7 +62,7 @@ export const fr: CvContent = {
     { label: "Infra & Outils", items: ["AWS", "RevenueCat", "Sentry", "Firebase", "GitHub Actions"] },
   ],
   education: [
-    { title: "Diplôme d'ingénieur réseaux & télécommunications", org: "Université de Technologie de Troyes", period: "2020", details: "Technologies mobiles et systèmes embarqués." },
+    { title: "Diplôme d'ingénieur SRT — Systèmes Réseaux et Télécommunications", org: "Université de Technologie de Troyes", period: "2020", details: "Spécialité TMSE — Technologie Mobile et Système Embarqué." },
     { title: "Master sécurité des systèmes d'information", org: "Université de Technologie de Troyes", period: "2020" },
   ],
   languages: [
