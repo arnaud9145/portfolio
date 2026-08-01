@@ -22,16 +22,13 @@ export const en: CvContent = {
   // Full catalogue — consumed by /projets. Stable ids (kebab-case).
   projects: [
     { id: "unlockt", name: "Unlockt", context: "Unlockt.me", role: "Senior Mobile Engineer", contribution: "major", tagline: "Creators selling their files.", metrics: ["1.2M active users"], tech: ["React Native", "TypeScript", "React Query", "Reanimated", "Shared Element", "Veriff & Yoti (KYC)", "Firebase", "Sentry", "Amplitude", "Lottie"], link: { href: "https://apps.apple.com/us/app/unlockt-sell-your-files/id1632025425", label: "App Store" }, screenshots: [
-      { src: "/projects/unlockt/unlockt-1.jpg", alt: "Unlockt app screenshot (1/4)", width: 820, height: 1775 },
-      { src: "/projects/unlockt/unlockt-2.jpg", alt: "Unlockt app screenshot (2/4)", width: 820, height: 1775 },
-      { src: "/projects/unlockt/unlockt-3.jpg", alt: "Unlockt app screenshot (3/4)", width: 820, height: 1775 },
-      { src: "/projects/unlockt/unlockt-4.jpg", alt: "Unlockt app screenshot (4/4)", width: 820, height: 1775 },
+      { src: "/projects/unlockt/unlockt-1.jpg", alt: "Unlockt — send-a-file screen (set a price, generate the link)", width: 820, height: 1777 },
+      { src: "/projects/unlockt/unlockt-2.jpg", alt: "Unlockt — link detail (media, price, sales, earnings)", width: 820, height: 1782 },
+      { src: "/projects/unlockt/unlockt-3.jpg", alt: "Unlockt — wallet (balance, withdrawals, transactions)", width: 820, height: 1782 },
     ] },
     { id: "exposed", name: "Exposed", context: "Behind The App · Dashi group", role: "Mobile Engineer", contribution: "major", tagline: "\"Who's Most Likely To\" party game (5000+ prompts, 4 modes). Vakarm in France, Exposed internationally.", metrics: ["~500k users/month"], tech: ["React Native", "TypeScript", "Reanimated", "Colyseus (real-time)", "RevenueCat", "Firebase", "Detox", "SVG"], link: { href: "https://apps.apple.com/us/app/exposed-whos-most-likely-to/id1553777064", label: "App Store" }, screenshots: [
-      { src: "/projects/exposed/exposed-1.jpg", alt: "Exposed app screenshot (1/4)", width: 820, height: 1774 },
-      { src: "/projects/exposed/exposed-2.jpg", alt: "Exposed app screenshot (2/4)", width: 820, height: 1774 },
-      { src: "/projects/exposed/exposed-3.jpg", alt: "Exposed app screenshot (3/4)", width: 820, height: 1774 },
-      { src: "/projects/exposed/exposed-4.jpg", alt: "Exposed app screenshot (4/4)", width: 820, height: 1774 },
+      { src: "/projects/exposed/exposed-1.jpg", alt: "Exposed — game lobby (game pin, players)", width: 820, height: 1782 },
+      { src: "/projects/exposed/exposed-2.jpg", alt: "Exposed — voting round with live results", width: 820, height: 1781 },
     ] },
     { id: "disorder", name: "Disorder", context: "Behind The App · Dashi group", role: "Mobile Engineer", contribution: "major", tagline: "Social app: weekly group chats with strangers nearby (50/50 mixed groups).", metrics: [], tech: ["React Native", "TypeScript", "Skia", "Reanimated", "Stream Chat", "React Query", "MMKV", "RevenueCat", "Firebase", "Sentry"], link: { href: "https://apps.apple.com/us/app/disorder-talk-meet-repeat/id6738487787", label: "App Store" }, screenshots: [
       { src: "/projects/disorder/disorder-1.jpg", alt: "Disorder app screenshot (1/4)", width: 820, height: 1775 },
