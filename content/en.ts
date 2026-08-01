@@ -34,12 +34,11 @@ export const en: CvContent = {
     { id: "konectom", name: "Konectom", context: "BAM — Biogen client", role: "Mobile Engineer", contribution: "minor", tagline: "Clinical self-assessment (Biogen): measuring motor and cognitive function.", metrics: [], tech: ["React Native", "TypeScript"] },
     { id: "rift", name: "More Impact / Rift", context: "Lita", role: "Mobile Engineer", contribution: "minor", tagline: "Impact savings app built for Lita — formerly \"More Impact\", now renamed Rift.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/rift/id1494745935", label: "App Store" } },
     { id: "ornikar", name: "Ornikar", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Driving theory and driving test preparation.", metrics: [], tech: ["React Native", "TypeScript"] },
-    { id: "jutheau-husson", name: "Jutheau-Husson", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Mobile app for an insurance broker.", metrics: [], tech: ["React Native", "TypeScript"] },
+    { id: "jutheau-husson", name: "Jutheau-Husson", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Mobile app for a leading Monaco insurance broker — modernising the client relationship.", metrics: [], tech: ["React Native", "TypeScript"] },
     { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Gala app: info, ticketing, schedule.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
     { id: "gala-tv", name: "Gala UTT — TV Display", context: "UNG — UTT Net Group (2017)", role: "Developer", contribution: "major", tagline: "Digital signage: live info and animations shown on the school's TVs during the gala.", metrics: [], tech: ["React", "Node"] },
     { id: "my-utt", name: "My UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT student life app.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
     { id: "integration-utt", name: "Intégration UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "Onboarding app for new UTT students.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
-    { id: "bde-utt", name: "BDE UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "App for BDE student parties.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
   ],
   experience: [
     { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "Sep. 2024 → present", summary: "Senior mobile engineer within the Dashi group (Unlockt & Behind The App), across several consumer apps.", highlights: [
@@ -71,7 +70,7 @@ export const en: CvContent = {
       "Added back-end endpoints (Laravel / PHP) and front-end for Intégration UTT",
       "TV display system for the school during the Gala (2017)",
       "President of the association (2017 & 2019)",
-    ], companyUrl: "https://uttnetgroup.fr/", appTags: [{ label: "Gala UTT", projectId: "gala-utt" }, { label: "Gala TV", projectId: "gala-tv" }, { label: "My UTT", projectId: "my-utt" }, { label: "Intégration UTT", projectId: "integration-utt" }, { label: "BDE UTT", projectId: "bde-utt" }] },
+    ], companyUrl: "https://uttnetgroup.fr/", appTags: [{ label: "Gala UTT", projectId: "gala-utt" }, { label: "Gala TV", projectId: "gala-tv" }, { label: "My UTT", projectId: "my-utt" }, { label: "Intégration UTT", projectId: "integration-utt" }] },
   ],
   stack: [
     { label: "Mobile", items: ["React Native", "Expo / EAS", "TypeScript", "Reanimated", "Skia", "Native modules", "React Query", "Stream Chat", "MMKV", "Detox", "i18n (react-intl / i18next)"] },
