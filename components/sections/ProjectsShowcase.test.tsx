@@ -54,9 +54,9 @@ describe("ProjectsShowcase", () => {
 
   it("affiche les tech tags réels d'un projet", () => {
     wrap();
-    // "Reanimated" appears on several projects; "Veriff (KYC)" is Unlockt-only.
+    // "Reanimated" appears on several projects; "Veriff & Yoti (KYC)" is Unlockt-only.
     expect(screen.getAllByText("Reanimated").length).toBeGreaterThan(0);
-    expect(screen.getByText("Veriff (KYC)")).toBeInTheDocument();
+    expect(screen.getByText("Veriff & Yoti (KYC)")).toBeInTheDocument();
   });
 
   it("affiche la métrique Unlockt (base du compteur animé)", () => {
