@@ -48,8 +48,16 @@ export const en: CvContent = {
       { src: "/projects/konectom/konectom-2.jpg", alt: "Konectom — clinical self-assessment (screen 2)", width: 820, height: 1455 },
       { src: "/projects/konectom/konectom-3.jpg", alt: "Konectom — clinical self-assessment (screen 3)", width: 820, height: 1455 },
     ] },
-    { id: "rift", name: "More Impact / Rift", context: "Lita", role: "Mobile Engineer", contribution: "minor", tagline: "Impact savings app built for Lita — formerly \"More Impact\", now renamed Rift.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/rift/id1494745935", label: "App Store" } },
-    { id: "ornikar", name: "Ornikar", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Driving theory and driving test preparation.", metrics: [], tech: ["React Native", "TypeScript"] },
+    { id: "rift", name: "More Impact / Rift", context: "Lita", role: "Mobile Engineer", contribution: "minor", tagline: "The Yuka of finance: scan the impact of your savings. Built for Lita, formerly \"More Impact\".", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/rift/id1494745935", label: "App Store" }, screenshots: [
+      { src: "/projects/rift/rift-1.jpg", alt: "Rift — savings breakdown (1)", width: 148, height: 303 },
+      { src: "/projects/rift/rift-2.jpg", alt: "Rift — environmental impact of savings (2)", width: 148, height: 303 },
+      { src: "/projects/rift/rift-3.jpg", alt: "Rift — ethical savings products (3)", width: 148, height: 303 },
+    ] },
+    { id: "ornikar", name: "Ornikar", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "App for driving instructors (Ornikar Enseignants): lesson scheduling and student tracking.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/ornikar-enseignants/id1385539158", label: "App Store" }, screenshots: [
+      { src: "/projects/ornikar/ornikar-1.jpg", alt: "Ornikar Enseignants — lesson schedule (1)", width: 820, height: 1775 },
+      { src: "/projects/ornikar/ornikar-2.jpg", alt: "Ornikar Enseignants — availability update (2)", width: 820, height: 1775 },
+      { src: "/projects/ornikar/ornikar-3.jpg", alt: "Ornikar Enseignants — student progress tracking (3)", width: 820, height: 1775 },
+    ] },
     { id: "jutheau-husson", name: "Jutheau-Husson", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Mobile app for a leading Monaco insurance broker — modernising the client relationship.", metrics: [], tech: ["React Native", "TypeScript"], screenshots: [
       { src: "/projects/jutheau-husson/jutheau-1.jpg", alt: "Jutheau-Husson — insurance app screen (1)", width: 460, height: 997 },
       { src: "/projects/jutheau-husson/jutheau-2.jpg", alt: "Jutheau-Husson — insurance app screen (2)", width: 460, height: 997 },

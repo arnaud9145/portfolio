@@ -567,6 +567,7 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 1.1rem;
 }
 .phone-screen--mock {
   display: flex;
@@ -604,6 +605,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 1.1rem;
 }
 .device-shot--front {
   position: relative;

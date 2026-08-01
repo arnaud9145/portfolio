@@ -48,8 +48,16 @@ export const fr: CvContent = {
       { src: "/projects/konectom/konectom-2.jpg", alt: "Konectom — auto-évaluation clinique (écran 2)", width: 820, height: 1455 },
       { src: "/projects/konectom/konectom-3.jpg", alt: "Konectom — auto-évaluation clinique (écran 3)", width: 820, height: 1455 },
     ] },
-    { id: "rift", name: "More Impact / Rift", context: "Lita", role: "Mobile Engineer", contribution: "minor", tagline: "Application d'épargne à impact développée pour Lita — anciennement « More Impact », aujourd'hui renommée Rift.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/rift/id1494745935", label: "App Store" } },
-    { id: "ornikar", name: "Ornikar", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Code de la route et préparation au permis de conduire.", metrics: [], tech: ["React Native", "TypeScript"] },
+    { id: "rift", name: "More Impact / Rift", context: "Lita", role: "Mobile Engineer", contribution: "minor", tagline: "Le Yuka de la finance : scanne l'impact de ton épargne. Produit de Lita, anciennement « More Impact ».", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/rift/id1494745935", label: "App Store" }, screenshots: [
+      { src: "/projects/rift/rift-1.jpg", alt: "Rift — composition de l'épargne (1)", width: 148, height: 303 },
+      { src: "/projects/rift/rift-2.jpg", alt: "Rift — impact environnemental de l'épargne (2)", width: 148, height: 303 },
+      { src: "/projects/rift/rift-3.jpg", alt: "Rift — produits d'épargne éthiques (3)", width: 148, height: 303 },
+    ] },
+    { id: "ornikar", name: "Ornikar", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Application pour les moniteurs d'auto-école (Ornikar Enseignants) : planning des leçons et suivi des élèves.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/ornikar-enseignants/id1385539158", label: "App Store" }, screenshots: [
+      { src: "/projects/ornikar/ornikar-1.jpg", alt: "Ornikar Enseignants — planning des leçons (1)", width: 820, height: 1775 },
+      { src: "/projects/ornikar/ornikar-2.jpg", alt: "Ornikar Enseignants — mise à jour des disponibilités (2)", width: 820, height: 1775 },
+      { src: "/projects/ornikar/ornikar-3.jpg", alt: "Ornikar Enseignants — suivi pédagogique de l'élève (3)", width: 820, height: 1775 },
+    ] },
     { id: "jutheau-husson", name: "Jutheau-Husson", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Application mobile pour un leader monégasque du courtage en assurances — moderniser la relation client.", metrics: [], tech: ["React Native", "TypeScript"], screenshots: [
       { src: "/projects/jutheau-husson/jutheau-1.jpg", alt: "Jutheau-Husson — écran de l'app assurance (1)", width: 460, height: 997 },
       { src: "/projects/jutheau-husson/jutheau-2.jpg", alt: "Jutheau-Husson — écran de l'app assurance (2)", width: 460, height: 997 },
