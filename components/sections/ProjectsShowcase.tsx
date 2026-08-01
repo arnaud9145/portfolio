@@ -203,7 +203,7 @@ function ProjectText({ project }: { project: ProjectItem }) {
         </div>
       )}
 
-      {(project.link || project.status) && (
+      {(project.link || project.repo || project.status) && (
         <div className="proj-footer">
           {project.link && (
             <a
@@ -213,6 +213,29 @@ function ProjectText({ project }: { project: ProjectItem }) {
               className="btn btn-outline proj-store"
             >
               {project.link.label}
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <path d="M7 17 17 7M9 7h8v8" />
+              </svg>
+            </a>
+          )}
+          {project.repo && (
+            <a
+              href={project.repo.href}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-outline proj-store proj-repo"
+            >
+              {project.repo.label}
               <svg
                 width="14"
                 height="14"

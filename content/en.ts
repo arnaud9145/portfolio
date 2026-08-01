@@ -67,16 +67,16 @@ export const en: CvContent = {
       { src: "/projects/jutheau-husson/jutheau-2.jpg", alt: "Jutheau-Husson — insurance app screen (2)", width: 460, height: 997 },
       { src: "/projects/jutheau-husson/jutheau-3.jpg", alt: "Jutheau-Husson — insurance app screen (3)", width: 460, height: 997 },
     ] },
-    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Gala app: info, ticketing, schedule.", metrics: [], tech: ["Ionic 3", "Angular", "Cordova"] },
-    { id: "gala-tv", name: "Gala UTT — TV Display", context: "UNG — UTT Net Group (2017)", role: "Developer", contribution: "major", tagline: "Digital signage: live info and animations shown on the school's TVs during the gala.", metrics: [], tech: ["React", "Node"], screenshots: [
+    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Gala app: info, ticketing, schedule.", metrics: [], tech: ["React Native", "Ionic 3", "Angular"], repo: { href: "https://github.com/ungdev/Gala-Mobile", label: "Code (GitHub)" } },
+    { id: "gala-tv", name: "Gala UTT — TV Display", context: "UNG — UTT Net Group (2017)", role: "Developer", contribution: "major", tagline: "Digital signage: live info and animations shown on the school's TVs during the gala.", metrics: [], tech: ["React", "Node"], repo: { href: "https://github.com/ungdev/TVGala_Client", label: "Code (GitHub)" }, screenshots: [
       { src: "/projects/gala-tv/gala-tv-1.jpg", alt: "Gala UTT — signage shown on the school's screens", width: 1100, height: 618 },
     ] },
-    { id: "my-utt", name: "My UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT student life app.", metrics: [], tech: ["React Native", "Laravel / PHP", "Symfony"], screenshots: [
+    { id: "my-utt", name: "My UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT student life app.", metrics: [], tech: ["React Native", "Laravel / PHP", "Symfony"], repo: { href: "https://github.com/ungdev/my-utt-mobile", label: "Code (GitHub)" }, screenshots: [
       { src: "/projects/my-utt/my-utt-1.jpg", alt: "My UTT — home screen (1)", width: 820, height: 1775 },
       { src: "/projects/my-utt/my-utt-2.jpg", alt: "My UTT — student life features screen (2)", width: 820, height: 1775 },
       { src: "/projects/my-utt/my-utt-3.jpg", alt: "My UTT — student profile screen (3)", width: 820, height: 1775 },
     ] },
-    { id: "integration-utt", name: "Intégration UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "Onboarding app for new UTT students — rebuilt from scratch in React Native (previously Ionic).", metrics: [], tech: ["React Native", "Laravel / PHP"], screenshots: [
+    { id: "integration-utt", name: "Intégration UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "Onboarding app for new UTT students — rebuilt from scratch in React Native (previously Ionic).", metrics: [], tech: ["React Native", "Laravel / PHP"], repo: { href: "https://github.com/ungdev/integration-UTT-mobile", label: "Code (GitHub)" }, screenshots: [
       { src: "/projects/integration-utt/integration-utt-1.jpg", alt: "Intégration UTT — onboarding welcome screen (1)", width: 820, height: 1777 },
       { src: "/projects/integration-utt/integration-utt-2.jpg", alt: "Intégration UTT — campus orientation screen (2)", width: 820, height: 1777 },
       { src: "/projects/integration-utt/integration-utt-3.jpg", alt: "Intégration UTT — new-student checklist screen (3)", width: 820, height: 1777 },
@@ -84,10 +84,10 @@ export const en: CvContent = {
     { id: "flute", name: "La Flute", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "Event-management platform for a student association.", metrics: [], tech: ["React", "MUI", "Apollo / GraphQL", "NestJS", "TypeORM"], link: { href: "https://flute3.sale", label: "flute3.sale" }, screenshots: [
       { src: "/projects/flute/flute-1.jpg", alt: "La Flute — event-management back office (participants, rooms, payments)", width: 1200, height: 691 },
     ] },
-    { id: "utt-arena", name: "UTT Arena", context: "UNG — UTT Net Group", role: "Developer & President", contribution: "major", tagline: "Website of the largest e-sport LAN in the Grand Est — president of UTT Arena in 2018, built the site that year.", metrics: ["450 players + visitors (2018 edition)"], tech: ["React", "Redux", "Node.js"], link: { href: "https://arena.utt.fr", label: "arena.utt.fr" }, screenshots: [
+    { id: "utt-arena", name: "UTT Arena", context: "UNG — UTT Net Group", role: "Developer & President", contribution: "major", tagline: "Website of the largest e-sport LAN in the Grand Est — president of UTT Arena in 2018, built the site that year.", metrics: ["450 players + visitors (2018 edition)"], tech: ["React", "Redux", "Node.js"], link: { href: "https://arena.utt.fr", label: "arena.utt.fr" }, repo: { href: "https://github.com/ungdev/UA-front-old", label: "Code (GitHub)" }, screenshots: [
       { src: "/projects/utt-arena/utt-arena-1.jpg", alt: "UTT Arena — e-sport competition website", width: 1200, height: 750 },
     ] },
-    { id: "uttarena-app", name: "UTT Arena — Intranet", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Arena intranet: tournament info for players and event management for staff. Integrated with the network captive portal — seat ↔ IP ↔ user ↔ MAC mapping, IPs communicated in real time.", metrics: ["450 players managed (2018 edition)"], tech: ["React", "Ant Design", "Chart.js", "OpenID Connect", "Node.js"], status: "Offline" },
+    { id: "uttarena-app", name: "UTT Arena — Intranet", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Arena intranet: tournament info for players and event management for staff. Integrated with the network captive portal — seat ↔ IP ↔ user ↔ MAC mapping, IPs communicated in real time.", metrics: ["450 players managed (2018 edition)"], tech: ["React", "Ant Design", "Chart.js", "OpenID Connect", "Node.js"], repo: { href: "https://github.com/ungdev/UA-appli", label: "Code (GitHub)" }, status: "Offline" },
   ],
   experience: [
     { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "Sep. 2024 → present", summary: "Senior mobile engineer within the Dashi group (Unlockt & Behind The App), across several consumer apps.", highlights: [

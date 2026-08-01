@@ -32,6 +32,7 @@ export interface ProjectItem {
   metrics: string[];             // vide si inconnu
   tech?: string[];               // stack technique — réelle si connue, minimale sinon
   link?: { href: string; label: string };
+  repo?: { href: string; label: string }; // dépôt source public (GitHub, etc.)
   status?: string;
   screenshots?: ProjectScreenshot[]; // captures réelles — sinon mockup placeholder générique
 }
