@@ -52,6 +52,9 @@ function ExperienceRow({ xp }: { xp: ExperienceItem }) {
               <span className="text-gold-hi">{xp.role}</span>
               <span className="text-muted"> · {xp.period}</span>
             </span>
+            {xp.summary && (
+              <span className="mt-1.5 block text-sm text-muted">{xp.summary}</span>
+            )}
           </span>
           <Chevron />
         </span>

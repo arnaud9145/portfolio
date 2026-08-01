@@ -17,7 +17,7 @@ describe("Experience", () => {
   it("rend les expériences dont UNG (déplacée depuis Formation)", () => {
     wrap();
     expect(screen.getByText("Unlockt.me")).toBeInTheDocument();
-    expect(screen.getByText("BAM")).toBeInTheDocument();
+    expect(screen.getByText("BAM · aujourd'hui Theodo Apps")).toBeInTheDocument();
     expect(screen.getByText("UNG (UTT Net Group)")).toBeInTheDocument();
   });
 
@@ -59,12 +59,44 @@ describe("Experience", () => {
   });
 
   it("ne rend pas de lien LinkedIn pour une entreprise dont l'URL est le placeholder '#'", () => {
+    // Toutes les expériences réelles ont désormais une vraie URL LinkedIn ;
+    // on force un placeholder "#" sur une entrée pour couvrir le cas de garde.
+    const content = getContent("fr");
+    const withPlaceholder = {
+      ...content,
+      experience: content.experience.map((xp, i) =>
+        i === 0 ? { ...xp, companyUrl: "#" } : xp
+      ),
+    };
+    render(
+      <NextIntlClientProvider locale="fr" messages={messages}>
+        <Experience content={withPlaceholder} />
+      </NextIntlClientProvider>
+    );
+    const btn = screen.getAllByRole("button", { expanded: false })[0];
+    const panelId = btn.getAttribute("aria-controls");
+    fireEvent.click(btn);
+    const panel = document.getElementById(panelId!) as HTMLElement;
+    expect(
+      within(panel).queryByRole("link", { name: /LinkedIn|linkedin/i })
+    ).not.toBeInTheDocument();
+  });
+
+  it("rend un lien LinkedIn pour une entreprise dont l'URL est réelle", () => {
     wrap();
     const btn = screen.getAllByRole("button", { expanded: false })[0];
+    const panelId = btn.getAttribute("aria-controls");
     fireEvent.click(btn);
+    const panel = document.getElementById(panelId!) as HTMLElement;
+    const link = within(panel).getByRole("link", { name: /LinkedIn|linkedin/i });
+    expect(link).toHaveAttribute("href", "https://www.linkedin.com/company/unlockt/");
+  });
+
+  it("affiche le résumé de l'expérience courante dans l'en-tête replié", () => {
+    wrap();
     expect(
-      screen.queryByRole("link", { name: /LinkedIn|linkedin/i })
-    ).not.toBeInTheDocument();
+      screen.getByText(/groupe Dashi \(Unlockt & Behind The App\)/)
+    ).toBeInTheDocument();
   });
 
   it("le clic sur n'importe quelle zone de l'en-tête (période, chevron) déplie l'accordéon", () => {
