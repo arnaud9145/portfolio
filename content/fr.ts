@@ -1,8 +1,5 @@
 import type { CvContent } from "./types";
 
-// PLACEHOLDER — tagline à rédiger.
-const LOREM_TAGLINE = "Lorem ipsum — description à venir.";
-
 export const fr: CvContent = {
   hero: {
     name: "Arnaud Dufour",
@@ -32,17 +29,17 @@ export const fr: CvContent = {
       { src: "/projects/movizer/movizer-2.png", alt: "Movizer — écran des discussions entre amis autour d'un film", width: 700, height: 1402 },
       { src: "/projects/movizer/movizer-3.png", alt: "Movizer — écran de recherche : sélections de films et séries à découvrir", width: 700, height: 1396 },
     ] },
-    { id: "le-collectionist", name: "Le Collectionist", context: "Le Collectionist", role: "Senior Mobile Engineer", contribution: "minor", tagline: LOREM_TAGLINE, metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/le-collectionist/id1630324684", label: "App Store" } },
-    { id: "roger", name: "Roger", context: "Roger", role: "Mobile Engineer", contribution: "minor", tagline: LOREM_TAGLINE, metrics: [], tech: ["React Native", "TypeScript", "Sentry", "AppCenter", "Fastlane"] },
-    { id: "konectom", name: "Konectom", context: "BAM — client Biogen", role: "Mobile Engineer", contribution: "minor", tagline: LOREM_TAGLINE, metrics: [], tech: ["React Native", "TypeScript"] },
+    { id: "le-collectionist", name: "Le Collectionist", context: "Le Collectionist", role: "Senior Mobile Engineer", contribution: "minor", tagline: "Location de villas et maisons d'exception.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/le-collectionist/id1630324684", label: "App Store" } },
+    { id: "roger", name: "Roger", context: "Roger", role: "Mobile Engineer", contribution: "minor", tagline: "Outil de communication et de collaboration d'entreprise.", metrics: [], tech: ["React Native", "TypeScript", "Sentry", "AppCenter", "Fastlane"] },
+    { id: "konectom", name: "Konectom", context: "BAM — client Biogen", role: "Mobile Engineer", contribution: "minor", tagline: "Auto-évaluation clinique (Biogen) : mesure des fonctions motrices et cognitives.", metrics: [], tech: ["React Native", "TypeScript"] },
     { id: "rift", name: "More Impact / Rift", context: "Lita", role: "Mobile Engineer", contribution: "minor", tagline: "Application d'épargne à impact développée pour Lita — anciennement « More Impact », aujourd'hui renommée Rift.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/rift/id1494745935", label: "App Store" } },
-    { id: "ornikar", name: "Ornikar", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: LOREM_TAGLINE, metrics: [], tech: ["React Native", "TypeScript"] },
-    { id: "jutheau-husson", name: "Jutheau-Husson", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: LOREM_TAGLINE, metrics: [], tech: ["React Native", "TypeScript"] },
-    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: LOREM_TAGLINE, metrics: [], tech: ["React Native", "Laravel / PHP"] },
+    { id: "ornikar", name: "Ornikar", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Code de la route et préparation au permis de conduire.", metrics: [], tech: ["React Native", "TypeScript"] },
+    { id: "jutheau-husson", name: "Jutheau-Husson", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Application mobile pour un courtier en assurances.", metrics: [], tech: ["React Native", "TypeScript"] },
+    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Application du Gala de l'UTT : infos, billetterie, programme.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
     { id: "gala-tv", name: "Gala UTT — Affichage TV", context: "UNG — UTT Net Group (2017)", role: "Développeur", contribution: "major", tagline: "Affichage dynamique : infos et animations diffusées sur les TV de l'école pendant le gala.", metrics: [], tech: ["React", "Node"] },
-    { id: "my-utt", name: "My UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: LOREM_TAGLINE, metrics: [], tech: ["React Native", "Laravel / PHP"] },
-    { id: "integration-utt", name: "Intégration UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: LOREM_TAGLINE, metrics: [], tech: ["React Native", "Laravel / PHP"] },
-    { id: "bde-utt", name: "BDE UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: LOREM_TAGLINE, metrics: [], tech: ["React Native", "Laravel / PHP"] },
+    { id: "my-utt", name: "My UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Application de la vie étudiante de l'UTT.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
+    { id: "integration-utt", name: "Intégration UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Application d'intégration des nouveaux étudiants de l'UTT.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
+    { id: "bde-utt", name: "BDE UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Application pour les soirées étudiantes du BDE.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
   ],
   experience: [
     { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "sept. 2024 → aujourd'hui", summary: "Ingénieur mobile senior au sein du groupe Dashi (Unlockt & Behind The App), sur plusieurs applications grand public.", highlights: [
