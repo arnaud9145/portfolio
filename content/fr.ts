@@ -21,9 +21,24 @@ export const fr: CvContent = {
   ],
   // Catalogue complet — consommé par /projets. Ids stables (kebab-case).
   projects: [
-    { id: "unlockt", name: "Unlockt", context: "Unlockt.me", role: "Senior Mobile Engineer", contribution: "major", tagline: "Vente de fichiers par des créateurs.", metrics: ["1,2 M d'utilisateurs actifs"], tech: ["React Native", "TypeScript", "React Query", "Reanimated", "Shared Element", "Veriff & Yoti (KYC)", "Firebase", "Sentry", "Amplitude", "Lottie"], link: { href: "https://apps.apple.com/us/app/unlockt-sell-your-files/id1632025425", label: "App Store" } },
-    { id: "exposed", name: "Exposed", context: "Behind The App · groupe Dashi", role: "Mobile Engineer", contribution: "major", tagline: "Party game « Who's Most Likely To » (5000+ défis, 4 modes). Vakarm en France, Exposed à l'international.", metrics: ["~500k utilisateurs/mois"], tech: ["React Native", "TypeScript", "Reanimated", "Colyseus (temps réel)", "RevenueCat", "Firebase", "Detox", "SVG"], link: { href: "https://apps.apple.com/us/app/exposed-whos-most-likely-to/id1553777064", label: "App Store" } },
-    { id: "disorder", name: "Disorder", context: "Behind The App · groupe Dashi", role: "Mobile Engineer", contribution: "major", tagline: "App sociale : chaque semaine, des group chats avec des inconnus de ta zone (groupes mixtes 50/50).", metrics: [], tech: ["React Native", "TypeScript", "Skia", "Reanimated", "Stream Chat", "React Query", "MMKV", "RevenueCat", "Firebase", "Sentry"], link: { href: "https://apps.apple.com/us/app/disorder-talk-meet-repeat/id6738487787", label: "App Store" } },
+    { id: "unlockt", name: "Unlockt", context: "Unlockt.me", role: "Senior Mobile Engineer", contribution: "major", tagline: "Vente de fichiers par des créateurs.", metrics: ["1,2 M d'utilisateurs actifs"], tech: ["React Native", "TypeScript", "React Query", "Reanimated", "Shared Element", "Veriff & Yoti (KYC)", "Firebase", "Sentry", "Amplitude", "Lottie"], link: { href: "https://apps.apple.com/us/app/unlockt-sell-your-files/id1632025425", label: "App Store" }, screenshots: [
+      { src: "/projects/unlockt/unlockt-1.jpg", alt: "Capture de l'app Unlockt (1/4)", width: 820, height: 1775 },
+      { src: "/projects/unlockt/unlockt-2.jpg", alt: "Capture de l'app Unlockt (2/4)", width: 820, height: 1775 },
+      { src: "/projects/unlockt/unlockt-3.jpg", alt: "Capture de l'app Unlockt (3/4)", width: 820, height: 1775 },
+      { src: "/projects/unlockt/unlockt-4.jpg", alt: "Capture de l'app Unlockt (4/4)", width: 820, height: 1775 },
+    ] },
+    { id: "exposed", name: "Exposed", context: "Behind The App · groupe Dashi", role: "Mobile Engineer", contribution: "major", tagline: "Party game « Who's Most Likely To » (5000+ défis, 4 modes). Vakarm en France, Exposed à l'international.", metrics: ["~500k utilisateurs/mois"], tech: ["React Native", "TypeScript", "Reanimated", "Colyseus (temps réel)", "RevenueCat", "Firebase", "Detox", "SVG"], link: { href: "https://apps.apple.com/us/app/exposed-whos-most-likely-to/id1553777064", label: "App Store" }, screenshots: [
+      { src: "/projects/exposed/exposed-1.jpg", alt: "Capture de l'app Exposed (1/4)", width: 820, height: 1774 },
+      { src: "/projects/exposed/exposed-2.jpg", alt: "Capture de l'app Exposed (2/4)", width: 820, height: 1774 },
+      { src: "/projects/exposed/exposed-3.jpg", alt: "Capture de l'app Exposed (3/4)", width: 820, height: 1774 },
+      { src: "/projects/exposed/exposed-4.jpg", alt: "Capture de l'app Exposed (4/4)", width: 820, height: 1774 },
+    ] },
+    { id: "disorder", name: "Disorder", context: "Behind The App · groupe Dashi", role: "Mobile Engineer", contribution: "major", tagline: "App sociale : chaque semaine, des group chats avec des inconnus de ta zone (groupes mixtes 50/50).", metrics: [], tech: ["React Native", "TypeScript", "Skia", "Reanimated", "Stream Chat", "React Query", "MMKV", "RevenueCat", "Firebase", "Sentry"], link: { href: "https://apps.apple.com/us/app/disorder-talk-meet-repeat/id6738487787", label: "App Store" }, screenshots: [
+      { src: "/projects/disorder/disorder-1.jpg", alt: "Capture de l'app Disorder (1/4)", width: 820, height: 1775 },
+      { src: "/projects/disorder/disorder-2.jpg", alt: "Capture de l'app Disorder (2/4)", width: 820, height: 1775 },
+      { src: "/projects/disorder/disorder-3.jpg", alt: "Capture de l'app Disorder (3/4)", width: 820, height: 1775 },
+      { src: "/projects/disorder/disorder-4.jpg", alt: "Capture de l'app Disorder (4/4)", width: 820, height: 1775 },
+    ] },
     { id: "movizer", name: "Movizer", context: "Happliness", role: "CTO & cofondateur", contribution: "lead", tagline: "Recommandations personnalisées de films & séries, partage entre amis.", metrics: [], tech: ["React Native", "TypeScript", "NestJS", "GraphQL", "PostgreSQL", "Redis", "TypeORM", "Firebase", "AWS S3"], link: { href: "https://lespepitestech.com/startup-de-la-french-tech/movizer", label: "Les Pépites Tech" }, status: "Retirée de l'App Store (2024)", screenshots: [
       { src: "/projects/movizer/movizer-1.png", alt: "Movizer — écran de détail d'un film (Dune) avec la recommandation d'un ami", width: 700, height: 806 },
       { src: "/projects/movizer/movizer-2.png", alt: "Movizer — écran des discussions entre amis autour d'un film", width: 700, height: 1402 },
