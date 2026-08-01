@@ -87,6 +87,7 @@ export const en: CvContent = {
     { id: "utt-arena", name: "UTT Arena", context: "UNG — UTT Net Group", role: "Developer & President", contribution: "major", tagline: "Website of the largest e-sport LAN in the Grand Est — president of UTT Arena in 2018, built the site that year.", metrics: [], tech: ["React", "Redux", "Node.js"], link: { href: "https://arena.utt.fr", label: "arena.utt.fr" }, screenshots: [
       { src: "/projects/utt-arena/utt-arena-1.jpg", alt: "UTT Arena — e-sport competition website", width: 1200, height: 750 },
     ] },
+    { id: "uttarena-app", name: "UTT Arena — Intranet", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Arena intranet: tournament info for players and event-management tools for staff (built alongside the public site).", metrics: [], tech: ["React", "Ant Design", "Chart.js", "OpenID Connect", "Node.js"], status: "Offline" },
   ],
   experience: [
     { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "Sep. 2024 → present", summary: "Senior mobile engineer within the Dashi group (Unlockt & Behind The App), across several consumer apps.", highlights: [
@@ -118,7 +119,7 @@ export const en: CvContent = {
       "Added back-end endpoints (Laravel / PHP) and front-end for Intégration UTT",
       "TV display system for the school during the Gala (2017)",
       "President of the association (2017 & 2019)",
-    ], companyUrl: "https://uttnetgroup.fr/", appTags: [{ label: "Gala UTT", projectId: "gala-utt" }, { label: "Gala TV", projectId: "gala-tv" }, { label: "My UTT", projectId: "my-utt" }, { label: "Intégration UTT", projectId: "integration-utt" }, { label: "UTT Arena", projectId: "utt-arena" }, { label: "La Flute", projectId: "flute" }] },
+    ], companyUrl: "https://uttnetgroup.fr/", appTags: [{ label: "Gala UTT", projectId: "gala-utt" }, { label: "Gala TV", projectId: "gala-tv" }, { label: "My UTT", projectId: "my-utt" }, { label: "Intégration UTT", projectId: "integration-utt" }, { label: "UTT Arena", projectId: "utt-arena" }, { label: "UTT Arena (intranet)", projectId: "uttarena-app" }, { label: "La Flute", projectId: "flute" }] },
   ],
   stack: [
     { label: "Mobile", items: ["React Native", "Expo / EAS", "TypeScript", "Reanimated", "Skia", "Native modules", "React Query", "Stream Chat", "MMKV", "Detox", "i18n (react-intl / i18next)"] },
