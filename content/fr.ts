@@ -67,7 +67,7 @@ export const fr: CvContent = {
       { src: "/projects/jutheau-husson/jutheau-2.jpg", alt: "Jutheau-Husson — écran de l'app assurance (2)", width: 460, height: 997 },
       { src: "/projects/jutheau-husson/jutheau-3.jpg", alt: "Jutheau-Husson — écran de l'app assurance (3)", width: 460, height: 997 },
     ] },
-    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Application du Gala de l'UTT : infos, billetterie, programme.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
+    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Application du Gala de l'UTT : infos, billetterie, programme.", metrics: [], tech: ["Ionic 3", "Angular", "Cordova"] },
     { id: "gala-tv", name: "Gala UTT — Affichage TV", context: "UNG — UTT Net Group (2017)", role: "Développeur", contribution: "major", tagline: "Affichage dynamique : infos et animations diffusées sur les TV de l'école pendant le gala.", metrics: [], tech: ["React", "Node"], screenshots: [
       { src: "/projects/gala-tv/gala-tv-1.jpg", alt: "Gala UTT — affichage diffusé sur les écrans de l'école", width: 1100, height: 618 },
     ] },
@@ -76,7 +76,7 @@ export const fr: CvContent = {
       { src: "/projects/my-utt/my-utt-2.jpg", alt: "My UTT — écran des services de la vie étudiante (2)", width: 820, height: 1775 },
       { src: "/projects/my-utt/my-utt-3.jpg", alt: "My UTT — écran de profil étudiant (3)", width: 820, height: 1775 },
     ] },
-    { id: "integration-utt", name: "Intégration UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Application d'intégration des nouveaux étudiants de l'UTT.", metrics: [], tech: ["React Native", "Laravel / PHP"], screenshots: [
+    { id: "integration-utt", name: "Intégration UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Application d'intégration des nouveaux étudiants de l'UTT — réécrite de zéro en React Native (auparavant en Ionic).", metrics: [], tech: ["React Native", "Laravel / PHP"], screenshots: [
       { src: "/projects/integration-utt/integration-utt-1.jpg", alt: "Intégration UTT — écran d'accueil de l'onboarding (1)", width: 820, height: 1777 },
       { src: "/projects/integration-utt/integration-utt-2.jpg", alt: "Intégration UTT — écran de découverte du campus (2)", width: 820, height: 1777 },
       { src: "/projects/integration-utt/integration-utt-3.jpg", alt: "Intégration UTT — écran de checklist du nouvel étudiant (3)", width: 820, height: 1777 },

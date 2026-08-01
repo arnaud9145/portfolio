@@ -67,7 +67,7 @@ export const en: CvContent = {
       { src: "/projects/jutheau-husson/jutheau-2.jpg", alt: "Jutheau-Husson — insurance app screen (2)", width: 460, height: 997 },
       { src: "/projects/jutheau-husson/jutheau-3.jpg", alt: "Jutheau-Husson — insurance app screen (3)", width: 460, height: 997 },
     ] },
-    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Gala app: info, ticketing, schedule.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
+    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Gala app: info, ticketing, schedule.", metrics: [], tech: ["Ionic 3", "Angular", "Cordova"] },
     { id: "gala-tv", name: "Gala UTT — TV Display", context: "UNG — UTT Net Group (2017)", role: "Developer", contribution: "major", tagline: "Digital signage: live info and animations shown on the school's TVs during the gala.", metrics: [], tech: ["React", "Node"], screenshots: [
       { src: "/projects/gala-tv/gala-tv-1.jpg", alt: "Gala UTT — signage shown on the school's screens", width: 1100, height: 618 },
     ] },
@@ -76,7 +76,7 @@ export const en: CvContent = {
       { src: "/projects/my-utt/my-utt-2.jpg", alt: "My UTT — student life features screen (2)", width: 820, height: 1775 },
       { src: "/projects/my-utt/my-utt-3.jpg", alt: "My UTT — student profile screen (3)", width: 820, height: 1775 },
     ] },
-    { id: "integration-utt", name: "Intégration UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "Onboarding app for new UTT students.", metrics: [], tech: ["React Native", "Laravel / PHP"], screenshots: [
+    { id: "integration-utt", name: "Intégration UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "Onboarding app for new UTT students — rebuilt from scratch in React Native (previously Ionic).", metrics: [], tech: ["React Native", "Laravel / PHP"], screenshots: [
       { src: "/projects/integration-utt/integration-utt-1.jpg", alt: "Intégration UTT — onboarding welcome screen (1)", width: 820, height: 1777 },
       { src: "/projects/integration-utt/integration-utt-2.jpg", alt: "Intégration UTT — campus orientation screen (2)", width: 820, height: 1777 },
       { src: "/projects/integration-utt/integration-utt-3.jpg", alt: "Intégration UTT — new-student checklist screen (3)", width: 820, height: 1777 },
