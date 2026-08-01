@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { NextIntlClientProvider } from "next-intl";
 import messages from "@/messages/fr.json";
 import { getContent } from "@/content";
+import type { ProjectItem } from "@/content/types";
 import { ProjectsShowcase } from "./ProjectsShowcase";
 
 function wrap() {
@@ -65,8 +66,20 @@ describe("ProjectsShowcase", () => {
   });
 
   it("marque les mockups placeholder d'une légende 'aperçu à venir'", () => {
-    wrap();
-    // Le Collectionist (entre autres) n'a pas encore de captures réelles → mockup avec légende.
+    // Tous les projets réels ont désormais un visuel ; on vérifie le fallback du
+    // composant : un projet sans captures (et non Roger) retombe sur le mockup.
+    const placeholder: ProjectItem = {
+      id: "sans-captures",
+      name: "Sans Captures",
+      contribution: "minor",
+      tagline: "Projet sans captures réelles.",
+      metrics: [],
+    };
+    render(
+      <NextIntlClientProvider locale="fr" messages={messages}>
+        <ProjectsShowcase projects={[placeholder]} locale="fr" />
+      </NextIntlClientProvider>,
+    );
     expect(screen.getAllByText("aperçu à venir").length).toBeGreaterThan(0);
   });
 
