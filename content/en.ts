@@ -50,7 +50,11 @@ export const en: CvContent = {
     ] },
     { id: "rift", name: "More Impact / Rift", context: "Lita", role: "Mobile Engineer", contribution: "minor", tagline: "Impact savings app built for Lita — formerly \"More Impact\", now renamed Rift.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/rift/id1494745935", label: "App Store" } },
     { id: "ornikar", name: "Ornikar", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Driving theory and driving test preparation.", metrics: [], tech: ["React Native", "TypeScript"] },
-    { id: "jutheau-husson", name: "Jutheau-Husson", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Mobile app for a leading Monaco insurance broker — modernising the client relationship.", metrics: [], tech: ["React Native", "TypeScript"] },
+    { id: "jutheau-husson", name: "Jutheau-Husson", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Mobile app for a leading Monaco insurance broker — modernising the client relationship.", metrics: [], tech: ["React Native", "TypeScript"], screenshots: [
+      { src: "/projects/jutheau-husson/jutheau-1.jpg", alt: "Jutheau-Husson — insurance app screen (1)", width: 460, height: 997 },
+      { src: "/projects/jutheau-husson/jutheau-2.jpg", alt: "Jutheau-Husson — insurance app screen (2)", width: 460, height: 997 },
+      { src: "/projects/jutheau-husson/jutheau-3.jpg", alt: "Jutheau-Husson — insurance app screen (3)", width: 460, height: 997 },
+    ] },
     { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Gala app: info, ticketing, schedule.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
     { id: "gala-tv", name: "Gala UTT — TV Display", context: "UNG — UTT Net Group (2017)", role: "Developer", contribution: "major", tagline: "Digital signage: live info and animations shown on the school's TVs during the gala.", metrics: [], tech: ["React", "Node"] },
     { id: "my-utt", name: "My UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT student life app.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
