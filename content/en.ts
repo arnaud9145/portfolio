@@ -21,7 +21,7 @@ export const en: CvContent = {
   ],
   // Full catalogue — consumed by /projets. Stable ids (kebab-case).
   projects: [
-    { id: "unlockt", name: "Unlockt", context: "Unlockt.me", role: "Senior Mobile Engineer", contribution: "major", tagline: "Creators selling their files.", metrics: ["1.2M active users"], tech: ["React Native", "TypeScript", "React Query", "Reanimated", "Shared Element", "Veriff (KYC)", "Firebase", "Sentry", "Amplitude", "Lottie"], link: { href: "https://apps.apple.com/us/app/unlockt-sell-your-files/id1632025425", label: "App Store" } },
+    { id: "unlockt", name: "Unlockt", context: "Unlockt.me", role: "Senior Mobile Engineer", contribution: "major", tagline: "Creators selling their files.", metrics: ["1.2M active users"], tech: ["React Native", "TypeScript", "React Query", "Reanimated", "Shared Element", "Veriff & Yoti (KYC)", "Firebase", "Sentry", "Amplitude", "Lottie"], link: { href: "https://apps.apple.com/us/app/unlockt-sell-your-files/id1632025425", label: "App Store" } },
     { id: "exposed", name: "Exposed", context: "Behind The App · Dashi group", role: "Mobile Engineer", contribution: "major", tagline: "\"Who's Most Likely To\" party game (5000+ prompts, 4 modes). Vakarm in France, Exposed internationally.", metrics: ["~500k users/month"], tech: ["React Native", "TypeScript", "Reanimated", "Colyseus (real-time)", "RevenueCat", "Firebase", "Detox", "SVG"], link: { href: "https://apps.apple.com/us/app/exposed-whos-most-likely-to/id1553777064", label: "App Store" } },
     { id: "disorder", name: "Disorder", context: "Behind The App · Dashi group", role: "Mobile Engineer", contribution: "major", tagline: "Social app: weekly group chats with strangers nearby (50/50 mixed groups).", metrics: [], tech: ["React Native", "TypeScript", "Skia", "Reanimated", "Stream Chat", "React Query", "MMKV", "RevenueCat", "Firebase", "Sentry"], link: { href: "https://apps.apple.com/us/app/disorder-talk-meet-repeat/id6738487787", label: "App Store" } },
     { id: "movizer", name: "Movizer", context: "Happliness", role: "CTO & co-founder", contribution: "lead", tagline: "Personalised movie & series recommendations, shared with friends.", metrics: [], tech: ["React Native", "TypeScript", "NestJS", "GraphQL", "PostgreSQL", "Redis", "TypeORM", "Firebase", "AWS S3"], link: { href: "https://lespepitestech.com/startup-de-la-french-tech/movizer", label: "Les Pépites Tech" }, status: "Removed from the App Store (2024)", screenshots: [
@@ -43,7 +43,7 @@ export const en: CvContent = {
   ],
   experience: [
     { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "Sep. 2024 → present", summary: "Senior mobile engineer within the Dashi group (Unlockt & Behind The App), across several consumer apps.", highlights: [
-      "Unlockt: full rewrite of the app from scratch (new codebase, on an existing product) — new design and new features (React Native, ~1.2M active users); Veriff (KYC) integration",
+      "Unlockt: full rewrite of the app from scratch (new codebase, on an existing product) — new design and new features (React Native, ~1.2M active users); Veriff & Yoti (identity verification)",
       "Disorder: built the entire front end (Skia, Reanimated, Stream Chat); RevenueCat monetisation",
       "Exposed / Vakarm: rebuilt the app from scratch and built the back end (Colyseus, real-time); RevenueCat",
       "Firebase & Sentry across all apps",
@@ -76,7 +76,7 @@ export const en: CvContent = {
   stack: [
     { label: "Mobile", items: ["React Native", "Expo / EAS", "TypeScript", "Reanimated", "Skia", "Native modules", "React Query", "Stream Chat", "MMKV", "Detox", "i18n (react-intl / i18next)"] },
     { label: "Backend", items: ["NestJS", "PostgreSQL", "Colyseus", "GraphQL", "Redis"] },
-    { label: "Infra & Tooling", items: ["AWS", "RevenueCat", "Sentry", "Firebase", "GitHub Actions", "Veriff (KYC)"] },
+    { label: "Infra & Tooling", items: ["AWS", "RevenueCat", "Sentry", "Firebase", "GitHub Actions", "Veriff & Yoti (KYC)"] },
   ],
   education: [
     { title: "Engineering degree, SRT — Systems, Networks & Telecommunications", org: "University of Technology of Troyes", period: "2020", details: "TMSE specialization — Mobile Technologies & Embedded Systems." },
