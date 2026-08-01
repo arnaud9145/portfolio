@@ -46,7 +46,7 @@ export const en: CvContent = {
   ],
   experience: [
     { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "Sep. 2024 → present", summary: "Senior mobile engineer within the Dashi group (Unlockt & Behind The App), across several consumer apps.", highlights: [
-      "Unlockt: design revamp, new features and code cleanup (React Native, ~1.2M active users); Veriff (KYC) integration",
+      "Unlockt: full rewrite of the app from scratch (new codebase, on an existing product) — new design and new features (React Native, ~1.2M active users); Veriff (KYC) integration",
       "Disorder: built the entire front end (Skia, Reanimated, Stream Chat); RevenueCat monetisation",
       "Exposed / Vakarm: rebuilt the app from scratch and built the back end (Colyseus, real-time); RevenueCat",
       "Firebase & Sentry across all apps",
