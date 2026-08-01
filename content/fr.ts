@@ -81,8 +81,10 @@ export const fr: CvContent = {
       { src: "/projects/integration-utt/integration-utt-2.jpg", alt: "Intégration UTT — écran de découverte du campus (2)", width: 820, height: 1777 },
       { src: "/projects/integration-utt/integration-utt-3.jpg", alt: "Intégration UTT — écran de checklist du nouvel étudiant (3)", width: 820, height: 1777 },
     ] },
-    { id: "flute", name: "La Flute", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Plateforme de gestion des événements d'une association étudiante.", metrics: [], tech: ["React", "MUI", "Apollo / GraphQL", "NestJS", "TypeORM"], link: { href: "https://flute3.sale", label: "flute3.sale" } },
-    { id: "utt-arena", name: "UTT Arena", context: "UNG — UTT Net Group", role: "Développeur & Président", contribution: "major", tagline: "Site de la plus grande LAN e-sport du Grand Est — président de l'UTT Arena en 2018, site réalisé la même année.", metrics: [], tech: ["Site web"], link: { href: "https://arena.utt.fr", label: "arena.utt.fr" }, screenshots: [
+    { id: "flute", name: "La Flute", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Plateforme de gestion des événements d'une association étudiante.", metrics: [], tech: ["React", "MUI", "Apollo / GraphQL", "NestJS", "TypeORM"], link: { href: "https://flute3.sale", label: "flute3.sale" }, screenshots: [
+      { src: "/projects/flute/flute-1.jpg", alt: "La Flute — back-office de gestion des événements (participants, chambres, paiements)", width: 1200, height: 691 },
+    ] },
+    { id: "utt-arena", name: "UTT Arena", context: "UNG — UTT Net Group", role: "Développeur & Président", contribution: "major", tagline: "Site de la plus grande LAN e-sport du Grand Est — président de l'UTT Arena en 2018, site réalisé la même année.", metrics: [], tech: ["React", "Redux", "Node.js"], link: { href: "https://arena.utt.fr", label: "arena.utt.fr" }, screenshots: [
       { src: "/projects/utt-arena/utt-arena-1.jpg", alt: "UTT Arena — site de la compétition e-sport", width: 1200, height: 750 },
     ] },
   ],

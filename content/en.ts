@@ -81,8 +81,10 @@ export const en: CvContent = {
       { src: "/projects/integration-utt/integration-utt-2.jpg", alt: "Intégration UTT — campus orientation screen (2)", width: 820, height: 1777 },
       { src: "/projects/integration-utt/integration-utt-3.jpg", alt: "Intégration UTT — new-student checklist screen (3)", width: 820, height: 1777 },
     ] },
-    { id: "flute", name: "La Flute", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "Event-management platform for a student association.", metrics: [], tech: ["React", "MUI", "Apollo / GraphQL", "NestJS", "TypeORM"], link: { href: "https://flute3.sale", label: "flute3.sale" } },
-    { id: "utt-arena", name: "UTT Arena", context: "UNG — UTT Net Group", role: "Developer & President", contribution: "major", tagline: "Website of the largest e-sport LAN in the Grand Est — president of UTT Arena in 2018, built the site that year.", metrics: [], tech: ["Site web"], link: { href: "https://arena.utt.fr", label: "arena.utt.fr" }, screenshots: [
+    { id: "flute", name: "La Flute", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "Event-management platform for a student association.", metrics: [], tech: ["React", "MUI", "Apollo / GraphQL", "NestJS", "TypeORM"], link: { href: "https://flute3.sale", label: "flute3.sale" }, screenshots: [
+      { src: "/projects/flute/flute-1.jpg", alt: "La Flute — event-management back office (participants, rooms, payments)", width: 1200, height: 691 },
+    ] },
+    { id: "utt-arena", name: "UTT Arena", context: "UNG — UTT Net Group", role: "Developer & President", contribution: "major", tagline: "Website of the largest e-sport LAN in the Grand Est — president of UTT Arena in 2018, built the site that year.", metrics: [], tech: ["React", "Redux", "Node.js"], link: { href: "https://arena.utt.fr", label: "arena.utt.fr" }, screenshots: [
       { src: "/projects/utt-arena/utt-arena-1.jpg", alt: "UTT Arena — e-sport competition website", width: 1200, height: 750 },
     ] },
   ],
