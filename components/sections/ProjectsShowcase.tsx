@@ -87,6 +87,30 @@ function ScreenshotsVisual({
   );
 }
 
+/**
+ * A single real screenshot in landscape orientation (e.g. TV/digital-signage
+ * captures) — rendered full-width as a rounded, bordered image rather than
+ * squeezed into the portrait phone frame used by `ScreenshotsVisual`.
+ */
+function LandscapeVisual({
+  screenshot,
+}: {
+  screenshot: NonNullable<ProjectItem["screenshots"]>[number];
+}) {
+  return (
+    <div className="landscape-shot">
+      <Image
+        src={screenshot.src}
+        alt={screenshot.alt}
+        width={screenshot.width}
+        height={screenshot.height}
+        sizes="(min-width: 900px) 360px, 82vw"
+        className="landscape-img"
+      />
+    </div>
+  );
+}
+
 /** Styled placeholder device for projects without real screenshots. */
 function PhoneMockup({
   project,
@@ -123,6 +147,12 @@ function ProjectVisual({
 }) {
   if (project.id === "roger") return <RogerVisual locale={locale} />;
   if (project.screenshots && project.screenshots.length > 0) {
+    const [first] = project.screenshots;
+    // Landscape captures (width > height, e.g. TV/digital-signage screens)
+    // don't fit the portrait phone frame — render them as a plain wide image.
+    if (project.screenshots.length === 1 && first.width > first.height) {
+      return <LandscapeVisual screenshot={first} />;
+    }
     return <ScreenshotsVisual screenshots={project.screenshots} />;
   }
   return <PhoneMockup project={project} previewSoon={previewSoon} />;

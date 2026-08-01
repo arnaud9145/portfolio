@@ -632,6 +632,20 @@ body {
   opacity: 0.86;
   filter: saturate(0.92) brightness(0.88) drop-shadow(0 24px 46px rgba(0, 0, 0, 0.5));
 }
+.landscape-shot {
+  position: relative;
+  width: 22rem;
+  max-width: 82vw;
+  margin: 0 auto;
+}
+.landscape-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.1rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.6);
+}
 .phone-initial {
   position: relative;
   z-index: 1;
@@ -821,6 +835,7 @@ body {
   }
   .js .visual-slide .phone-fan,
   .js .visual-slide .device-fan { width: 16rem; }
+  .js .visual-slide .landscape-shot { width: 26rem; }
 }
 
 /* ---- Reduced motion ---------------------------------------- */

@@ -41,7 +41,11 @@ export const en: CvContent = {
       { src: "/projects/movizer/movizer-2.png", alt: "Movizer — discussions screen with friends about a movie", width: 700, height: 1402 },
       { src: "/projects/movizer/movizer-3.png", alt: "Movizer — search screen: curated movie & series picks to discover", width: 700, height: 1396 },
     ] },
-    { id: "le-collectionist", name: "Le Collectionist", context: "Le Collectionist", role: "Senior Mobile Engineer", contribution: "minor", tagline: "Rentals of exceptional villas and houses.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/le-collectionist/id1630324684", label: "App Store" } },
+    { id: "le-collectionist", name: "Le Collectionist", context: "Le Collectionist", role: "Senior Mobile Engineer", contribution: "minor", tagline: "Rentals of exceptional villas and houses.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/le-collectionist/id1630324684", label: "App Store" }, screenshots: [
+      { src: "/projects/le-collectionist/le-collectionist-1.jpg", alt: "Le Collectionist — villa listing detail screen (1)", width: 820, height: 1775 },
+      { src: "/projects/le-collectionist/le-collectionist-2.jpg", alt: "Le Collectionist — search & booking screen (2)", width: 820, height: 1775 },
+      { src: "/projects/le-collectionist/le-collectionist-3.jpg", alt: "Le Collectionist — trip / stay details screen (3)", width: 820, height: 1775 },
+    ] },
     { id: "roger", name: "Roger", context: "Roger", role: "Mobile Engineer", contribution: "minor", tagline: "Enterprise communication and collaboration tool.", metrics: [], tech: ["React Native", "TypeScript", "Sentry", "AppCenter", "Fastlane"] },
     { id: "konectom", name: "Konectom", context: "BAM — Biogen client", role: "Mobile Engineer", contribution: "minor", tagline: "Clinical self-assessment (Biogen): measuring motor and cognitive function.", metrics: [], tech: ["React Native", "TypeScript"], screenshots: [
       { src: "/projects/konectom/konectom-1.jpg", alt: "Konectom — clinical self-assessment (screen 1)", width: 820, height: 1455 },
@@ -64,9 +68,19 @@ export const en: CvContent = {
       { src: "/projects/jutheau-husson/jutheau-3.jpg", alt: "Jutheau-Husson — insurance app screen (3)", width: 460, height: 997 },
     ] },
     { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Gala app: info, ticketing, schedule.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
-    { id: "gala-tv", name: "Gala UTT — TV Display", context: "UNG — UTT Net Group (2017)", role: "Developer", contribution: "major", tagline: "Digital signage: live info and animations shown on the school's TVs during the gala.", metrics: [], tech: ["React", "Node"] },
-    { id: "my-utt", name: "My UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT student life app.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
-    { id: "integration-utt", name: "Intégration UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "Onboarding app for new UTT students.", metrics: [], tech: ["React Native", "Laravel / PHP"] },
+    { id: "gala-tv", name: "Gala UTT — TV Display", context: "UNG — UTT Net Group (2017)", role: "Developer", contribution: "major", tagline: "Digital signage: live info and animations shown on the school's TVs during the gala.", metrics: [], tech: ["React", "Node"], screenshots: [
+      { src: "/projects/gala-tv/gala-tv-1.jpg", alt: "Gala UTT — signage shown on the school's screens", width: 1100, height: 618 },
+    ] },
+    { id: "my-utt", name: "My UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT student life app.", metrics: [], tech: ["React Native", "Laravel / PHP"], screenshots: [
+      { src: "/projects/my-utt/my-utt-1.jpg", alt: "My UTT — home screen (1)", width: 820, height: 1775 },
+      { src: "/projects/my-utt/my-utt-2.jpg", alt: "My UTT — student life features screen (2)", width: 820, height: 1775 },
+      { src: "/projects/my-utt/my-utt-3.jpg", alt: "My UTT — student profile screen (3)", width: 820, height: 1775 },
+    ] },
+    { id: "integration-utt", name: "Intégration UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "Onboarding app for new UTT students.", metrics: [], tech: ["React Native", "Laravel / PHP"], screenshots: [
+      { src: "/projects/integration-utt/integration-utt-1.jpg", alt: "Intégration UTT — onboarding welcome screen (1)", width: 820, height: 1777 },
+      { src: "/projects/integration-utt/integration-utt-2.jpg", alt: "Intégration UTT — campus orientation screen (2)", width: 820, height: 1777 },
+      { src: "/projects/integration-utt/integration-utt-3.jpg", alt: "Intégration UTT — new-student checklist screen (3)", width: 820, height: 1777 },
+    ] },
   ],
   experience: [
     { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "Sep. 2024 → present", summary: "Senior mobile engineer within the Dashi group (Unlockt & Behind The App), across several consumer apps.", highlights: [
