@@ -36,26 +36,21 @@ export const en: CvContent = {
       { src: "/projects/disorder/disorder-3.jpg", alt: "Disorder app screenshot (3/4)", width: 820, height: 1775 },
       { src: "/projects/disorder/disorder-4.jpg", alt: "Disorder app screenshot (4/4)", width: 820, height: 1775 },
     ] },
-    { id: "movizer", name: "Movizer", context: "Happliness", role: "CTO & co-founder", contribution: "lead", tagline: "Personalised movie & series recommendations, shared with friends.", metrics: [], tech: ["React Native", "TypeScript", "NestJS", "GraphQL", "PostgreSQL", "Redis", "TypeORM", "Firebase", "AWS S3"], link: { href: "https://lespepitestech.com/startup-de-la-french-tech/movizer", label: "Les Pépites Tech" }, status: "Removed from the App Store (2024)", screenshots: [
-      { src: "/projects/movizer/movizer-1.png", alt: "Movizer — movie detail screen (Dune) with a friend's recommendation", width: 700, height: 806 },
-      { src: "/projects/movizer/movizer-2.png", alt: "Movizer — discussions screen with friends about a movie", width: 700, height: 1402 },
-      { src: "/projects/movizer/movizer-3.png", alt: "Movizer — search screen: curated movie & series picks to discover", width: 700, height: 1396 },
-    ] },
     { id: "le-collectionist", name: "Le Collectionist", context: "Le Collectionist", role: "Senior Mobile Engineer", contribution: "minor", tagline: "Rentals of exceptional villas and houses.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/le-collectionist/id1630324684", label: "App Store" }, screenshots: [
       { src: "/projects/le-collectionist/le-collectionist-1.jpg", alt: "Le Collectionist — villa listing detail screen (1)", width: 820, height: 1775 },
       { src: "/projects/le-collectionist/le-collectionist-2.jpg", alt: "Le Collectionist — search & booking screen (2)", width: 820, height: 1775 },
       { src: "/projects/le-collectionist/le-collectionist-3.jpg", alt: "Le Collectionist — trip / stay details screen (3)", width: 820, height: 1775 },
     ] },
     { id: "roger", name: "Roger", context: "Roger", role: "Mobile Engineer", contribution: "minor", tagline: "Enterprise communication and collaboration tool.", metrics: [], tech: ["React Native", "TypeScript", "Sentry", "AppCenter", "Fastlane"] },
+    { id: "movizer", name: "Movizer", context: "Happliness", role: "CTO & co-founder", contribution: "lead", tagline: "Personalised movie & series recommendations, shared with friends.", metrics: [], tech: ["React Native", "TypeScript", "NestJS", "GraphQL", "PostgreSQL", "Redis", "TypeORM", "Firebase", "AWS S3"], link: { href: "https://lespepitestech.com/startup-de-la-french-tech/movizer", label: "Les Pépites Tech" }, status: "Removed from the App Store (2024)", screenshots: [
+      { src: "/projects/movizer/movizer-1.png", alt: "Movizer — movie detail screen (Dune) with a friend's recommendation", width: 700, height: 806 },
+      { src: "/projects/movizer/movizer-2.png", alt: "Movizer — discussions screen with friends about a movie", width: 700, height: 1402 },
+      { src: "/projects/movizer/movizer-3.png", alt: "Movizer — search screen: curated movie & series picks to discover", width: 700, height: 1396 },
+    ] },
     { id: "konectom", name: "Konectom", context: "BAM — Biogen client", role: "Mobile Engineer", contribution: "minor", tagline: "Clinical self-assessment (Biogen): measuring motor and cognitive function.", metrics: [], tech: ["React Native", "TypeScript"], screenshots: [
       { src: "/projects/konectom/konectom-1.jpg", alt: "Konectom — clinical self-assessment (screen 1)", width: 820, height: 1455 },
       { src: "/projects/konectom/konectom-2.jpg", alt: "Konectom — clinical self-assessment (screen 2)", width: 820, height: 1455 },
       { src: "/projects/konectom/konectom-3.jpg", alt: "Konectom — clinical self-assessment (screen 3)", width: 820, height: 1455 },
-    ] },
-    { id: "rift", name: "More Impact / Rift", context: "Lita", role: "Mobile Engineer", contribution: "minor", tagline: "The Yuka of finance: scan the impact of your savings. Built for Lita, formerly \"More Impact\".", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/rift/id1494745935", label: "App Store" }, screenshots: [
-      { src: "/projects/rift/rift-1.jpg", alt: "Rift — savings breakdown (1)", width: 148, height: 303 },
-      { src: "/projects/rift/rift-2.jpg", alt: "Rift — environmental impact of savings (2)", width: 148, height: 303 },
-      { src: "/projects/rift/rift-3.jpg", alt: "Rift — ethical savings products (3)", width: 148, height: 303 },
     ] },
     { id: "ornikar", name: "Ornikar", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "App for driving instructors (Ornikar Enseignants): lesson scheduling and student tracking.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/ornikar-enseignants/id1385539158", label: "App Store" }, screenshots: [
       { src: "/projects/ornikar/ornikar-1.jpg", alt: "Ornikar Enseignants — lesson schedule (1)", width: 820, height: 1775 },
@@ -67,9 +62,10 @@ export const en: CvContent = {
       { src: "/projects/jutheau-husson/jutheau-2.jpg", alt: "Jutheau-Husson — insurance app screen (2)", width: 460, height: 997 },
       { src: "/projects/jutheau-husson/jutheau-3.jpg", alt: "Jutheau-Husson — insurance app screen (3)", width: 460, height: 997 },
     ] },
-    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Gala app: info, ticketing, schedule.", metrics: [], tech: ["React Native", "Ionic 3", "Angular"], repo: { href: "https://github.com/ungdev/Gala-Mobile", label: "Code (GitHub)" } },
-    { id: "gala-tv", name: "Gala UTT — TV Display", context: "UNG — UTT Net Group (2017)", role: "Developer", contribution: "major", tagline: "Digital signage: live info and animations shown on the school's TVs during the gala.", metrics: [], tech: ["React", "Node"], repo: { href: "https://github.com/ungdev/TVGala_Client", label: "Code (GitHub)" }, screenshots: [
-      { src: "/projects/gala-tv/gala-tv-1.jpg", alt: "Gala UTT — signage shown on the school's screens", width: 1100, height: 618 },
+    { id: "rift", name: "More Impact / Rift", context: "Lita", role: "Mobile Engineer", contribution: "minor", tagline: "The Yuka of finance: scan the impact of your savings. Built for Lita, formerly \"More Impact\".", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/rift/id1494745935", label: "App Store" }, screenshots: [
+      { src: "/projects/rift/rift-1.jpg", alt: "Rift — savings breakdown (1)", width: 148, height: 303 },
+      { src: "/projects/rift/rift-2.jpg", alt: "Rift — environmental impact of savings (2)", width: 148, height: 303 },
+      { src: "/projects/rift/rift-3.jpg", alt: "Rift — ethical savings products (3)", width: 148, height: 303 },
     ] },
     { id: "my-utt", name: "My UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT student life app.", metrics: [], tech: ["React Native", "Laravel / PHP", "Symfony"], repo: { href: "https://github.com/ungdev/my-utt-mobile", label: "Code (GitHub)" }, screenshots: [
       { src: "/projects/my-utt/my-utt-1.jpg", alt: "My UTT — home screen (1)", width: 820, height: 1775 },
@@ -81,13 +77,19 @@ export const en: CvContent = {
       { src: "/projects/integration-utt/integration-utt-2.jpg", alt: "Intégration UTT — campus orientation screen (2)", width: 820, height: 1777 },
       { src: "/projects/integration-utt/integration-utt-3.jpg", alt: "Intégration UTT — new-student checklist screen (3)", width: 820, height: 1777 },
     ] },
-    { id: "flute", name: "La Flute", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "Event-management platform for a student association.", metrics: [], tech: ["React", "MUI", "Apollo / GraphQL", "NestJS", "TypeORM"], link: { href: "https://flute3.sale", label: "flute3.sale" }, screenshots: [
-      { src: "/projects/flute/flute-1.jpg", alt: "La Flute — event-management back office (participants, rooms, payments)", width: 1200, height: 691 },
+    { id: "uttarena-app", name: "UTT Arena — Intranet", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Arena intranet: tournament info for players and event management for staff. Integrated with the network captive portal — seat ↔ IP ↔ user ↔ MAC mapping, IPs communicated in real time.", metrics: ["450 players managed (2018 edition)"], tech: ["React", "Ant Design", "Chart.js", "OpenID Connect", "Node.js"], repo: { href: "https://github.com/ungdev/UA-appli", label: "Code (GitHub)" }, status: "Offline", screenshots: [
+      { src: "/projects/uttarena-app/uttarena-app-1.jpg", alt: "UTT Arena — intranet (home: tournaments, partners)", width: 1200, height: 799 },
     ] },
     { id: "utt-arena", name: "UTT Arena", context: "UNG — UTT Net Group", role: "Developer & President", contribution: "major", tagline: "Website of the largest e-sport LAN in the Grand Est — president of UTT Arena in 2018, built the site that year.", metrics: ["450 players + visitors (2018 edition)"], tech: ["React", "Redux", "Node.js"], link: { href: "https://arena.utt.fr", label: "arena.utt.fr" }, repo: { href: "https://github.com/ungdev/UA-front-old", label: "Code (GitHub)" }, screenshots: [
       { src: "/projects/utt-arena/utt-arena-1.jpg", alt: "UTT Arena — e-sport competition website", width: 1200, height: 750 },
     ] },
-    { id: "uttarena-app", name: "UTT Arena — Intranet", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Arena intranet: tournament info for players and event management for staff. Integrated with the network captive portal — seat ↔ IP ↔ user ↔ MAC mapping, IPs communicated in real time.", metrics: ["450 players managed (2018 edition)"], tech: ["React", "Ant Design", "Chart.js", "OpenID Connect", "Node.js"], repo: { href: "https://github.com/ungdev/UA-appli", label: "Code (GitHub)" }, status: "Offline" },
+    { id: "gala-tv", name: "Gala UTT — TV Display", context: "UNG — UTT Net Group (2017)", role: "Developer", contribution: "major", tagline: "Digital signage: live info and animations shown on the school's TVs during the gala.", metrics: [], tech: ["React", "Node"], repo: { href: "https://github.com/ungdev/TVGala_Client", label: "Code (GitHub)" }, screenshots: [
+      { src: "/projects/gala-tv/gala-tv-1.jpg", alt: "Gala UTT — signage shown on the school's screens", width: 1100, height: 618 },
+    ] },
+    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Gala app: info, ticketing, schedule.", metrics: [], tech: ["React Native", "Ionic 3", "Angular"], repo: { href: "https://github.com/ungdev/Gala-Mobile", label: "Code (GitHub)" } },
+    { id: "flute", name: "La Flute", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "Event-management platform for a student association.", metrics: [], tech: ["React", "MUI", "Apollo / GraphQL", "NestJS", "TypeORM"], link: { href: "https://flute3.sale", label: "flute3.sale" }, screenshots: [
+      { src: "/projects/flute/flute-1.jpg", alt: "La Flute — event-management back office (participants, rooms, payments)", width: 1200, height: 691 },
+    ] },
   ],
   experience: [
     { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "Sep. 2024 → present", summary: "Senior mobile engineer within the Dashi group (Unlockt & Behind The App), across several consumer apps.", highlights: [
