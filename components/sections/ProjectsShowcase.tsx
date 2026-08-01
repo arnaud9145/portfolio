@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/content";
 import type { ProjectItem } from "@/content/types";
 import { CountUp } from "@/components/ui/CountUp";
@@ -150,7 +151,7 @@ function ProjectVisual({
     const [first] = project.screenshots;
     // Landscape captures (width > height, e.g. TV/digital-signage screens)
     // don't fit the portrait phone frame — render them as a plain wide image.
-    if (project.screenshots.length === 1 && first.width > first.height) {
+    if (project.screenshots.length === 1 && first.width >= first.height) {
       return <LandscapeVisual screenshot={first} />;
     }
     return <ScreenshotsVisual screenshots={project.screenshots} />;
@@ -160,11 +161,25 @@ function ProjectVisual({
 
 /* ---- Text block ------------------------------------------------------- */
 
-function ProjectText({ project }: { project: ProjectItem }) {
+function ProjectText({
+  project,
+  experienceByProject,
+}: {
+  project: ProjectItem;
+  experienceByProject: Record<string, string>;
+}) {
   const t = useTranslations("projects");
+  const expId = experienceByProject[project.id];
   return (
     <div className="proj-text">
-      {project.context && <p className="proj-context">{project.context}</p>}
+      {project.context &&
+        (expId ? (
+          <Link href={`/#${expId}`} className="proj-context proj-context--link">
+            {project.context}
+          </Link>
+        ) : (
+          <p className="proj-context">{project.context}</p>
+        ))}
       <h2 className="proj-name font-display">{project.name}</h2>
 
       <div className="proj-badges">
@@ -263,9 +278,11 @@ function ProjectText({ project }: { project: ProjectItem }) {
 export function ProjectsShowcase({
   projects,
   locale,
+  experienceByProject = {},
 }: {
   projects: ProjectItem[];
   locale: Locale;
+  experienceByProject?: Record<string, string>;
 }) {
   const t = useTranslations("projects");
   const previewSoon = t("previewSoon");
@@ -307,7 +324,7 @@ export function ProjectsShowcase({
             <div className="proj-visual-inline">
               <ProjectVisual project={project} locale={locale} previewSoon={previewSoon} />
             </div>
-            <ProjectText project={project} />
+            <ProjectText project={project} experienceByProject={experienceByProject} />
           </section>
         ))}
       </div>

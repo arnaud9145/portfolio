@@ -24,6 +24,15 @@ export default async function ProjectsPage({
   const content = getContent(locale as Locale);
   const t = await getTranslations("projects");
 
+  // Map each project id → its experience id, derived from experience[].appTags,
+  // so the project's context label can deep-link back to the matching experience.
+  const experienceByProject: Record<string, string> = {};
+  for (const xp of content.experience) {
+    for (const tag of xp.appTags ?? []) {
+      experienceByProject[tag.projectId] = xp.id;
+    }
+  }
+
   return (
     <main className="projets-main">
       <header className="projets-hero">
@@ -54,7 +63,11 @@ export default async function ProjectsPage({
         </div>
       </header>
 
-      <ProjectsShowcase projects={content.projects} locale={locale as Locale} />
+      <ProjectsShowcase
+        projects={content.projects}
+        locale={locale as Locale}
+        experienceByProject={experienceByProject}
+      />
     </main>
   );
 }

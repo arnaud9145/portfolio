@@ -1,5 +1,5 @@
 "use client";
-import { useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { useTranslations } from "next-intl";
 import type { CvContent } from "@/content";
 import type { ExperienceItem } from "@/content/types";
@@ -26,15 +26,44 @@ function Chevron() {
   );
 }
 
-function ExperienceRow({ xp }: { xp: ExperienceItem }) {
+function ExperienceRow({
+  xp,
+  centered,
+}: {
+  xp: ExperienceItem;
+  centered: boolean;
+}) {
   const t = useTranslations("actions");
   const [open, setOpen] = useState(false);
   const uid = useId();
   const headId = `xp-head-${uid}`;
   const panelId = `xp-panel-${uid}`;
 
+  // Open + scroll into view when the URL hash targets this experience
+  // (e.g. arriving from /projets via /#bam). Read the hash on the client only,
+  // never during render, to avoid any hydration mismatch.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const openIfTargeted = () => {
+      if (window.location.hash === `#${xp.id}`) {
+        setOpen(true);
+        document
+          .getElementById(xp.id)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+    openIfTargeted();
+    window.addEventListener("hashchange", openIfTargeted);
+    return () => window.removeEventListener("hashchange", openIfTargeted);
+  }, [xp.id]);
+
   return (
-    <div className={`card card-hover p-5 sm:p-6${open ? " acc-open" : ""}`}>
+    <div
+      id={xp.id}
+      className={`card card-hover scroll-mt-24 p-5 sm:p-6${open ? " acc-open" : ""}${
+        centered ? " xp-centered" : ""
+      }`}
+    >
       <button
         id={headId}
         type="button"
@@ -135,13 +164,35 @@ function ExperienceRow({ xp }: { xp: ExperienceItem }) {
 
 export function Experience({ content }: { content: CvContent }) {
   const t = useTranslations("sections");
+  const [centeredId, setCenteredId] = useState<string | null>(null);
+
+  // Highlight the experience card crossing the viewport's centre band as the
+  // list is scrolled. Observe each card by its id; clean up on unmount.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const cards = content.experience
+      .map((xp) => document.getElementById(xp.id))
+      .filter((el): el is HTMLElement => el !== null);
+    if (cards.length === 0) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setCenteredId(entry.target.id);
+        }
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
+    );
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, [content.experience]);
+
   return (
     <section className="mx-auto max-w-4xl px-6 py-16">
       <SectionHeading id="experience">{t("experience")}</SectionHeading>
       <div className="space-y-4">
         {content.experience.map((xp, i) => (
           <Reveal key={xp.id} delay={Math.min(i, 4) * 70}>
-            <ExperienceRow xp={xp} />
+            <ExperienceRow xp={xp} centered={centeredId === xp.id} />
           </Reveal>
         ))}
       </div>

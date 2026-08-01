@@ -208,6 +208,12 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 22px 48px -28px rgba(201, 162, 39, 0.5);
 }
+/* Experience card crossing the viewport centre — discreet gold ring + glow. */
+.xp-centered {
+  border-color: rgba(201, 162, 39, 0.55);
+  box-shadow: 0 0 0 1px rgba(230, 200, 102, 0.28),
+    0 18px 46px -26px rgba(201, 162, 39, 0.5);
+}
 /* Selective gold-filled accent card — reserve for ONE key highlight per view. */
 .card-gold {
   position: relative;
@@ -607,6 +613,11 @@ body {
   height: auto;
   border-radius: 1.1rem;
 }
+@media (prefers-reduced-motion: no-preference) {
+  .device-shot {
+    transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.45s ease;
+  }
+}
 .device-shot--front {
   position: relative;
   z-index: 3;
@@ -614,23 +625,38 @@ body {
 }
 .device-shot--left {
   position: absolute;
-  top: 4%;
-  left: -20%;
-  width: 76%;
+  top: -1%;
+  left: 0;
+  width: 80%;
   z-index: 1;
-  transform: rotate(-9deg);
-  opacity: 0.82;
+  transform: translateX(-32%) rotate(-12deg);
+  transform-origin: bottom center;
+  opacity: 0.9;
   filter: saturate(0.92) brightness(0.85) drop-shadow(0 24px 46px rgba(0, 0, 0, 0.5));
 }
 .device-shot--right {
   position: absolute;
-  top: 4%;
-  right: -20%;
-  width: 76%;
+  top: -1%;
+  right: 0;
+  width: 80%;
   z-index: 2;
-  transform: rotate(9deg);
-  opacity: 0.86;
+  transform: translateX(32%) rotate(12deg);
+  transform-origin: bottom center;
+  opacity: 0.92;
   filter: saturate(0.92) brightness(0.88) drop-shadow(0 24px 46px rgba(0, 0, 0, 0.5));
+}
+.device-fan:hover .device-shot--left {
+  transform: translateX(-50%) rotate(-16deg);
+  top: -3%;
+  opacity: 1;
+}
+.device-fan:hover .device-shot--right {
+  transform: translateX(50%) rotate(16deg);
+  top: -3%;
+  opacity: 1;
+}
+.device-fan:hover .device-shot--front {
+  transform: translateY(4%) scale(0.955);
 }
 .landscape-shot {
   position: relative;
@@ -683,6 +709,18 @@ body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold);
+}
+.proj-context--link {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.proj-context--link:hover,
+.proj-context--link:focus-visible {
+  color: var(--gold-hi);
+  border-bottom-color: rgba(230, 200, 102, 0.5);
 }
 .proj-name {
   margin-top: 0.4rem;

@@ -35,7 +35,7 @@ describe("RevealPhone", () => {
     wrap();
     fireEvent.click(screen.getByRole("button", { name: "Révéler le numéro" }));
     expect(await screen.findByRole("alert")).toHaveTextContent(
-      "Une erreur est survenue, réessaie.",
+      "Une erreur est survenue, réessayez.",
     );
   });
 

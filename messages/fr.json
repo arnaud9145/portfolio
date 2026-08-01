@@ -11,7 +11,7 @@
     "downloadCv": "Télécharger le CV",
     "revealPhone": "Révéler le numéro",
     "revealing": "Chargement…",
-    "revealError": "Une erreur est survenue, réessaie.",
+    "revealError": "Une erreur est survenue, réessayez.",
     "toggleTheme": "Changer de thème",
     "viewCompany": "Voir l'entreprise sur LinkedIn"
   },
@@ -22,8 +22,8 @@
     "send": "Envoyer",
     "sending": "Envoi…",
     "success": "Message envoyé, merci.",
-    "error": "Une erreur est survenue. Réessaie ou écris-moi sur LinkedIn.",
-    "lead": "Un poste, un projet mobile ambitieux, ou juste envie d'échanger ? Écris-moi — je réponds vite."
+    "error": "Une erreur est survenue. Réessayez ou écrivez-moi sur LinkedIn.",
+    "lead": "Un poste, un projet mobile ambitieux, ou juste envie d'échanger ? Écrivez-moi — je réponds vite."
   },
   "sections": {
     "apps": "Applications développées",

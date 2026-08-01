@@ -9,18 +9,19 @@ export const fr: CvContent = {
     availability: "En recherche — CDI ingénieur mobile senior, Paris (présent 2-4 j/semaine)",
   },
   summary: [
-    { title: "Senior React Native", body: "Spécialisation mobile profonde depuis 2018. Pas un fullstack qui fait « aussi » du mobile." },
+    { title: "Senior React Native", body: "Spécialisation mobile profonde depuis 2018 : pas un fullstack qui sait faire du mobile, mais un mobile qui sait être fullstack." },
     { title: "Ex-CTO & cofondateur", body: "Happliness / Movizer : arbitrage produit, cadrage, pilotage des choix techniques." },
     { title: "AI-Native", body: "IA intégrée au workflow de dev quotidien, avec des gains mesurables." },
   ],
   apps: [
-    { id: "disorder", name: "Disorder", role: "Mobile Engineer", tagline: "App sociale : chaque semaine, des group chats avec des inconnus de ta zone (groupes mixtes 50/50).", metrics: [], link: { href: "https://apps.apple.com/us/app/disorder-talk-meet-repeat/id6738487787", label: "App Store" } },
+    { id: "disorder", name: "Disorder", role: "Mobile Engineer", tagline: "App sociale : chaque semaine, des group chats avec des inconnus de votre zone (groupes mixtes 50/50).", metrics: [], link: { href: "https://apps.apple.com/us/app/disorder-talk-meet-repeat/id6738487787", label: "App Store" } },
     { id: "unlockt", name: "Unlockt", role: "Senior Mobile Engineer", tagline: "Vente de fichiers par des créateurs.", metrics: [], link: { href: "https://apps.apple.com/us/app/unlockt-sell-your-files/id1632025425", label: "App Store" } },
     { id: "exposed", name: "Exposed", role: "Mobile Engineer", tagline: "Party game « Who's Most Likely To » (5000+ défis, 4 modes).", metrics: [], link: { href: "https://apps.apple.com/us/app/exposed-whos-most-likely-to/id1553777064", label: "App Store" } },
     { id: "movizer", name: "Movizer", role: "CTO & cofondateur", tagline: "Recommandations personnalisées de films & séries, partage entre amis.", metrics: [], link: { href: "https://lespepitestech.com/startup-de-la-french-tech/movizer", label: "Les Pépites Tech" }, status: "Retirée de l'App Store (2024)" },
   ],
   // Catalogue complet — consommé par /projets. Ids stables (kebab-case).
   projects: [
+    { id: "portfolio", name: "Portfolio", context: "Projet personnel · 2026", role: "Design & développement", contribution: "lead", tagline: "Ce site même — pensé comme une démonstration technique (Lighthouse au vert, accessible, SEO soigné, bilingue), réalisé quasi à 100 % avec Claude (Claude Code).", metrics: [], tech: ["Next.js 16", "React", "TypeScript", "Tailwind CSS v4", "next-intl", "Vercel", "Vitest"], repo: { href: "https://github.com/arnaud9145/portfolio", label: "Code (GitHub)" } },
     { id: "unlockt", name: "Unlockt", context: "Unlockt.me", role: "Senior Mobile Engineer", contribution: "major", tagline: "Vente de fichiers par des créateurs.", metrics: ["1,2 M d'utilisateurs actifs"], tech: ["React Native", "TypeScript", "React Query", "Reanimated", "Shared Element", "Veriff & Yoti (KYC)", "Firebase", "Sentry", "Amplitude", "Lottie"], link: { href: "https://apps.apple.com/us/app/unlockt-sell-your-files/id1632025425", label: "App Store" }, screenshots: [
       { src: "/projects/unlockt/unlockt-1.jpg", alt: "Unlockt — écran d'envoi de fichier (définir un prix, générer le lien)", width: 820, height: 1777 },
       { src: "/projects/unlockt/unlockt-2.jpg", alt: "Unlockt — détail d'un lien (médias, prix, ventes, gains)", width: 820, height: 1782 },
@@ -30,7 +31,7 @@ export const fr: CvContent = {
       { src: "/projects/exposed/exposed-1.jpg", alt: "Exposed — lobby d'une partie (game pin, joueurs)", width: 820, height: 1782 },
       { src: "/projects/exposed/exposed-2.jpg", alt: "Exposed — manche de vote avec résultats en direct", width: 820, height: 1781 },
     ] },
-    { id: "disorder", name: "Disorder", context: "Behind The App · groupe Dashi", role: "Mobile Engineer", contribution: "major", tagline: "App sociale : chaque semaine, des group chats avec des inconnus de ta zone (groupes mixtes 50/50).", metrics: [], tech: ["React Native", "TypeScript", "Skia", "Reanimated", "Stream Chat", "React Query", "MMKV", "RevenueCat", "Firebase", "Sentry"], link: { href: "https://apps.apple.com/us/app/disorder-talk-meet-repeat/id6738487787", label: "App Store" }, screenshots: [
+    { id: "disorder", name: "Disorder", context: "Behind The App · groupe Dashi", role: "Mobile Engineer", contribution: "major", tagline: "App sociale : chaque semaine, des group chats avec des inconnus de votre zone (groupes mixtes 50/50).", metrics: [], tech: ["React Native", "TypeScript", "Skia", "Reanimated", "Stream Chat", "React Query", "MMKV", "RevenueCat", "Firebase", "Sentry"], link: { href: "https://apps.apple.com/us/app/disorder-talk-meet-repeat/id6738487787", label: "App Store" }, screenshots: [
       { src: "/projects/disorder/disorder-1.jpg", alt: "Capture de l'app Disorder (1/4)", width: 820, height: 1775 },
       { src: "/projects/disorder/disorder-2.jpg", alt: "Capture de l'app Disorder (2/4)", width: 820, height: 1775 },
       { src: "/projects/disorder/disorder-3.jpg", alt: "Capture de l'app Disorder (3/4)", width: 820, height: 1775 },
@@ -47,11 +48,6 @@ export const fr: CvContent = {
       { src: "/projects/movizer/movizer-2.png", alt: "Movizer — écran des discussions entre amis autour d'un film", width: 700, height: 1402 },
       { src: "/projects/movizer/movizer-3.png", alt: "Movizer — écran de recherche : sélections de films et séries à découvrir", width: 700, height: 1396 },
     ] },
-    { id: "konectom", name: "Konectom", context: "BAM — client Biogen", role: "Mobile Engineer", contribution: "minor", tagline: "Auto-évaluation clinique (Biogen) : mesure des fonctions motrices et cognitives.", metrics: [], tech: ["React Native", "TypeScript"], screenshots: [
-      { src: "/projects/konectom/konectom-1.jpg", alt: "Konectom — auto-évaluation clinique (écran 1)", width: 820, height: 1455 },
-      { src: "/projects/konectom/konectom-2.jpg", alt: "Konectom — auto-évaluation clinique (écran 2)", width: 820, height: 1455 },
-      { src: "/projects/konectom/konectom-3.jpg", alt: "Konectom — auto-évaluation clinique (écran 3)", width: 820, height: 1455 },
-    ] },
     { id: "ornikar", name: "Ornikar", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "Application pour les moniteurs d'auto-école (Ornikar Enseignants) : planning des leçons et suivi des élèves.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/ornikar-enseignants/id1385539158", label: "App Store" }, screenshots: [
       { src: "/projects/ornikar/ornikar-1.jpg", alt: "Ornikar Enseignants — planning des leçons (1)", width: 820, height: 1775 },
       { src: "/projects/ornikar/ornikar-2.jpg", alt: "Ornikar Enseignants — mise à jour des disponibilités (2)", width: 820, height: 1775 },
@@ -62,7 +58,12 @@ export const fr: CvContent = {
       { src: "/projects/jutheau-husson/jutheau-2.jpg", alt: "Jutheau-Husson — écran de l'app assurance (2)", width: 460, height: 997 },
       { src: "/projects/jutheau-husson/jutheau-3.jpg", alt: "Jutheau-Husson — écran de l'app assurance (3)", width: 460, height: 997 },
     ] },
-    { id: "rift", name: "More Impact / Rift", context: "Lita", role: "Mobile Engineer", contribution: "minor", tagline: "Le Yuka de la finance : scanne l'impact de ton épargne. Produit de Lita, anciennement « More Impact ».", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/rift/id1494745935", label: "App Store" }, screenshots: [
+    { id: "konectom", name: "Konectom", context: "BAM — client Biogen", role: "Mobile Engineer", contribution: "minor", tagline: "Auto-évaluation clinique (Biogen) : mesure des fonctions motrices et cognitives.", metrics: [], tech: ["React Native", "TypeScript"], screenshots: [
+      { src: "/projects/konectom/konectom-1.jpg", alt: "Konectom — auto-évaluation clinique (écran 1)", width: 820, height: 1455 },
+      { src: "/projects/konectom/konectom-2.jpg", alt: "Konectom — auto-évaluation clinique (écran 2)", width: 820, height: 1455 },
+      { src: "/projects/konectom/konectom-3.jpg", alt: "Konectom — auto-évaluation clinique (écran 3)", width: 820, height: 1455 },
+    ] },
+    { id: "rift", name: "More Impact / Rift", context: "Lita", role: "Mobile Engineer", contribution: "minor", tagline: "Le Yuka de la finance : scannez l'impact de votre épargne. Produit de Lita, anciennement « More Impact ».", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/rift/id1494745935", label: "App Store" }, screenshots: [
       { src: "/projects/rift/rift-1.jpg", alt: "Rift — composition de l'épargne (1)", width: 148, height: 303 },
       { src: "/projects/rift/rift-2.jpg", alt: "Rift — impact environnemental de l'épargne (2)", width: 148, height: 303 },
       { src: "/projects/rift/rift-3.jpg", alt: "Rift — produits d'épargne éthiques (3)", width: 148, height: 303 },
@@ -86,17 +87,18 @@ export const fr: CvContent = {
     { id: "gala-tv", name: "Gala UTT — Affichage TV", context: "UNG — UTT Net Group (2017)", role: "Développeur", contribution: "major", tagline: "Affichage dynamique : infos et animations diffusées sur les TV de l'école pendant le gala.", metrics: [], tech: ["React", "Node"], repo: { href: "https://github.com/ungdev/TVGala_Client", label: "Code (GitHub)" }, screenshots: [
       { src: "/projects/gala-tv/gala-tv-1.jpg", alt: "Gala UTT — affichage diffusé sur les écrans de l'école", width: 1100, height: 618 },
     ] },
-    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Application du Gala de l'UTT : infos, billetterie, programme.", metrics: [], tech: ["React Native", "Ionic 3", "Angular"], repo: { href: "https://github.com/ungdev/Gala-Mobile", label: "Code (GitHub)" } },
+    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Application du Gala de l'UTT : infos, billetterie, programme.", metrics: [], tech: ["React Native", "Ionic 3", "Angular"], repo: { href: "https://github.com/ungdev/Gala-Mobile", label: "Code (GitHub)" }, screenshots: [{ src: "/projects/gala-utt/gala-utt-1.jpg", alt: "Gala UTT — affiche de l'édition 2018", width: 640, height: 640 }] },
     { id: "flute", name: "La Flute", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Plateforme de gestion des événements d'une association étudiante.", metrics: [], tech: ["React", "MUI", "Apollo / GraphQL", "NestJS", "TypeORM"], link: { href: "https://flute3.sale", label: "flute3.sale" }, screenshots: [
       { src: "/projects/flute/flute-1.jpg", alt: "La Flute — back-office de gestion des événements (participants, chambres, paiements)", width: 1200, height: 691 },
     ] },
   ],
   experience: [
-    { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "sept. 2024 → aujourd'hui", summary: "Ingénieur mobile senior au sein du groupe Dashi (Unlockt & Behind The App), sur plusieurs applications grand public.", highlights: [
+    { id: "unlockt", company: "Unlockt", role: "Senior Mobile Engineer", period: "sept. 2024 → aujourd'hui", summary: "Ingénieur mobile senior au sein du groupe Dashi (Unlockt & Behind The App), sur plusieurs applications grand public.", highlights: [
       "Unlockt : réécriture complète de l'app de zéro (nouveau code, sur un produit existant) — nouveau design et nouvelles fonctionnalités (React Native, ~1,2 M utilisateurs actifs) ; intégration Veriff & Yoti (vérification d'identité)",
       "Disorder : développement de tout le front (Skia, Reanimated, Stream Chat) ; monétisation RevenueCat",
       "Exposed / Vakarm : refonte de l'app de zéro et développement du back (Colyseus, temps réel) ; RevenueCat",
       "Firebase & Sentry sur l'ensemble des apps",
+      "IA au cœur du workflow : Codex puis Claude (Claude Code) intégrés progressivement à ma pratique quotidienne, au point de ne plus pouvoir m'en passer aujourd'hui.",
     ], companyUrl: "https://www.linkedin.com/company/unlockt/", appTags: [{ label: "Unlockt", projectId: "unlockt" }, { label: "Disorder", projectId: "disorder" }, { label: "Exposed", projectId: "exposed" }] },
     { id: "le-collectionist", company: "Le Collectionist", role: "Senior Mobile Engineer", period: "mai → sept. 2024", summary: "", highlights: ["Développement de l'application mobile React Native", "Squad Contrats, Paiement & Facturation : fonctionnalités critiques du parcours client et évolutions liées aux paiements"], companyUrl: "https://www.linkedin.com/company/le-collectionist/", appTags: [{ label: "Le Collectionist", projectId: "le-collectionist" }] },
     { id: "roger", company: "Roger", role: "Mobile Engineer", period: "févr. 2023 → avr. 2024", summary: "", highlights: [
@@ -104,19 +106,19 @@ export const fr: CvContent = {
       "Contributions au front web selon les besoins",
       "CI/CD & monitoring : Fastlane, AppCenter, Firebase, Sentry",
     ], companyUrl: "https://www.linkedin.com/company/get-roger/", appTags: [{ label: "Roger", projectId: "roger" }] },
-    { id: "happliness", company: "Happliness (Movizer)", role: "CTO & cofondateur", period: "nov. 2021 → févr. 2023", summary: "", highlights: [
+    { id: "happliness", company: "Happliness", role: "CTO & cofondateur", period: "nov. 2021 → févr. 2023", summary: "", highlights: [
       "Direction technique et produit (cofondateur)",
       "App mobile React Native et back-end NestJS / GraphQL / PostgreSQL / Redis ; Firebase",
       "Landing web Next.js, infrastructure AWS",
     ], companyUrl: "https://www.linkedin.com/company/movizer/", appTags: [{ label: "Movizer", projectId: "movizer" }] },
-    { id: "bam", company: "BAM · aujourd'hui Theodo Apps", role: "Mobile Engineer", period: "févr. 2020 → nov. 2021", summary: "", highlights: [
+    { id: "bam", company: "BAM (aujourd'hui Theodo Apps)", role: "Mobile Engineer", period: "févr. 2020 → nov. 2021", summary: "", highlights: [
       "Ingénieur mobile React Native en régie chez plusieurs clients",
       "Konectom (Biogen) : lancement du produit de zéro au sein d'une grande équipe (4 mobile, 3 back, 2 data + PO/PM) ; développement d'un module natif Swift",
       "More Impact / Rift (Lita) : reprise du projet et développement de nouvelles fonctionnalités",
       "Ornikar : développement de fonctionnalités (mission courte)",
       "Jutheau-Husson : lancement et setup initial du projet mobile",
     ], companyUrl: "https://www.linkedin.com/company/theodo-apps/", appTags: [{ label: "Ornikar", projectId: "ornikar" }, { label: "Konectom", projectId: "konectom" }, { label: "More Impact / Rift", projectId: "rift" }, { label: "Jutheau-Husson", projectId: "jutheau-husson" }] },
-    { id: "ung", company: "UNG (UTT Net Group)", role: "Développeur & Président", period: "2016 → 2019", summary: "", highlights: [
+    { id: "ung", company: "UTT Net Group", role: "Développeur & Président", period: "2016 → 2019", summary: "", highlights: [
       "Applications mobiles développées de zéro : My UTT, Intégration UTT, Gala UTT (React Native)",
       "Ajout d'endpoints back-end (Laravel / PHP) et de front pour Intégration UTT",
       "Système d'affichage sur les TV de l'école pendant le Gala (2017)",

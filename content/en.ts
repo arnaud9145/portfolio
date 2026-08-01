@@ -9,7 +9,7 @@ export const en: CvContent = {
     availability: "Open to work — senior mobile engineer, permanent role, Paris (on-site 2-4 days/week)",
   },
   summary: [
-    { title: "Senior React Native", body: "Deep mobile specialisation since 2018. Not a fullstack who also does mobile." },
+    { title: "Senior React Native", body: "Deep mobile specialisation since 2018: not a fullstack who can also do mobile, but a mobile engineer who can be fullstack." },
     { title: "Former CTO & co-founder", body: "Happliness / Movizer: product trade-offs, scoping, technical decision-making." },
     { title: "AI-Native", body: "AI embedded in the daily dev workflow, with measurable gains." },
   ],
@@ -21,6 +21,7 @@ export const en: CvContent = {
   ],
   // Full catalogue — consumed by /projets. Stable ids (kebab-case).
   projects: [
+    { id: "portfolio", name: "Portfolio", context: "Personal project · 2026", role: "Design & development", contribution: "lead", tagline: "This very site — built as a technical demonstration (green Lighthouse, accessible, careful SEO, bilingual), made almost 100% with Claude (Claude Code).", metrics: [], tech: ["Next.js 16", "React", "TypeScript", "Tailwind CSS v4", "next-intl", "Vercel", "Vitest"], repo: { href: "https://github.com/arnaud9145/portfolio", label: "Code (GitHub)" } },
     { id: "unlockt", name: "Unlockt", context: "Unlockt.me", role: "Senior Mobile Engineer", contribution: "major", tagline: "Creators selling their files.", metrics: ["1.2M active users"], tech: ["React Native", "TypeScript", "React Query", "Reanimated", "Shared Element", "Veriff & Yoti (KYC)", "Firebase", "Sentry", "Amplitude", "Lottie"], link: { href: "https://apps.apple.com/us/app/unlockt-sell-your-files/id1632025425", label: "App Store" }, screenshots: [
       { src: "/projects/unlockt/unlockt-1.jpg", alt: "Unlockt — send-a-file screen (set a price, generate the link)", width: 820, height: 1777 },
       { src: "/projects/unlockt/unlockt-2.jpg", alt: "Unlockt — link detail (media, price, sales, earnings)", width: 820, height: 1782 },
@@ -47,11 +48,6 @@ export const en: CvContent = {
       { src: "/projects/movizer/movizer-2.png", alt: "Movizer — discussions screen with friends about a movie", width: 700, height: 1402 },
       { src: "/projects/movizer/movizer-3.png", alt: "Movizer — search screen: curated movie & series picks to discover", width: 700, height: 1396 },
     ] },
-    { id: "konectom", name: "Konectom", context: "BAM — Biogen client", role: "Mobile Engineer", contribution: "minor", tagline: "Clinical self-assessment (Biogen): measuring motor and cognitive function.", metrics: [], tech: ["React Native", "TypeScript"], screenshots: [
-      { src: "/projects/konectom/konectom-1.jpg", alt: "Konectom — clinical self-assessment (screen 1)", width: 820, height: 1455 },
-      { src: "/projects/konectom/konectom-2.jpg", alt: "Konectom — clinical self-assessment (screen 2)", width: 820, height: 1455 },
-      { src: "/projects/konectom/konectom-3.jpg", alt: "Konectom — clinical self-assessment (screen 3)", width: 820, height: 1455 },
-    ] },
     { id: "ornikar", name: "Ornikar", context: "BAM", role: "Mobile Engineer", contribution: "minor", tagline: "App for driving instructors (Ornikar Enseignants): lesson scheduling and student tracking.", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/ornikar-enseignants/id1385539158", label: "App Store" }, screenshots: [
       { src: "/projects/ornikar/ornikar-1.jpg", alt: "Ornikar Enseignants — lesson schedule (1)", width: 820, height: 1775 },
       { src: "/projects/ornikar/ornikar-2.jpg", alt: "Ornikar Enseignants — availability update (2)", width: 820, height: 1775 },
@@ -61,6 +57,11 @@ export const en: CvContent = {
       { src: "/projects/jutheau-husson/jutheau-1.jpg", alt: "Jutheau-Husson — insurance app screen (1)", width: 460, height: 997 },
       { src: "/projects/jutheau-husson/jutheau-2.jpg", alt: "Jutheau-Husson — insurance app screen (2)", width: 460, height: 997 },
       { src: "/projects/jutheau-husson/jutheau-3.jpg", alt: "Jutheau-Husson — insurance app screen (3)", width: 460, height: 997 },
+    ] },
+    { id: "konectom", name: "Konectom", context: "BAM — Biogen client", role: "Mobile Engineer", contribution: "minor", tagline: "Clinical self-assessment (Biogen): measuring motor and cognitive function.", metrics: [], tech: ["React Native", "TypeScript"], screenshots: [
+      { src: "/projects/konectom/konectom-1.jpg", alt: "Konectom — clinical self-assessment (screen 1)", width: 820, height: 1455 },
+      { src: "/projects/konectom/konectom-2.jpg", alt: "Konectom — clinical self-assessment (screen 2)", width: 820, height: 1455 },
+      { src: "/projects/konectom/konectom-3.jpg", alt: "Konectom — clinical self-assessment (screen 3)", width: 820, height: 1455 },
     ] },
     { id: "rift", name: "More Impact / Rift", context: "Lita", role: "Mobile Engineer", contribution: "minor", tagline: "The Yuka of finance: scan the impact of your savings. Built for Lita, formerly \"More Impact\".", metrics: [], tech: ["React Native", "TypeScript"], link: { href: "https://apps.apple.com/fr/app/rift/id1494745935", label: "App Store" }, screenshots: [
       { src: "/projects/rift/rift-1.jpg", alt: "Rift — savings breakdown (1)", width: 148, height: 303 },
@@ -86,17 +87,18 @@ export const en: CvContent = {
     { id: "gala-tv", name: "Gala UTT — TV Display", context: "UNG — UTT Net Group (2017)", role: "Developer", contribution: "major", tagline: "Digital signage: live info and animations shown on the school's TVs during the gala.", metrics: [], tech: ["React", "Node"], repo: { href: "https://github.com/ungdev/TVGala_Client", label: "Code (GitHub)" }, screenshots: [
       { src: "/projects/gala-tv/gala-tv-1.jpg", alt: "Gala UTT — signage shown on the school's screens", width: 1100, height: 618 },
     ] },
-    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Gala app: info, ticketing, schedule.", metrics: [], tech: ["React Native", "Ionic 3", "Angular"], repo: { href: "https://github.com/ungdev/Gala-Mobile", label: "Code (GitHub)" } },
+    { id: "gala-utt", name: "Gala UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "UTT Gala app: info, ticketing, schedule.", metrics: [], tech: ["React Native", "Ionic 3", "Angular"], repo: { href: "https://github.com/ungdev/Gala-Mobile", label: "Code (GitHub)" }, screenshots: [{ src: "/projects/gala-utt/gala-utt-1.jpg", alt: "UTT Gala — 2018 edition poster", width: 640, height: 640 }] },
     { id: "flute", name: "La Flute", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: "Event-management platform for a student association.", metrics: [], tech: ["React", "MUI", "Apollo / GraphQL", "NestJS", "TypeORM"], link: { href: "https://flute3.sale", label: "flute3.sale" }, screenshots: [
       { src: "/projects/flute/flute-1.jpg", alt: "La Flute — event-management back office (participants, rooms, payments)", width: 1200, height: 691 },
     ] },
   ],
   experience: [
-    { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "Sep. 2024 → present", summary: "Senior mobile engineer within the Dashi group (Unlockt & Behind The App), across several consumer apps.", highlights: [
+    { id: "unlockt", company: "Unlockt", role: "Senior Mobile Engineer", period: "Sep. 2024 → present", summary: "Senior mobile engineer within the Dashi group (Unlockt & Behind The App), across several consumer apps.", highlights: [
       "Unlockt: full rewrite of the app from scratch (new codebase, on an existing product) — new design and new features (React Native, ~1.2M active users); Veriff & Yoti (identity verification)",
       "Disorder: built the entire front end (Skia, Reanimated, Stream Chat); RevenueCat monetisation",
       "Exposed / Vakarm: rebuilt the app from scratch and built the back end (Colyseus, real-time); RevenueCat",
       "Firebase & Sentry across all apps",
+      "AI at the core of the workflow: Codex then Claude (Claude Code) progressively integrated into my daily practice — now indispensable.",
     ], companyUrl: "https://www.linkedin.com/company/unlockt/", appTags: [{ label: "Unlockt", projectId: "unlockt" }, { label: "Disorder", projectId: "disorder" }, { label: "Exposed", projectId: "exposed" }] },
     { id: "le-collectionist", company: "Le Collectionist", role: "Senior Mobile Engineer", period: "May → Sep. 2024", summary: "", highlights: ["React Native mobile app development", "Contracts, Payment & Billing squad: critical customer-journey features and payment-related changes"], companyUrl: "https://www.linkedin.com/company/le-collectionist/", appTags: [{ label: "Le Collectionist", projectId: "le-collectionist" }] },
     { id: "roger", company: "Roger", role: "Mobile Engineer", period: "Feb. 2023 → Apr. 2024", summary: "", highlights: [
@@ -104,19 +106,19 @@ export const en: CvContent = {
       "Contributions to the web front end as needed",
       "CI/CD & monitoring: Fastlane, AppCenter, Firebase, Sentry",
     ], companyUrl: "https://www.linkedin.com/company/get-roger/", appTags: [{ label: "Roger", projectId: "roger" }] },
-    { id: "happliness", company: "Happliness (Movizer)", role: "CTO & co-founder", period: "Nov. 2021 → Feb. 2023", summary: "", highlights: [
+    { id: "happliness", company: "Happliness", role: "CTO & co-founder", period: "Nov. 2021 → Feb. 2023", summary: "", highlights: [
       "Technical and product leadership (co-founder)",
       "React Native mobile app and NestJS / GraphQL / PostgreSQL / Redis back end; Firebase",
       "Next.js web landing page, AWS infrastructure",
     ], companyUrl: "https://www.linkedin.com/company/movizer/", appTags: [{ label: "Movizer", projectId: "movizer" }] },
-    { id: "bam", company: "BAM · now Theodo Apps", role: "Mobile Engineer", period: "Feb. 2020 → Nov. 2021", summary: "", highlights: [
+    { id: "bam", company: "BAM (now Theodo Apps)", role: "Mobile Engineer", period: "Feb. 2020 → Nov. 2021", summary: "", highlights: [
       "React Native mobile engineer staffed on-site (staff augmentation) with several clients",
       "Konectom (Biogen): launched the product from scratch within a large team (4 mobile, 3 backend, 2 data + PO/PM); built a native Swift module",
       "More Impact / Rift (Lita): took over the project and built new features",
       "Ornikar: feature development (short assignment)",
       "Jutheau-Husson: kicked off and set up the mobile project from scratch",
     ], companyUrl: "https://www.linkedin.com/company/theodo-apps/", appTags: [{ label: "Ornikar", projectId: "ornikar" }, { label: "Konectom", projectId: "konectom" }, { label: "More Impact / Rift", projectId: "rift" }, { label: "Jutheau-Husson", projectId: "jutheau-husson" }] },
-    { id: "ung", company: "UNG (UTT Net Group)", role: "Developer & President", period: "2016 → 2019", summary: "", highlights: [
+    { id: "ung", company: "UTT Net Group", role: "Developer & President", period: "2016 → 2019", summary: "", highlights: [
       "Mobile apps built from scratch: My UTT, Intégration UTT, Gala UTT (React Native)",
       "Added back-end endpoints (Laravel / PHP) and front-end for Intégration UTT",
       "TV display system for the school during the Gala (2017)",

@@ -16,9 +16,9 @@ function wrap() {
 describe("Experience", () => {
   it("rend les expériences dont UNG (déplacée depuis Formation)", () => {
     wrap();
-    expect(screen.getByText("Unlockt.me")).toBeInTheDocument();
-    expect(screen.getByText("BAM · aujourd'hui Theodo Apps")).toBeInTheDocument();
-    expect(screen.getByText("UNG (UTT Net Group)")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Unlockt/ })).toBeInTheDocument();
+    expect(screen.getByText("BAM (aujourd'hui Theodo Apps)")).toBeInTheDocument();
+    expect(screen.getByText("UTT Net Group")).toBeInTheDocument();
   });
 
   it("expose les tags d'apps qui pointent vers /projets#<id>", () => {
