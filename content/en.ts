@@ -1,11 +1,5 @@
 import type { CvContent } from "./types";
 
-// PLACEHOLDER — missions to be written by Arnaud. Intentional lorem ipsum.
-const LOREM_MISSIONS = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit — mission TBD.",
-  "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-];
 // PLACEHOLDER — tagline to be written.
 const LOREM_TAGLINE = "Lorem ipsum — description coming soon.";
 
@@ -51,12 +45,36 @@ export const en: CvContent = {
     { id: "bde-utt", name: "BDE UTT", context: "UNG — UTT Net Group", role: "Developer", contribution: "major", tagline: LOREM_TAGLINE, metrics: [], tech: ["React Native", "Laravel / PHP"] },
   ],
   experience: [
-    { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "Sep. 2024 → present", summary: "Senior mobile engineer within the Dashi group (Unlockt & Behind The App), across several consumer apps.", highlights: LOREM_MISSIONS, companyUrl: "https://www.linkedin.com/company/unlockt/", appTags: [{ label: "Unlockt", projectId: "unlockt" }, { label: "Disorder", projectId: "disorder" }, { label: "Exposed", projectId: "exposed" }] },
-    { id: "le-collectionist", company: "Le Collectionist", role: "Senior Mobile Engineer", period: "May → Sep. 2024", summary: "", highlights: LOREM_MISSIONS, companyUrl: "https://www.linkedin.com/company/le-collectionist/", appTags: [{ label: "Le Collectionist", projectId: "le-collectionist" }] },
-    { id: "roger", company: "Roger", role: "Mobile Engineer", period: "Feb. 2023 → Apr. 2024", summary: "", highlights: LOREM_MISSIONS, companyUrl: "https://www.linkedin.com/company/get-roger/", appTags: [{ label: "Roger", projectId: "roger" }] },
-    { id: "happliness", company: "Happliness (Movizer)", role: "CTO & co-founder", period: "Nov. 2021 → Feb. 2023", summary: "", highlights: LOREM_MISSIONS, companyUrl: "https://www.linkedin.com/company/movizer/", appTags: [{ label: "Movizer", projectId: "movizer" }] },
-    { id: "bam", company: "BAM · now Theodo Apps", role: "Mobile Engineer", period: "Feb. 2020 → Nov. 2021", summary: "", highlights: LOREM_MISSIONS, companyUrl: "https://www.linkedin.com/company/theodo-apps/", appTags: [{ label: "Ornikar", projectId: "ornikar" }, { label: "Konectom", projectId: "konectom" }, { label: "More Impact / Rift", projectId: "rift" }, { label: "Jutheau-Husson", projectId: "jutheau-husson" }] },
-    { id: "ung", company: "UNG (UTT Net Group)", role: "Developer & President", period: "2016 → 2019", summary: "", highlights: LOREM_MISSIONS, companyUrl: "https://uttnetgroup.fr/", appTags: [{ label: "Gala UTT", projectId: "gala-utt" }, { label: "Gala TV", projectId: "gala-tv" }, { label: "My UTT", projectId: "my-utt" }, { label: "Intégration UTT", projectId: "integration-utt" }, { label: "BDE UTT", projectId: "bde-utt" }] },
+    { id: "unlockt", company: "Unlockt.me", role: "Senior Mobile Engineer", period: "Sep. 2024 → present", summary: "Senior mobile engineer within the Dashi group (Unlockt & Behind The App), across several consumer apps.", highlights: [
+      "Unlockt: design revamp, new features and code cleanup (React Native, ~1.2M active users); Veriff (KYC) integration",
+      "Disorder: built the entire front end (Skia, Reanimated, Stream Chat); RevenueCat monetisation",
+      "Exposed / Vakarm: rebuilt the app from scratch and built the back end (Colyseus, real-time); RevenueCat",
+      "Firebase & Sentry across all apps",
+    ], companyUrl: "https://www.linkedin.com/company/unlockt/", appTags: [{ label: "Unlockt", projectId: "unlockt" }, { label: "Disorder", projectId: "disorder" }, { label: "Exposed", projectId: "exposed" }] },
+    { id: "le-collectionist", company: "Le Collectionist", role: "Senior Mobile Engineer", period: "May → Sep. 2024", summary: "", highlights: [], companyUrl: "https://www.linkedin.com/company/le-collectionist/", appTags: [{ label: "Le Collectionist", projectId: "le-collectionist" }] },
+    { id: "roger", company: "Roger", role: "Mobile Engineer", period: "Feb. 2023 → Apr. 2024", summary: "", highlights: [
+      "Mobile app built from scratch in React Native",
+      "Contributions to the web front end as needed",
+      "CI/CD & monitoring: Fastlane, AppCenter, Firebase, Sentry",
+    ], companyUrl: "https://www.linkedin.com/company/get-roger/", appTags: [{ label: "Roger", projectId: "roger" }] },
+    { id: "happliness", company: "Happliness (Movizer)", role: "CTO & co-founder", period: "Nov. 2021 → Feb. 2023", summary: "", highlights: [
+      "Technical and product leadership (co-founder)",
+      "React Native mobile app and NestJS / GraphQL / PostgreSQL / Redis back end; Firebase",
+      "Next.js web landing page, AWS infrastructure",
+    ], companyUrl: "https://www.linkedin.com/company/movizer/", appTags: [{ label: "Movizer", projectId: "movizer" }] },
+    { id: "bam", company: "BAM · now Theodo Apps", role: "Mobile Engineer", period: "Feb. 2020 → Nov. 2021", summary: "", highlights: [
+      "React Native mobile engineer staffed on-site (staff augmentation) with several clients",
+      "Konectom (Biogen): launched the product from scratch within a large team (4 mobile, 3 backend, 2 data + PO/PM); built a native Swift module",
+      "More Impact / Rift (Lita): took over the project and built new features",
+      "Ornikar: feature development (short assignment)",
+      "Jutheau-Husson: kicked off and set up the mobile project from scratch",
+    ], companyUrl: "https://www.linkedin.com/company/theodo-apps/", appTags: [{ label: "Ornikar", projectId: "ornikar" }, { label: "Konectom", projectId: "konectom" }, { label: "More Impact / Rift", projectId: "rift" }, { label: "Jutheau-Husson", projectId: "jutheau-husson" }] },
+    { id: "ung", company: "UNG (UTT Net Group)", role: "Developer & President", period: "2016 → 2019", summary: "", highlights: [
+      "Mobile apps built from scratch: My UTT, Intégration UTT, Gala UTT (React Native)",
+      "Added back-end endpoints (Laravel / PHP) and front-end for Intégration UTT",
+      "TV display system for the school during the Gala (2017)",
+      "President of the association (2017 & 2019)",
+    ], companyUrl: "https://uttnetgroup.fr/", appTags: [{ label: "Gala UTT", projectId: "gala-utt" }, { label: "Gala TV", projectId: "gala-tv" }, { label: "My UTT", projectId: "my-utt" }, { label: "Intégration UTT", projectId: "integration-utt" }, { label: "BDE UTT", projectId: "bde-utt" }] },
   ],
   stack: [
     { label: "Mobile", items: ["React Native", "Expo / EAS", "TypeScript", "Reanimated", "Skia", "Native modules", "React Query", "Stream Chat", "MMKV", "Detox", "i18n (react-intl / i18next)"] },

@@ -48,7 +48,7 @@ export interface ExperienceItem {
   role: string;
   period: string;        // ex: "sept. 2024 → aujourd'hui"
   summary: string;
-  highlights: string[];  // missions détaillées (dépliées dans l'accordéon) — PLACEHOLDER pour l'instant
+  highlights: string[];  // missions détaillées (dépliées dans l'accordéon) — vide si non renseigné
   companyUrl?: string;   // page LinkedIn entreprise — "#" placeholder
   appTags?: AppTag[];    // apps liées → /projets#<projectId>
 }
