@@ -71,7 +71,7 @@ export const fr: CvContent = {
     { id: "gala-tv", name: "Gala UTT — Affichage TV", context: "UNG — UTT Net Group (2017)", role: "Développeur", contribution: "major", tagline: "Affichage dynamique : infos et animations diffusées sur les TV de l'école pendant le gala.", metrics: [], tech: ["React", "Node"], screenshots: [
       { src: "/projects/gala-tv/gala-tv-1.jpg", alt: "Gala UTT — affichage diffusé sur les écrans de l'école", width: 1100, height: 618 },
     ] },
-    { id: "my-utt", name: "My UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Application de la vie étudiante de l'UTT.", metrics: [], tech: ["React Native", "Laravel / PHP"], screenshots: [
+    { id: "my-utt", name: "My UTT", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Application de la vie étudiante de l'UTT.", metrics: [], tech: ["React Native", "Laravel / PHP", "Symfony"], screenshots: [
       { src: "/projects/my-utt/my-utt-1.jpg", alt: "My UTT — écran d'accueil (1)", width: 820, height: 1775 },
       { src: "/projects/my-utt/my-utt-2.jpg", alt: "My UTT — écran des services de la vie étudiante (2)", width: 820, height: 1775 },
       { src: "/projects/my-utt/my-utt-3.jpg", alt: "My UTT — écran de profil étudiant (3)", width: 820, height: 1775 },
@@ -80,6 +80,10 @@ export const fr: CvContent = {
       { src: "/projects/integration-utt/integration-utt-1.jpg", alt: "Intégration UTT — écran d'accueil de l'onboarding (1)", width: 820, height: 1777 },
       { src: "/projects/integration-utt/integration-utt-2.jpg", alt: "Intégration UTT — écran de découverte du campus (2)", width: 820, height: 1777 },
       { src: "/projects/integration-utt/integration-utt-3.jpg", alt: "Intégration UTT — écran de checklist du nouvel étudiant (3)", width: 820, height: 1777 },
+    ] },
+    { id: "flute", name: "La Flute", context: "UNG — UTT Net Group", role: "Développeur", contribution: "major", tagline: "Plateforme de gestion des événements d'une association étudiante.", metrics: [], tech: ["React", "MUI", "Apollo / GraphQL", "NestJS", "TypeORM"], link: { href: "https://flute3.sale", label: "flute3.sale" } },
+    { id: "utt-arena", name: "UTT Arena", context: "UNG — UTT Net Group", role: "Développeur & Président", contribution: "major", tagline: "Site de la plus grande LAN e-sport du Grand Est — président de l'UTT Arena en 2018, site réalisé la même année.", metrics: [], tech: ["Site web"], link: { href: "https://arena.utt.fr", label: "arena.utt.fr" }, screenshots: [
+      { src: "/projects/utt-arena/utt-arena-1.jpg", alt: "UTT Arena — site de la compétition e-sport", width: 1200, height: 750 },
     ] },
   ],
   experience: [
@@ -112,7 +116,7 @@ export const fr: CvContent = {
       "Ajout d'endpoints back-end (Laravel / PHP) et de front pour Intégration UTT",
       "Système d'affichage sur les TV de l'école pendant le Gala (2017)",
       "Président de l'association (2017 & 2019)",
-    ], companyUrl: "https://uttnetgroup.fr/", appTags: [{ label: "Gala UTT", projectId: "gala-utt" }, { label: "Gala TV", projectId: "gala-tv" }, { label: "My UTT", projectId: "my-utt" }, { label: "Intégration UTT", projectId: "integration-utt" }] },
+    ], companyUrl: "https://uttnetgroup.fr/", appTags: [{ label: "Gala UTT", projectId: "gala-utt" }, { label: "Gala TV", projectId: "gala-tv" }, { label: "My UTT", projectId: "my-utt" }, { label: "Intégration UTT", projectId: "integration-utt" }, { label: "UTT Arena", projectId: "utt-arena" }, { label: "La Flute", projectId: "flute" }] },
   ],
   stack: [
     { label: "Mobile", items: ["React Native", "Expo / EAS", "TypeScript", "Reanimated", "Skia", "Modules natifs", "React Query", "Stream Chat", "MMKV", "Detox", "i18n (react-intl / i18next)"] },
