@@ -9,7 +9,7 @@ export const fr: CvContent = {
     title: "Senior React Native Engineer",
     tagline: "React Native depuis 2018 · Ex-CTO & cofondateur · AI-Native",
     location: "Reims — 45 min de Paris Gare de l'Est",
-    availability: "En recherche — CDI ingénieur mobile senior, Paris",
+    availability: "En recherche — CDI ingénieur mobile senior, Paris (présent 2-4 j/semaine)",
   },
   summary: [
     { title: "Senior React Native", body: "Spécialisation mobile profonde depuis 2018. Pas un fullstack qui fait « aussi » du mobile." },
@@ -51,7 +51,7 @@ export const fr: CvContent = {
       "Exposed / Vakarm : refonte de l'app de zéro et développement du back (Colyseus, temps réel) ; RevenueCat",
       "Firebase & Sentry sur l'ensemble des apps",
     ], companyUrl: "https://www.linkedin.com/company/unlockt/", appTags: [{ label: "Unlockt", projectId: "unlockt" }, { label: "Disorder", projectId: "disorder" }, { label: "Exposed", projectId: "exposed" }] },
-    { id: "le-collectionist", company: "Le Collectionist", role: "Senior Mobile Engineer", period: "mai → sept. 2024", summary: "", highlights: [], companyUrl: "https://www.linkedin.com/company/le-collectionist/", appTags: [{ label: "Le Collectionist", projectId: "le-collectionist" }] },
+    { id: "le-collectionist", company: "Le Collectionist", role: "Senior Mobile Engineer", period: "mai → sept. 2024", summary: "", highlights: ["Développement de l'application mobile React Native", "Squad Contrats, Paiement & Facturation : fonctionnalités critiques du parcours client et évolutions liées aux paiements"], companyUrl: "https://www.linkedin.com/company/le-collectionist/", appTags: [{ label: "Le Collectionist", projectId: "le-collectionist" }] },
     { id: "roger", company: "Roger", role: "Mobile Engineer", period: "févr. 2023 → avr. 2024", summary: "", highlights: [
       "App mobile développée de zéro en React Native",
       "Contributions au front web selon les besoins",
