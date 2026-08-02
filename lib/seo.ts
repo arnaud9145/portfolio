@@ -7,7 +7,7 @@ const DESCRIPTION: Record<Locale, string> = {
   en: "Arnaud Dufour, senior React Native mobile engineer since 2018, former CTO & co-founder, AI-Native. Based in Reims, 45 min from Paris.",
 };
 
-export const SITE_URL = "https://arnaud.dev";
+export const SITE_URL = "https://arnaud.dufour.build";
 
 export const LINKEDIN_URL = "https://www.linkedin.com/in/arnaud-dufour/";
 export const GITHUB_URL = "https://github.com/arnaud9145";
@@ -58,8 +58,8 @@ const PROJECTS_TITLE: Record<Locale, string> = {
 };
 
 const PROJECTS_DESCRIPTION: Record<Locale, string> = {
-  fr: "Sept ans d'applications React Native : Unlockt (1,2 M d'utilisateurs), Exposed (~500k/mois), Disorder, Movizer, et du conseil chez BAM. Le portfolio mobile d'Arnaud Dufour.",
-  en: "Seven years of React Native apps: Unlockt (1.2M users), Exposed (~500k/month), Disorder, Movizer, and agency work at BAM. The mobile portfolio of Arnaud Dufour.",
+  fr: "Des applications React Native depuis 2018 : Unlockt (1,2 M d'utilisateurs), Exposed (~500k/mois), Disorder, Movizer, conseil chez BAM. Le portfolio d'Arnaud Dufour.",
+  en: "React Native apps since 2018: Unlockt (1.2M users), Exposed (~500k/month), Disorder, Movizer, and agency work at BAM. Arnaud Dufour's mobile portfolio.",
 };
 
 export function buildProjectsMetadata(locale: Locale): Metadata {
@@ -117,6 +117,6 @@ export function personJsonLd(locale: Locale, url: string) {
       "Android",
       "NestJS",
     ],
-    worksFor: { "@type": "Organization", name: "Unlockt.me" },
+    worksFor: { "@type": "Organization", name: "Unlockt" },
   } as const;
 }

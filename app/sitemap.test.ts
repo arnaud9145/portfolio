@@ -6,10 +6,10 @@ describe("sitemap", () => {
     const urls = sitemap().map((entry) => entry.url);
     expect(urls).toEqual(
       expect.arrayContaining([
-        "https://arnaud.dev",
-        "https://arnaud.dev/en",
-        "https://arnaud.dev/projets",
-        "https://arnaud.dev/en/projets",
+        "https://arnaud.dufour.build",
+        "https://arnaud.dufour.build/en",
+        "https://arnaud.dufour.build/projets",
+        "https://arnaud.dufour.build/en/projets",
       ]),
     );
     // Exactly one entry per route × locale — no stray/duplicate routes.
@@ -28,20 +28,20 @@ describe("sitemap", () => {
   });
 
   it("le hreflang de la home pointe vers les bonnes URLs localisées", () => {
-    const home = sitemap().find((entry) => entry.url === "https://arnaud.dev");
+    const home = sitemap().find((entry) => entry.url === "https://arnaud.dufour.build");
     expect(home?.alternates?.languages).toMatchObject({
-      fr: "https://arnaud.dev",
-      en: "https://arnaud.dev/en",
-      "x-default": "https://arnaud.dev",
+      fr: "https://arnaud.dufour.build",
+      en: "https://arnaud.dufour.build/en",
+      "x-default": "https://arnaud.dufour.build",
     });
   });
 
   it("le hreflang de /projets pointe vers les bonnes URLs localisées", () => {
-    const projets = sitemap().find((entry) => entry.url === "https://arnaud.dev/projets");
+    const projets = sitemap().find((entry) => entry.url === "https://arnaud.dufour.build/projets");
     expect(projets?.alternates?.languages).toMatchObject({
-      fr: "https://arnaud.dev/projets",
-      en: "https://arnaud.dev/en/projets",
-      "x-default": "https://arnaud.dev/projets",
+      fr: "https://arnaud.dufour.build/projets",
+      en: "https://arnaud.dufour.build/en/projets",
+      "x-default": "https://arnaud.dufour.build/projets",
     });
   });
 });
