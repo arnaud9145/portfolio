@@ -9,10 +9,10 @@ const DESCRIPTION: Record<Locale, string> = {
 
 export const SITE_URL = "https://arnaud.dufour.build";
 
-// Root-level OG image (served at /opengraph-image, no locale prefix) — referenced
-// explicitly so the tag is never dropped and never hits the /fr redirect.
+// OG image served at /api/og — a route handler excluded from the next-intl
+// middleware matcher, so the tag resolves to a direct 200 with no /fr redirect.
 const OG_IMAGE = {
-  url: "/opengraph-image",
+  url: "/api/og",
   width: 1200,
   height: 630,
   alt: "Arnaud Dufour — Senior React Native Engineer",
@@ -58,7 +58,7 @@ export function buildMetadata(locale: Locale, pathname = ""): Metadata {
       alternateLocale: otherLocale === "fr" ? "fr_FR" : "en_US",
       images: [OG_IMAGE],
     },
-    twitter: { card: "summary_large_image", title, description: DESCRIPTION[locale], images: ["/opengraph-image"] },
+    twitter: { card: "summary_large_image", title, description: DESCRIPTION[locale], images: ["/api/og"] },
   };
 }
 
@@ -99,7 +99,7 @@ export function buildProjectsMetadata(locale: Locale): Metadata {
       alternateLocale: otherLocale === "fr" ? "fr_FR" : "en_US",
       images: [OG_IMAGE],
     },
-    twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] },
+    twitter: { card: "summary_large_image", title, description, images: ["/api/og"] },
   };
 }
 
@@ -140,7 +140,7 @@ export function buildParcoursMetadata(locale: Locale): Metadata {
       alternateLocale: otherLocale === "fr" ? "fr_FR" : "en_US",
       images: [OG_IMAGE],
     },
-    twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] },
+    twitter: { card: "summary_large_image", title, description, images: ["/api/og"] },
   };
 }
 
@@ -181,7 +181,7 @@ export function buildContactMetadata(locale: Locale): Metadata {
       alternateLocale: otherLocale === "fr" ? "fr_FR" : "en_US",
       images: [OG_IMAGE],
     },
-    twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] },
+    twitter: { card: "summary_large_image", title, description, images: ["/api/og"] },
   };
 }
 
