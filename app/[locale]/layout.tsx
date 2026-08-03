@@ -10,6 +10,7 @@ import { buildMetadata } from "@/lib/seo";
 import type { Locale } from "@/content";
 import { SiteNav } from "@/components/ui/SiteNav";
 import { MobileTabBar } from "@/components/ui/MobileTabBar";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-sans" });
@@ -72,6 +73,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <SiteNav />
           {children}
+          <ScrollToTop />
           <MobileTabBar />
         </NextIntlClientProvider>
         <Analytics />

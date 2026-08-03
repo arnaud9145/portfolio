@@ -1037,13 +1037,21 @@ select {
 
 /* --- Projects filter / search bar ----------------------------------- */
 .proj-filters {
+  position: sticky;
+  top: 4rem;
+  z-index: 20;
   max-width: 72rem;
   margin: 0 auto 2.5rem;
-  padding: 0 1.5rem;
+  padding: 0.7rem 1.1rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.7rem 0.9rem;
+  background: color-mix(in oklab, var(--bg) 82%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
 }
 .proj-search {
   flex: 1 1 15rem;
@@ -1088,11 +1096,70 @@ select {
   border-color: transparent;
   font-weight: 600;
 }
-.proj-filter-count {
+.proj-filter-meta {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.proj-filter-count {
   color: var(--muted);
   font-size: 0.82rem;
   white-space: nowrap;
+}
+.proj-filter-clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.28rem 0.62rem;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+.proj-filter-clear:hover {
+  color: var(--gold-hi);
+  border-color: rgba(201, 162, 39, 0.45);
+  background: rgba(201, 162, 39, 0.08);
+}
+
+/* ---- Floating "back to top" button ------------------------- */
+.scroll-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.5rem;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  background: color-mix(in oklab, var(--bg) 80%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--gold-hi);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.2s ease;
+}
+.scroll-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.scroll-top:hover {
+  background: rgba(201, 162, 39, 0.16);
+}
+/* sit above the mobile tab bar */
+@media (max-width: 767px) {
+  .scroll-top {
+    bottom: 5.25rem;
+  }
 }
 .proj-empty {
   max-width: 72rem;

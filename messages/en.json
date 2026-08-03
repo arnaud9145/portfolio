@@ -20,7 +20,8 @@
     "revealing": "Loading…",
     "revealError": "Something went wrong, please try again.",
     "toggleTheme": "Toggle theme",
-    "viewCompany": "View company on LinkedIn"
+    "viewCompany": "View company on LinkedIn",
+    "backToTop": "Back to top"
   },
   "contact": {
     "name": "Name",

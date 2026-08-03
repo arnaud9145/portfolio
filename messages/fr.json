@@ -20,7 +20,8 @@
     "revealing": "Chargement…",
     "revealError": "Une erreur est survenue, réessayez.",
     "toggleTheme": "Changer de thème",
-    "viewCompany": "Voir l'entreprise sur LinkedIn"
+    "viewCompany": "Voir l'entreprise sur LinkedIn",
+    "backToTop": "Remonter en haut"
   },
   "contact": {
     "name": "Nom",

@@ -366,7 +366,10 @@ export function ProjectsShowcase({
   // la section Stack, ou n'importe quel lien). Lu côté client au montage.
   useEffect(() => {
     const tech = new URLSearchParams(window.location.search).get("tech");
-    if (tech) setActiveTechs([tech]);
+    if (tech) {
+      setActiveTechs([tech]);
+      window.scrollTo({ top: 0 }); // arriver en haut quand on filtre depuis la Stack
+    }
   }, []);
 
   // Text + tech-chip filtering. A project matches when it satisfies the text
@@ -526,7 +529,17 @@ export function ProjectsShowcase({
             );
           })}
         </div>
-        <span className="proj-filter-count">{t("count", { count: filtered.length })}</span>
+        <div className="proj-filter-meta">
+          <span className="proj-filter-count">{t("count", { count: filtered.length })}</span>
+          {!isDefault && (
+            <button type="button" className="proj-filter-clear" onClick={resetFilters}>
+              {t("resetFilters")}
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden>
+                <path d="M6 6l12 12M18 6 6 18" />
+              </svg>
+            </button>
+          )}
+        </div>
       </div>
 
       {filtered.length === 0 ? (
