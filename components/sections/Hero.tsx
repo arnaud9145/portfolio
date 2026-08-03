@@ -81,7 +81,7 @@ export function Hero({ content }: { content: CvContent }) {
               src="/portrait-arnaud.jpg"
               alt="Arnaud Dufour en costume et nœud papillon, portrait en clair-obscur sur fond sombre"
               width={1100}
-              height={1175}
+              height={1025}
               sizes="(max-width: 768px) 90vw, 40vw"
               priority
               className="h-auto w-full"
