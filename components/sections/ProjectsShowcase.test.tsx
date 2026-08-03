@@ -82,7 +82,7 @@ describe("ProjectsShowcase", () => {
         <ProjectsShowcase projects={[placeholder]} locale="fr" />
       </NextIntlClientProvider>,
     );
-    expect(screen.getAllByText("aperçu à venir").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("aperçu non disponible").length).toBeGreaterThan(0);
   });
 
   it("expose le lien store quand il existe", () => {

@@ -139,6 +139,34 @@ function PhoneMockup({
   );
 }
 
+/** Horizontal browser-window placeholder for web projects without screenshots. */
+function WebMockup({
+  project,
+  previewSoon,
+}: {
+  project: ProjectItem;
+  previewSoon: string;
+}) {
+  const initial = project.name.trim().charAt(0).toUpperCase();
+  return (
+    <div className="web-mock">
+      <div className="web-mock-bar" aria-hidden>
+        <span />
+        <span />
+        <span />
+      </div>
+      <div className="web-mock-body">
+        <span className="phone-glow" aria-hidden />
+        <span className="web-mock-initial font-display" aria-hidden>
+          {initial}
+        </span>
+        <span className="web-mock-name">{project.name}</span>
+        <span className="web-mock-caption">{previewSoon}</span>
+      </div>
+    </div>
+  );
+}
+
 function ProjectVisual({
   project,
   locale,
@@ -167,6 +195,8 @@ function ProjectVisual({
         />
       );
     }
+  } else if (project.web) {
+    visual = <WebMockup project={project} previewSoon={previewSoon} />;
   } else {
     visual = <PhoneMockup project={project} previewSoon={previewSoon} />;
   }

@@ -42,6 +42,7 @@ export interface ProjectItem {
   repoBack?: { href: string; label: string }; // second dépôt (API/back associée au front)
   status?: string;
   screenshots?: ProjectScreenshot[]; // captures réelles — sinon mockup placeholder générique
+  web?: boolean;                 // projet web → placeholder horizontal (sinon téléphone)
 }
 
 /** Tag d'app affiché sous une expérience → lien vers /projets#<projectId>. */
