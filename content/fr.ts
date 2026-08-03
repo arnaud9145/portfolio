@@ -145,6 +145,6 @@ export const fr: CvContent = {
     { icon: "✈️", label: "Voyages", note: "Le plus marquant : six mois à Shanghai pendant mes études — dont une nuit à camper sur la Grande Muraille. Plus récemment, Alicante en Espagne." },
     { icon: "🚗", label: "Voitures", note: "Passionné d'autos : j'achète et je revends au gré des envies — j'en suis à ma deuxième Audi TT (une quattro V6 3.2 atmo grise). J'adore conduire, et j'ai même roulé sur circuit (en TT RS)." },
     { icon: "🎧", label: "Musique (DJ)", note: "Surtout des soirées étudiantes et quelques bars. Je touche à tout, avec un faible pour le commercial/pop, le big room et la hardstyle." },
-    { icon: "🐱", label: "Chats", note: "Lucy, ma boule de poils toute noire (2021), très câline — j'ai même pris un appart en RDC pour qu'elle sorte dans la résidence." },
+    { icon: "🐱", label: "Chats", note: "Lucy, ma boule de poils toute noire très câline — j'ai pris un appart au RDC pour qu'elle sorte dans la résidence." },
   ],
 };

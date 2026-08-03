@@ -145,6 +145,6 @@ export const en: CvContent = {
     { icon: "✈️", label: "Travel", note: "Most memorable: six months in Shanghai during my studies — including a night camping on the Great Wall. More recently, Alicante in Spain." },
     { icon: "🚗", label: "Cars", note: "Into cars: I buy and sell as the mood takes me — currently on my second Audi TT (a grey quattro V6 3.2 naturally aspirated). I love driving, and I've even done a track day (in a TT RS)." },
     { icon: "🎧", label: "Music (DJ)", note: "Mostly student parties and a few bars. I'll play anything, with a soft spot for commercial/pop, big room and hardstyle." },
-    { icon: "🐱", label: "Cats", note: "Lucy, my all-black bundle of fluff (2021), super cuddly — I even got a ground-floor flat so she could roam the residence." },
+    { icon: "🐱", label: "Cats", note: "Lucy, my all-black bundle of fluff, super cuddly — I got a ground-floor flat so she could roam the residence." },
   ],
 };
