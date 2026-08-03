@@ -9,6 +9,15 @@ const DESCRIPTION: Record<Locale, string> = {
 
 export const SITE_URL = "https://arnaud.dufour.build";
 
+// Root-level OG image (served at /opengraph-image, no locale prefix) — referenced
+// explicitly so the tag is never dropped and never hits the /fr redirect.
+const OG_IMAGE = {
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: "Arnaud Dufour — Senior React Native Engineer",
+};
+
 export const LINKEDIN_URL = "https://www.linkedin.com/in/arnaud-dufour/";
 export const GITHUB_URL = "https://github.com/arnaud9145";
 
@@ -47,8 +56,9 @@ export function buildMetadata(locale: Locale, pathname = ""): Metadata {
       url: canonical,
       locale: locale === "fr" ? "fr_FR" : "en_US",
       alternateLocale: otherLocale === "fr" ? "fr_FR" : "en_US",
+      images: [OG_IMAGE],
     },
-    twitter: { card: "summary_large_image", title, description: DESCRIPTION[locale] },
+    twitter: { card: "summary_large_image", title, description: DESCRIPTION[locale], images: ["/opengraph-image"] },
   };
 }
 
@@ -87,8 +97,9 @@ export function buildProjectsMetadata(locale: Locale): Metadata {
       url: canonical,
       locale: locale === "fr" ? "fr_FR" : "en_US",
       alternateLocale: otherLocale === "fr" ? "fr_FR" : "en_US",
+      images: [OG_IMAGE],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] },
   };
 }
 
@@ -127,8 +138,9 @@ export function buildParcoursMetadata(locale: Locale): Metadata {
       url: canonical,
       locale: locale === "fr" ? "fr_FR" : "en_US",
       alternateLocale: otherLocale === "fr" ? "fr_FR" : "en_US",
+      images: [OG_IMAGE],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] },
   };
 }
 
@@ -167,8 +179,9 @@ export function buildContactMetadata(locale: Locale): Metadata {
       url: canonical,
       locale: locale === "fr" ? "fr_FR" : "en_US",
       alternateLocale: otherLocale === "fr" ? "fr_FR" : "en_US",
+      images: [OG_IMAGE],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] },
   };
 }
 
