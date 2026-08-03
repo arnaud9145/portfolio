@@ -8,12 +8,16 @@ describe("sitemap", () => {
       expect.arrayContaining([
         "https://arnaud.dufour.build",
         "https://arnaud.dufour.build/en",
+        "https://arnaud.dufour.build/parcours",
+        "https://arnaud.dufour.build/en/parcours",
         "https://arnaud.dufour.build/projets",
         "https://arnaud.dufour.build/en/projets",
+        "https://arnaud.dufour.build/contact",
+        "https://arnaud.dufour.build/en/contact",
       ]),
     );
     // Exactly one entry per route × locale — no stray/duplicate routes.
-    expect(urls).toHaveLength(4);
+    expect(urls).toHaveLength(8);
   });
 
   it("expose les alternates hreflang fr / en / x-default pour chaque route", () => {
@@ -42,6 +46,24 @@ describe("sitemap", () => {
       fr: "https://arnaud.dufour.build/projets",
       en: "https://arnaud.dufour.build/en/projets",
       "x-default": "https://arnaud.dufour.build/projets",
+    });
+  });
+
+  it("le hreflang de /parcours pointe vers les bonnes URLs localisées", () => {
+    const parcours = sitemap().find((entry) => entry.url === "https://arnaud.dufour.build/parcours");
+    expect(parcours?.alternates?.languages).toMatchObject({
+      fr: "https://arnaud.dufour.build/parcours",
+      en: "https://arnaud.dufour.build/en/parcours",
+      "x-default": "https://arnaud.dufour.build/parcours",
+    });
+  });
+
+  it("le hreflang de /contact pointe vers les bonnes URLs localisées", () => {
+    const contact = sitemap().find((entry) => entry.url === "https://arnaud.dufour.build/contact");
+    expect(contact?.alternates?.languages).toMatchObject({
+      fr: "https://arnaud.dufour.build/contact",
+      en: "https://arnaud.dufour.build/en/contact",
+      "x-default": "https://arnaud.dufour.build/contact",
     });
   });
 });

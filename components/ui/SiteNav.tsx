@@ -4,27 +4,18 @@ import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitch } from "@/components/ui/LocaleSwitch";
 
-// On-page anchors (scroll-spy). "projets" is a separate cross-page route.
-const SECTIONS = ["summary", "experience", "stack", "education", "contact"] as const;
-
-type NavItem =
-  | { kind: "anchor"; id: (typeof SECTIONS)[number] }
-  | { kind: "route"; id: "projets"; href: string };
-
-const NAV: NavItem[] = [
-  { kind: "anchor", id: "summary" },
-  { kind: "anchor", id: "experience" },
-  { kind: "route", id: "projets", href: "/projets" },
-  { kind: "anchor", id: "stack" },
-  { kind: "anchor", id: "education" },
-  { kind: "anchor", id: "contact" },
-];
+// Real route links (one per page). Labels come from the `tabs` namespace so the
+// desktop nav stays consistent with the mobile tab bar.
+const NAV = [
+  { id: "home", href: "/", label: "home" },
+  { id: "parcours", href: "/parcours", label: "experience" },
+  { id: "projets", href: "/projets", label: "projects" },
+  { id: "contact", href: "/contact", label: "contact" },
+] as const;
 
 export function SiteNav() {
-  const t = useTranslations("nav");
+  const t = useTranslations("tabs");
   const pathname = usePathname();
-  const onHome = pathname === "/";
-  const [active, setActive] = useState<string>("");
   const [scrolled, setScrolled] = useState(false);
 
   // Elevate the bar once the page scrolls.
@@ -35,83 +26,39 @@ export function SiteNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scroll-spy only makes sense on the home one-pager (sections live there).
-  useEffect(() => {
-    if (!onHome) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        }
-      },
-      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
-    );
-    for (const id of SECTIONS) {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    }
-    return () => observer.disconnect();
-  }, [onHome]);
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <nav
       className={`site-nav${scrolled ? " scrolled" : ""}`}
-      aria-label={t("summary")}
+      aria-label={t("label")}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-4 sm:px-6">
-        {onHome ? (
-          <a
-            href="#top"
-            className="nav-brand shrink-0 text-lg"
-            aria-label="Arnaud Dufour — haut de page"
-          >
-            AD
-          </a>
-        ) : (
-          <Link
-            href="/"
-            className="nav-brand shrink-0 text-lg"
-            aria-label="Arnaud Dufour — retour au CV"
-          >
-            AD
-          </Link>
-        )}
-        <ul className="nav-scroller flex flex-1 items-center gap-5 overflow-x-auto sm:gap-7">
+        <Link
+          href="/"
+          className="nav-brand shrink-0 text-lg"
+          aria-label="Arnaud Dufour — retour à l'accueil"
+        >
+          AD
+        </Link>
+        <ul className="nav-scroller hidden flex-1 items-center gap-5 overflow-x-auto md:flex sm:gap-7">
           {NAV.map((item) => {
-            if (item.kind === "route") {
-              return (
-                <li key={item.id} className="shrink-0">
-                  <Link
-                    href={item.href}
-                    className={`nav-link${!onHome ? " active" : ""}`}
-                    aria-current={!onHome ? "page" : undefined}
-                  >
-                    {t(item.id)}
-                  </Link>
-                </li>
-              );
-            }
-            // Anchor items: in-page smooth scroll on home, cross-page link elsewhere.
+            const active = isActive(item.href);
             return (
               <li key={item.id} className="shrink-0">
-                {onHome ? (
-                  <a
-                    href={`#${item.id}`}
-                    className={`nav-link${active === item.id ? " active" : ""}`}
-                    aria-current={active === item.id ? "true" : undefined}
-                  >
-                    {t(item.id)}
-                  </a>
-                ) : (
-                  <Link href={`/#${item.id}`} className="nav-link">
-                    {t(item.id)}
-                  </Link>
-                )}
+                <Link
+                  href={item.href}
+                  className={`nav-link${active ? " active" : ""}`}
+                  aria-current={active ? "page" : undefined}
+                >
+                  {t(item.label)}
+                </Link>
               </li>
             );
           })}
         </ul>
-        <div className="shrink-0">
+        <div className="ml-auto shrink-0">
           <LocaleSwitch />
         </div>
       </div>

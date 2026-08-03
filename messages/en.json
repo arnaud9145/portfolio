@@ -7,6 +7,13 @@
     "education": "Education",
     "contact": "Contact"
   },
+  "tabs": {
+    "label": "Navigation",
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
   "actions": {
     "downloadCv": "Download CV",
     "revealPhone": "Reveal phone number",
@@ -25,12 +32,28 @@
     "error": "Something went wrong. Try again or reach me on LinkedIn.",
     "lead": "A role, an ambitious mobile project, or just want to talk? Drop me a line — I reply fast."
   },
+  "openToWork": {
+    "title": "Open to opportunities",
+    "role": "Permanent role — Senior mobile engineer (React Native)",
+    "location": "Paris · on-site 2-4 days/week (based in Reims, 45 min away)",
+    "availability": "Available to talk right now",
+    "cta": "Get in touch"
+  },
+  "home": {
+    "ctaTitle": "What's next?",
+    "ctaBody": "Explore my projects or browse through my experience.",
+    "ctaProjects": "See the projects",
+    "ctaParcours": "See my experience"
+  },
   "sections": {
     "apps": "Apps I've built",
     "experience": "Experience",
     "stack": "Tech stack",
+    "filterBy": "See projects using {tech}",
+    "stackGroups": { "mobile": "Mobile", "web": "Web", "back": "Backend", "infra": "Infra & tooling" },
     "education": "Education",
     "languages": "Languages",
+    "interests": "Interests",
     "contact": "Contact"
   },
   "projects": {
@@ -39,9 +62,14 @@
     "intro": "Mobile apps since 2018 — from the startup I was CTO of, to high-traffic consumer apps, agency client work, and my earliest student projects.",
     "back": "Back to CV",
     "count": "{count} projects",
+    "searchPlaceholder": "Search a project, a tech…",
+    "filterAll": "All",
+    "noResults": "No projects match.",
+    "resetFilters": "Reset",
     "roleLabel": "Role",
     "techLabel": "Stack",
     "previewSoon": "preview coming",
+    "legacyNote": "Vintage screenshots — these projects are nearly 10 years old and I couldn't find better 🙃",
     "contribution": {
       "lead": "Technical lead",
       "major": "Major contribution",

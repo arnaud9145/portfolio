@@ -92,6 +92,86 @@ export function buildProjectsMetadata(locale: Locale): Metadata {
   };
 }
 
+const PARCOURS_TITLE: Record<Locale, string> = {
+  fr: "Parcours — Arnaud Dufour, ingénieur mobile React Native",
+  en: "Career — Arnaud Dufour, React Native mobile engineer",
+};
+
+const PARCOURS_DESCRIPTION: Record<Locale, string> = {
+  fr: "Expériences (Unlockt, Le Collectionist, Roger, BAM…), stack technique, formation et centres d'intérêt d'Arnaud Dufour, ingénieur mobile React Native depuis 2018.",
+  en: "Experience (Unlockt, Le Collectionist, Roger, BAM…), tech stack, education and interests of Arnaud Dufour, React Native mobile engineer since 2018.",
+};
+
+export function buildParcoursMetadata(locale: Locale): Metadata {
+  const path = "parcours";
+  const title = PARCOURS_TITLE[locale];
+  const description = PARCOURS_DESCRIPTION[locale];
+  const canonical = localizedUrl(locale, path);
+  const otherLocale = locale === "fr" ? "en" : "fr";
+  return {
+    metadataBase: new URL(SITE_URL),
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages: {
+        fr: localizedUrl("fr", path),
+        en: localizedUrl("en", path),
+        "x-default": localizedUrl("fr", path),
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: canonical,
+      locale: locale === "fr" ? "fr_FR" : "en_US",
+      alternateLocale: otherLocale === "fr" ? "fr_FR" : "en_US",
+    },
+    twitter: { card: "summary_large_image", title, description },
+  };
+}
+
+const CONTACT_TITLE: Record<Locale, string> = {
+  fr: "Contact — Arnaud Dufour",
+  en: "Contact — Arnaud Dufour",
+};
+
+const CONTACT_DESCRIPTION: Record<Locale, string> = {
+  fr: "Contactez Arnaud Dufour, ingénieur mobile React Native senior — un poste, un projet mobile ambitieux, ou juste échanger.",
+  en: "Get in touch with Arnaud Dufour, senior React Native mobile engineer — a role, an ambitious mobile project, or just to chat.",
+};
+
+export function buildContactMetadata(locale: Locale): Metadata {
+  const path = "contact";
+  const title = CONTACT_TITLE[locale];
+  const description = CONTACT_DESCRIPTION[locale];
+  const canonical = localizedUrl(locale, path);
+  const otherLocale = locale === "fr" ? "en" : "fr";
+  return {
+    metadataBase: new URL(SITE_URL),
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages: {
+        fr: localizedUrl("fr", path),
+        en: localizedUrl("en", path),
+        "x-default": localizedUrl("fr", path),
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: canonical,
+      locale: locale === "fr" ? "fr_FR" : "en_US",
+      alternateLocale: otherLocale === "fr" ? "fr_FR" : "en_US",
+    },
+    twitter: { card: "summary_large_image", title, description },
+  };
+}
+
 export function personJsonLd(locale: Locale, url: string) {
   const c = getContent(locale);
   return {
@@ -99,6 +179,7 @@ export function personJsonLd(locale: Locale, url: string) {
     "@type": "Person",
     name: c.hero.name,
     jobTitle: c.hero.title,
+    email: "arnaud@dufour.build",
     url,
     address: { "@type": "PostalAddress", addressLocality: "Reims", addressCountry: "FR" },
     knowsLanguage: c.languages.map((l) => l.name),

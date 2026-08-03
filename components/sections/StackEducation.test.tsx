@@ -4,7 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import messages from "@/messages/fr.json";
 import { getContent } from "@/content";
 import { Stack } from "./Stack";
-import { Education } from "./Education";
+import { Languages } from "./Languages";
 
 function wrap(ui: React.ReactNode) {
   return render(
@@ -12,16 +12,19 @@ function wrap(ui: React.ReactNode) {
   );
 }
 
-describe("Stack & Education", () => {
+describe("Stack & Languages", () => {
   it("rend les groupes de stack", () => {
     wrap(<Stack content={getContent("fr")} />);
     expect(screen.getByText("React Native")).toBeInTheDocument();
     expect(screen.getByText("NestJS")).toBeInTheDocument();
   });
-  it("rend les diplômes et les langues, sans l'associatif UNG (déplacé en Expériences)", () => {
-    wrap(<Education content={getContent("fr")} />);
-    expect(screen.getAllByText(/Université de Technologie de Troyes/)[0]).toBeInTheDocument();
+  it("rend le bloc Langues autonome (les diplômes sont désormais dans la timeline)", () => {
+    wrap(<Languages content={getContent("fr")} />);
+    expect(screen.getByRole("heading", { name: /Langues/ })).toBeInTheDocument();
     expect(screen.getByText(/Espagnol/)).toBeInTheDocument();
-    expect(screen.queryByText(/UNG/)).not.toBeInTheDocument();
+    // les diplômes ne sont plus rendus ici
+    expect(
+      screen.queryByText(/Université de Technologie de Troyes/)
+    ).not.toBeInTheDocument();
   });
 });

@@ -1,22 +1,24 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import type { CvContent } from "@/content";
+import { Link } from "@/i18n/navigation";
 import { RevealPhone } from "@/components/ui/RevealPhone";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function Hero({ content }: { content: CvContent }) {
   const t = useTranslations("actions");
+  const otw = useTranslations("openToWork");
   const { hero } = content;
 
   return (
     <header id="top" className="relative overflow-hidden">
       <div className="hero-glow" aria-hidden />
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-24 pt-16 md:min-h-[calc(100svh-4rem)] md:grid-cols-[1.05fr_.95fr] md:gap-16 md:pb-16">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 pb-24 pt-16 md:min-h-[calc(100svh-4rem)] md:grid-cols-[1.05fr_.95fr] md:gap-16 md:pb-16">
         {/* Text column — readable immediately, staggered entrance only */}
-        <div className="relative z-10 max-w-xl">
+        <div className="relative z-10 min-w-0 max-w-xl">
           <span className="badge anim-rise" style={{ animationDelay: "60ms" }}>
             <span className="dot" aria-hidden />
-            {hero.availability}
+            {otw("title")}
           </span>
 
           <h1
@@ -64,9 +66,9 @@ export function Hero({ content }: { content: CvContent }) {
             <a href="/cv-arnaud-dufour.pdf" download className="btn btn-gold">
               {t("downloadCv")}
             </a>
-            <a href="#contact" className="btn btn-outline">
+            <Link href="/contact" className="btn btn-outline">
               Contact
-            </a>
+            </Link>
             <RevealPhone />
           </div>
         </div>
@@ -79,7 +81,7 @@ export function Hero({ content }: { content: CvContent }) {
               src="/portrait-arnaud.jpg"
               alt="Arnaud Dufour en costume et nœud papillon, portrait en clair-obscur sur fond sombre"
               width={1100}
-              height={1486}
+              height={1175}
               sizes="(max-width: 768px) 90vw, 40vw"
               priority
               className="h-auto w-full"

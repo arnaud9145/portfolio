@@ -1,5 +1,12 @@
 "use client";
-import { useEffect, useRef, useState, type ElementType, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ElementType,
+  type ReactNode,
+} from "react";
 
 /**
  * Scroll-triggered fade + slide-up wrapper.
@@ -12,11 +19,13 @@ export function Reveal({
   as: Tag = "div",
   delay = 0,
   className = "",
+  style,
 }: {
   children: ReactNode;
   as?: ElementType;
   delay?: number;
   className?: string;
+  style?: CSSProperties;
 }) {
   const ref = useRef<HTMLElement | null>(null);
   const [shown, setShown] = useState(false);
@@ -51,7 +60,11 @@ export function Reveal({
     <Tag
       ref={ref}
       className={`reveal-base${shown ? " is-in" : ""}${className ? ` ${className}` : ""}`}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+      style={
+        delay || style
+          ? { ...(delay ? { transitionDelay: `${delay}ms` } : null), ...style }
+          : undefined
+      }
     >
       {children}
     </Tag>

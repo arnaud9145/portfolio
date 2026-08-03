@@ -55,14 +55,16 @@ describe("ProjectsShowcase", () => {
 
   it("affiche les tech tags réels d'un projet", () => {
     wrap();
-    // "Reanimated" appears on several projects; "Veriff & Yoti (KYC)" is Unlockt-only.
+    // "Reanimated" appears on several projects; "Veriff" is Unlockt-only.
     expect(screen.getAllByText("Reanimated").length).toBeGreaterThan(0);
-    expect(screen.getByText("Veriff & Yoti (KYC)")).toBeInTheDocument();
+    expect(screen.getByText("Veriff")).toBeInTheDocument();
   });
 
   it("affiche la métrique Unlockt (base du compteur animé)", () => {
     wrap();
-    expect(screen.getByText(/1,2 M d'utilisateurs actifs/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/1,2 M d'utilisateurs actifs/, { selector: ".proj-metric span" }),
+    ).toBeInTheDocument();
   });
 
   it("marque les mockups placeholder d'une légende 'aperçu à venir'", () => {

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getContent } from "@/content";
+import { getContent, experienceApps, derivedStack } from "@/content";
 
 describe("content", () => {
   it("expose fr et en avec les mêmes clés de sections", () => {
@@ -21,14 +21,31 @@ describe("content", () => {
   });
 
   it.each(["fr", "en"] as const)(
-    "chaque tag d'app d'une expérience référence un projet existant (%s)",
+    "chaque projet référence une expérience existante via experienceId (%s)",
     (locale) => {
-      const { projects, experience } = getContent(locale);
-      const ids = new Set(projects.map((p) => p.id));
-      for (const xp of experience) {
-        for (const tag of xp.appTags ?? []) {
-          expect(ids.has(tag.projectId), `${locale}: ${tag.projectId}`).toBe(true);
+      const content = getContent(locale);
+      const expIds = new Set(content.experience.map((xp) => xp.id));
+      for (const p of content.projects) {
+        if (p.experienceId) {
+          expect(
+            expIds.has(p.experienceId),
+            `${locale}: ${p.id} → ${p.experienceId}`,
+          ).toBe(true);
         }
+      }
+    },
+  );
+
+  // Garde-fou "source unique" : les tags d'une expérience sont DÉRIVÉS des
+  // projets — un projet ajouté ne peut plus être oublié sous son expérience.
+  it.each(["fr", "en"] as const)(
+    "dérive les apps d'une expérience depuis les projets (%s)",
+    (locale) => {
+      const content = getContent(locale);
+      for (const p of content.projects) {
+        if (!p.experienceId) continue;
+        const surfaced = experienceApps(content, p.experienceId).map((a) => a.projectId);
+        expect(surfaced, `${locale}: ${p.id} sous ${p.experienceId}`).toContain(p.id);
       }
     },
   );
@@ -48,6 +65,23 @@ describe("content", () => {
       }
     }
   });
+
+  // La stack est DÉRIVÉE des projets : ajouter une techno à un projet la fait
+  // apparaître ; rien n'est oublié (le bug "Heroku manquant" ne peut plus arriver).
+  it.each(["fr", "en"] as const)(
+    "dérive la stack depuis les technos des projets (%s)",
+    (locale) => {
+      const items = derivedStack(getContent(locale)).flatMap((g) =>
+        g.items.map((i) => i.name),
+      );
+      for (const t of ["React Native", "Heroku", "Stripe", "Node.js", "NestJS", "Next.js"]) {
+        expect(items, `${locale}: ${t}`).toContain(t);
+      }
+      // exclus de la stack (mais peuvent rester en techno projet)
+      expect(items).not.toContain("SVG");
+      expect(items).not.toContain("Detox");
+    },
+  );
 
   it("respecte la règle de localisation (jamais 'Reims' seul)", () => {
     const fr = getContent("fr");

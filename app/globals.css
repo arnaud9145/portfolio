@@ -16,6 +16,9 @@
   --gold-lo: #9a7b1b;
   --accent: var(--gold);
   --gold-gradient: linear-gradient(135deg, #e6c866, #c9a227, #9a7b1b);
+
+  /* cool steel-blue used to distinguish education entries from work */
+  --edu: #8fa3b8;
 }
 
 @theme inline {
@@ -132,6 +135,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
+  max-width: 100%;
   border: 1px solid var(--border);
   background: rgba(201, 162, 39, 0.05);
   border-radius: 999px;
@@ -155,6 +159,56 @@ body {
   width: 64px;
   border-radius: 2px;
   background: var(--gold-gradient);
+}
+
+/* Tailwind v4 ne met plus cursor:pointer sur les <button> — on le rétablit
+   pour tous les éléments interactifs (sauf désactivés). */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+label[for],
+summary,
+select {
+  cursor: pointer;
+}
+
+/* ---- Open-to-work panel (home) ----------------------------- */
+.otw {
+  border-color: rgba(201, 162, 39, 0.34);
+  background:
+    linear-gradient(180deg, rgba(201, 162, 39, 0.07), rgba(201, 162, 39, 0.015));
+}
+.otw-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.otw-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 999px;
+  background: #34d399;
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.16);
+  animation: otw-pulse 2s ease-in-out infinite;
+}
+@keyframes otw-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.18); }
+  50% { box-shadow: 0 0 0 6px rgba(52, 211, 153, 0.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .otw-dot { animation: none; }
+}
+.otw-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--fg);
+}
+.otw-row svg {
+  margin-top: 0.1rem;
+  color: var(--gold);
+  flex-shrink: 0;
 }
 
 /* ---- Buttons ----------------------------------------------- */
@@ -256,6 +310,19 @@ body {
   color: var(--gold-hi);
   background: rgba(201, 162, 39, 0.06);
 }
+/* clickable stack pill (deep-links to filtered projects) */
+.pill--link {
+  cursor: pointer;
+}
+/* headline techs — bigger + gold-tinted, so the stack reads hierarchically */
+.pill--lg {
+  font-size: 0.95rem;
+  padding: 0.42rem 0.95rem;
+  font-weight: 600;
+  color: var(--gold-hi);
+  border-color: rgba(201, 162, 39, 0.4);
+  background: rgba(201, 162, 39, 0.08);
+}
 .pill-metric {
   color: var(--gold-hi);
   border-color: rgba(201, 162, 39, 0.32);
@@ -286,6 +353,14 @@ body {
 }
 .tag-app:hover svg {
   transform: translateX(2px);
+}
+/* app icon shown before the tag label */
+.tag-app-logo {
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 4px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 /* ---- Section heading eyebrow ------------------------------- */
@@ -331,6 +406,139 @@ body {
   min-height: 0;
 }
 
+/* ---- Experience timeline ----------------------------------- */
+.xp-timeline {
+  position: relative;
+  padding-left: 2.4rem;
+}
+/* vertical rail running the full height of the list */
+.xp-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.6rem;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--border);
+}
+/* Vertical spacing between entries is time-proportional: each item's gap to the
+   one above is set via an inline margin-top (px, clamped) in Experience.tsx so
+   the distance reflects the real elapsed time between roles. */
+/* node sitting on the rail, aligned with the top of each card */
+.xp-node {
+  position: absolute;
+  left: -2.15rem;
+  top: 1.55rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 999px;
+  background: var(--gold-hi);
+  /* mask the rail behind the node + soft gold halo */
+  box-shadow: 0 0 0 3px var(--bg), 0 0 10px 1px rgba(230, 200, 102, 0.5);
+}
+/* prominent, at-a-glance dates */
+.xp-period {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-hi);
+}
+/* discreet duration read out on the axis, right after the period */
+.xp-duration {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--muted);
+}
+/* discreet contextual pill (e.g. associative role) */
+.xp-tag {
+  display: inline-block;
+  margin-top: 0.55rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+}
+/* company LinkedIn — icon-only, accessible via aria-label */
+.xp-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 0.42rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+.xp-linkedin:hover {
+  color: var(--gold-hi);
+  border-color: rgba(201, 162, 39, 0.4);
+  background: rgba(201, 162, 39, 0.08);
+}
+/* LinkedIn glyph (first svg) sized to match the label; arrow (last) nudges on hover */
+.xp-linkedin > svg:first-of-type {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex-shrink: 0;
+}
+.xp-linkedin > svg:last-of-type {
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+.xp-linkedin:hover > svg:last-of-type {
+  transform: translateX(2px);
+}
+
+/* ---- Study (education) timeline entries -------------------- */
+/* cool-toned node so studies read as distinct from work */
+.xp-node--study {
+  background: var(--edu);
+  box-shadow: 0 0 0 3px var(--bg),
+    0 0 10px 1px color-mix(in oklab, var(--edu) 50%, transparent);
+}
+/* study card carries a faint steel-blue left border accent */
+.xp-study {
+  border-left: 2px solid color-mix(in oklab, var(--edu) 45%, var(--border));
+}
+/* study entry crossing the viewport centre — steel-blue ring (mirrors the gold
+   .xp-centered on experiences, in the --edu colour instead) */
+.xp-centered--study {
+  border-color: color-mix(in oklab, var(--edu) 60%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--edu) 45%, transparent),
+    0 18px 46px -26px color-mix(in oklab, var(--edu) 55%, transparent);
+}
+.xp-period--study {
+  color: var(--edu);
+}
+.xp-org--study {
+  color: var(--edu);
+}
+/* small "Formation / Education" badge on study entries */
+.xp-edu-label {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--edu);
+  border: 1px solid color-mix(in oklab, var(--edu) 40%, transparent);
+  background: color-mix(in oklab, var(--edu) 8%, transparent);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+}
+
 /* ---- Sticky nav -------------------------------------------- */
 .site-nav {
   position: sticky;
@@ -345,6 +553,67 @@ body {
 .site-nav.scrolled {
   background: color-mix(in oklab, #0a0a0b 82%, transparent);
   border-bottom-color: var(--border);
+}
+
+/* ---- Mobile app-style bottom tab bar (hidden on desktop) -------------- */
+.mobile-tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-bottom: env(safe-area-inset-bottom);
+  background: color-mix(in oklab, #0a0a0b 82%, transparent);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  border-top: 1px solid var(--border);
+}
+@media (min-width: 768px) {
+  .mobile-tabbar {
+    display: none;
+  }
+}
+/* Reserve space so the fixed bar never covers page content on mobile. */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: calc(3.9rem + env(safe-area-inset-bottom));
+  }
+}
+.mobile-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.18rem;
+  min-height: 3.9rem;
+  padding: 0.5rem 0.25rem;
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.2s ease;
+}
+.mobile-tab-icon {
+  display: grid;
+  place-items: center;
+}
+.mobile-tab-icon svg {
+  width: 23px;
+  height: 23px;
+}
+.mobile-tab.active {
+  color: var(--gold-hi);
+}
+.mobile-tab.active .mobile-tab-icon svg {
+  filter: drop-shadow(0 0 8px color-mix(in oklab, var(--gold-hi) 45%, transparent));
+}
+@media (prefers-reduced-motion: no-preference) {
+  .mobile-tab:active {
+    transform: scale(0.92);
+  }
 }
 .nav-brand {
   font-family: var(--font-display), Georgia, serif;
@@ -498,6 +767,12 @@ body {
 }
 
 /* ---- Scrolly shell ----------------------------------------- */
+/* Clip on the full-width page wrapper (not on .scrolly, which is only 72rem and
+   would crop the fan before the viewport edge). Lets the fan spread into the
+   available space while still preventing any horizontal page scroll. */
+.projets-main {
+  overflow-x: clip;
+}
 .scrolly {
   position: relative;
   max-width: 72rem;
@@ -615,7 +890,8 @@ body {
 }
 @media (prefers-reduced-motion: no-preference) {
   .device-shot {
-    transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.45s ease;
+    /* suivi net au scroll (--spread piloté par JS) */
+    transition: transform 0.12s linear, opacity 0.45s ease;
   }
 }
 .device-shot--front {
@@ -629,7 +905,7 @@ body {
   left: 0;
   width: 80%;
   z-index: 1;
-  transform: translateX(-32%) rotate(-12deg);
+  transform: translateX(calc(var(--spread, 1) * -32%)) rotate(calc(var(--spread, 1) * -12deg));
   transform-origin: bottom center;
   opacity: 0.9;
   filter: saturate(0.92) brightness(0.85) drop-shadow(0 24px 46px rgba(0, 0, 0, 0.5));
@@ -640,23 +916,23 @@ body {
   right: 0;
   width: 80%;
   z-index: 2;
-  transform: translateX(32%) rotate(12deg);
+  transform: translateX(calc(var(--spread, 1) * 32%)) rotate(calc(var(--spread, 1) * 12deg));
   transform-origin: bottom center;
   opacity: 0.92;
   filter: saturate(0.92) brightness(0.88) drop-shadow(0 24px 46px rgba(0, 0, 0, 0.5));
 }
-.device-fan:hover .device-shot--left {
-  transform: translateX(-50%) rotate(-16deg);
-  top: -3%;
-  opacity: 1;
+/* Movizer: the front shot is a squat detail card (not a full phone), so we
+   enlarge the fan and let it hang slightly right, and pin the tall back phones
+   to the front's baseline so they grow upward — never down into the title. */
+.device-fan--movizer {
+  width: 18rem;
+  max-width: 74vw;
 }
-.device-fan:hover .device-shot--right {
-  transform: translateX(50%) rotate(16deg);
-  top: -3%;
-  opacity: 1;
-}
-.device-fan:hover .device-shot--front {
-  transform: translateY(4%) scale(0.955);
+.device-fan--movizer .device-shot--left,
+.device-fan--movizer .device-shot--right {
+  top: auto;
+  bottom: 0;
+  width: 60%;
 }
 .landscape-shot {
   position: relative;
@@ -704,6 +980,31 @@ body {
 
 /* ---- Project text block ------------------------------------ */
 .proj-text { max-width: 40rem; }
+/* Project header: app logo left of the name + role */
+.proj-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.proj-head-main {
+  min-width: 0;
+}
+.proj-logo {
+  width: 4.25rem;
+  height: 4.25rem;
+  flex-shrink: 0;
+  border-radius: 1.05rem;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 22px -12px rgba(0, 0, 0, 0.75);
+}
+@media (max-width: 640px) {
+  .proj-logo {
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 0.85rem;
+  }
+}
 .proj-context {
   font-size: 0.8rem;
   letter-spacing: 0.14em;
@@ -711,16 +1012,103 @@ body {
   color: var(--gold);
 }
 .proj-context--link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
   cursor: pointer;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.35);
   transition: color 0.25s ease, border-color 0.25s ease;
 }
 .proj-context--link:hover,
 .proj-context--link:focus-visible {
   color: var(--gold-hi);
-  border-bottom-color: rgba(230, 200, 102, 0.5);
+  border-bottom-color: rgba(230, 200, 102, 0.7);
+}
+.proj-context-arrow {
+  opacity: 0.7;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.proj-context--link:hover .proj-context-arrow,
+.proj-context--link:focus-visible .proj-context-arrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* --- Projects filter / search bar ----------------------------------- */
+.proj-filters {
+  max-width: 72rem;
+  margin: 0 auto 2.5rem;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem 0.9rem;
+}
+.proj-search {
+  flex: 1 1 15rem;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.6rem 1.05rem;
+  color: var(--fg);
+  font-size: 0.92rem;
+}
+.proj-search::placeholder {
+  color: var(--muted);
+}
+.proj-search:focus-visible {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.16);
+}
+.proj-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.proj-filter-chip {
+  cursor: pointer;
+  font-size: 0.82rem;
+  padding: 0.42rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.proj-filter-chip:hover {
+  color: var(--fg);
+  border-color: rgba(201, 162, 39, 0.4);
+}
+.proj-filter-chip.is-active {
+  color: #0a0a0b;
+  background: var(--gold-gradient);
+  border-color: transparent;
+  font-weight: 600;
+}
+.proj-filter-count {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+.proj-empty {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3rem;
+  text-align: center;
+  color: var(--muted);
+}
+@media (max-width: 640px) {
+  .proj-filter-count {
+    margin-left: 0;
+  }
 }
 .proj-name {
   margin-top: 0.4rem;
@@ -762,12 +1150,44 @@ body {
   background: rgba(255, 255, 255, 0.02);
 }
 .proj-role { font-size: 0.85rem; color: var(--muted); }
+.proj-period {
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.22rem 0.6rem;
+  opacity: 0.85;
+}
 .proj-role-label { opacity: 0.6; }
 .proj-tagline {
   margin-top: 1.1rem;
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--fg);
+}
+.proj-description {
+  margin-top: 0.6rem;
+  max-width: 44ch;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+/* Wrap le visuel + la note en colonne : la note passe TOUJOURS sous l'image
+   (les conteneurs parents .proj-visual-inline et .visual-slide sont en flex
+   center, donc le wrap y reste un seul enfant centré, sans rétrécir l'image). */
+.proj-visual-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.proj-legacy-note {
+  max-width: 18rem;
+  margin: 0.75rem auto 0;
+  font-size: 0.72rem;
+  text-align: center;
+  color: var(--muted);
+  opacity: 0.75;
 }
 .proj-metrics {
   list-style: none;
@@ -873,6 +1293,7 @@ body {
   }
   .js .visual-slide .phone-fan,
   .js .visual-slide .device-fan { width: 16rem; }
+  .js .visual-slide .device-fan--movizer { width: 18rem; }
   .js .visual-slide .landscape-shot { width: 26rem; }
 }
 

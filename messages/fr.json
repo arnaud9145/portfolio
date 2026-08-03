@@ -7,6 +7,13 @@
     "education": "Formation",
     "contact": "Contact"
   },
+  "tabs": {
+    "label": "Navigation",
+    "home": "Accueil",
+    "projects": "Projets",
+    "experience": "Parcours",
+    "contact": "Contact"
+  },
   "actions": {
     "downloadCv": "Télécharger le CV",
     "revealPhone": "Révéler le numéro",
@@ -25,12 +32,28 @@
     "error": "Une erreur est survenue. Réessayez ou écrivez-moi sur LinkedIn.",
     "lead": "Un poste, un projet mobile ambitieux, ou juste envie d'échanger ? Écrivez-moi — je réponds vite."
   },
+  "openToWork": {
+    "title": "Ouvert aux opportunités",
+    "role": "CDI — Ingénieur mobile senior (React Native)",
+    "location": "Paris · présentiel 2-4 j/semaine (basé à Reims, 45 min)",
+    "availability": "Disponible pour en discuter dès maintenant",
+    "cta": "Me contacter"
+  },
+  "home": {
+    "ctaTitle": "La suite ?",
+    "ctaBody": "Explorez mes projets ou parcourez mon expérience.",
+    "ctaProjects": "Voir les projets",
+    "ctaParcours": "Voir mon parcours"
+  },
   "sections": {
     "apps": "Applications développées",
     "experience": "Expériences",
     "stack": "Stack technique",
+    "filterBy": "Voir les projets en {tech}",
+    "stackGroups": { "mobile": "Mobile", "web": "Web", "back": "Back", "infra": "Infra & outils" },
     "education": "Formation",
     "languages": "Langues",
+    "interests": "Centres d'intérêt",
     "contact": "Contact"
   },
   "projects": {
@@ -39,9 +62,14 @@
     "intro": "Des applications mobiles depuis 2018 — de la startup dont j'ai été CTO aux apps grand public à fort trafic, en passant par le conseil et mes premiers projets étudiants.",
     "back": "Retour au CV",
     "count": "{count} projets",
+    "searchPlaceholder": "Rechercher un projet, une techno…",
+    "filterAll": "Tous",
+    "noResults": "Aucun projet ne correspond.",
+    "resetFilters": "Réinitialiser",
     "roleLabel": "Rôle",
     "techLabel": "Stack",
     "previewSoon": "aperçu à venir",
+    "legacyNote": "Captures d'époque — ces projets ont presque 10 ans, je n'ai pas retrouvé mieux 🙃",
     "contribution": {
       "lead": "Direction technique",
       "major": "Contribution majeure",

@@ -27,19 +27,19 @@ describe("POST /api/contact", () => {
   });
 
   it("envoie l'email pour un payload valide", async () => {
-    const res = await POST(post({ name: "Jean", email: "j@x.com", message: "Bonjour, un poste ?", website: "" }));
+    const res = await POST(post({ name: "Jean", email: "j@x.com", message: "Bonjour, un poste ?", hp: "" }));
     expect(res.status).toBe(200);
     expect(sendMock).toHaveBeenCalledOnce();
   });
 
   it("rejette si le honeypot est rempli", async () => {
-    const res = await POST(post({ name: "Bot", email: "b@x.com", message: "spam", website: "http://spam" }));
+    const res = await POST(post({ name: "Bot", email: "b@x.com", message: "spam", hp: "http://spam" }));
     expect(res.status).toBe(400);
     expect(sendMock).not.toHaveBeenCalled();
   });
 
   it("rejette un email invalide", async () => {
-    const res = await POST(post({ name: "Jean", email: "pasunemail", message: "Bonjour", website: "" }));
+    const res = await POST(post({ name: "Jean", email: "pasunemail", message: "Bonjour", hp: "" }));
     expect(res.status).toBe(400);
   });
 

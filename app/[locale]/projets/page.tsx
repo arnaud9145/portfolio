@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { getContent, type Locale } from "@/content";
+import { getContent, experienceByProject, type Locale } from "@/content";
 import { buildProjectsMetadata } from "@/lib/seo";
-import { Link } from "@/i18n/navigation";
 import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
 
 export async function generateMetadata({
@@ -24,37 +23,14 @@ export default async function ProjectsPage({
   const content = getContent(locale as Locale);
   const t = await getTranslations("projects");
 
-  // Map each project id → its experience id, derived from experience[].appTags,
-  // so the project's context label can deep-link back to the matching experience.
-  const experienceByProject: Record<string, string> = {};
-  for (const xp of content.experience) {
-    for (const tag of xp.appTags ?? []) {
-      experienceByProject[tag.projectId] = xp.id;
-    }
-  }
+  // projectId → experienceId, derived from the projects themselves (single source).
+  const projectExperience = experienceByProject(content);
 
   return (
     <main className="projets-main">
       <header className="projets-hero">
         <div className="hero-glow" aria-hidden />
         <div className="projets-hero-inner">
-          <Link href="/" className="projets-back">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden
-            >
-              <path d="m15 18-6-6 6-6" />
-            </svg>
-            {t("back")}
-          </Link>
-
           <span className="projets-eyebrow">{t("eyebrow")}</span>
           <h1 className="projets-title font-display">{t("title")}</h1>
           <div className="filet" aria-hidden />
@@ -66,7 +42,7 @@ export default async function ProjectsPage({
       <ProjectsShowcase
         projects={content.projects}
         locale={locale as Locale}
-        experienceByProject={experienceByProject}
+        experienceByProject={projectExperience}
       />
     </main>
   );

@@ -29,7 +29,20 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-4">
-      <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" />
+      {/* Honeypot anti-spam : caché aux humains + ignoré par les gestionnaires de
+          mots de passe (data-*-ignore) pour éviter les faux positifs d'autofill.
+          Un bot qui remplit tout le formulaire le remplira quand même. */}
+      <input
+        type="text"
+        name="hp"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden
+        data-1p-ignore
+        data-lpignore="true"
+        data-form-type="other"
+        className="hidden"
+      />
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-fg">{t("name")}</label>
         <input id="name" name="name" required className={field} />
@@ -40,7 +53,7 @@ export function ContactForm() {
       </div>
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-fg">{t("message")}</label>
-        <textarea id="message" name="message" required rows={5} className={field} />
+        <textarea id="message" name="message" required minLength={5} rows={5} className={field} />
       </div>
       <button type="submit" disabled={status === "sending"} className="btn btn-gold w-full disabled:opacity-60 sm:w-auto">
         {status === "sending" ? t("sending") : t("send")}

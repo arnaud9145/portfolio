@@ -28,11 +28,18 @@ export interface ProjectItem {
   context?: string;              // entreprise / via qui
   role?: string;
   contribution: Contribution;
+  experienceId?: string;         // expérience liée — SOURCE UNIQUE des tags & liens projet↔expérience
+  period?: string;               // année(s) du projet, ex. "2024" ou "2018–2019"
+  badge?: string;                // libellé de badge personnalisé (prioritaire sur contribution)
   tagline: string;
+  description?: string;          // paragraphe localisé, plus riche que tagline
+  legacy?: boolean;              // projet ancien — affiche la note générique « captures d'époque »
+  screenshotNote?: string;       // note localisée dédiée sous le visuel (prioritaire sur legacy)
   metrics: string[];             // vide si inconnu
   tech?: string[];               // stack technique — réelle si connue, minimale sinon
   link?: { href: string; label: string };
   repo?: { href: string; label: string }; // dépôt source public (GitHub, etc.)
+  repoBack?: { href: string; label: string }; // second dépôt (API/back associée au front)
   status?: string;
   screenshots?: ProjectScreenshot[]; // captures réelles — sinon mockup placeholder générique
 }
@@ -49,14 +56,11 @@ export interface ExperienceItem {
   role: string;
   period: string;        // ex: "sept. 2024 → aujourd'hui"
   summary: string;
+  tag?: string;          // petit libellé localisé (ex. contexte associatif) — pastille discrète
   highlights: string[];  // missions détaillées (dépliées dans l'accordéon) — vide si non renseigné
   companyUrl?: string;   // page LinkedIn entreprise — "#" placeholder
-  appTags?: AppTag[];    // apps liées → /projets#<projectId>
-}
-
-export interface StackGroup {
-  label: string;         // ex: "Mobile"
-  items: string[];
+  // NB : les apps liées ne sont PAS listées ici — elles sont dérivées des projets
+  // (project.experienceId === this.id) via experienceApps(). Source unique.
 }
 
 export interface EducationItem {
@@ -64,6 +68,13 @@ export interface EducationItem {
   org: string;
   period: string;
   details?: string;
+}
+
+/** Centre d'intérêt — pastille emoji + libellé localisé, précision optionnelle. */
+export interface InterestItem {
+  icon: string;   // emoji
+  label: string;  // libellé localisé
+  note?: string;  // courte précision localisée (optionnelle)
 }
 
 export interface CvContent {
@@ -78,7 +89,8 @@ export interface CvContent {
   apps: AppItem[];
   projects: ProjectItem[]; // catalogue complet — page /projets
   experience: ExperienceItem[];
-  stack: StackGroup[];
+  // La stack technique est dérivée des projets (voir derivedStack) — pas un champ.
   education: EducationItem[];
-  languages: { name: string; level: string }[];
+  languages: { name: string; level: string; flag: string }[];
+  interests: InterestItem[];
 }

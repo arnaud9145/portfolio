@@ -3,6 +3,8 @@ import {
   personJsonLd,
   buildMetadata,
   buildProjectsMetadata,
+  buildParcoursMetadata,
+  buildContactMetadata,
   localizedUrl,
 } from "@/lib/seo";
 
@@ -50,6 +52,28 @@ describe("seo", () => {
     expect(languages?.fr).toBe("https://arnaud.dufour.build/projets");
     expect(languages?.en).toBe("https://arnaud.dufour.build/en/projets");
     expect(languages?.["x-default"]).toBe("https://arnaud.dufour.build/projets");
+  });
+
+  it("génère une metadata dédiée /parcours avec canonical et hreflang", () => {
+    const m = buildParcoursMetadata("fr");
+    expect(m.title).toContain("Parcours");
+    expect(m.description).toBeTruthy();
+    expect(m.alternates?.canonical).toBe("https://arnaud.dufour.build/parcours");
+    const languages = m.alternates?.languages;
+    expect(languages?.fr).toBe("https://arnaud.dufour.build/parcours");
+    expect(languages?.en).toBe("https://arnaud.dufour.build/en/parcours");
+    expect(languages?.["x-default"]).toBe("https://arnaud.dufour.build/parcours");
+  });
+
+  it("génère une metadata dédiée /contact avec canonical et hreflang", () => {
+    const m = buildContactMetadata("fr");
+    expect(m.title).toContain("Contact");
+    expect(m.description).toBeTruthy();
+    expect(m.alternates?.canonical).toBe("https://arnaud.dufour.build/contact");
+    const languages = m.alternates?.languages;
+    expect(languages?.fr).toBe("https://arnaud.dufour.build/contact");
+    expect(languages?.en).toBe("https://arnaud.dufour.build/en/contact");
+    expect(languages?.["x-default"]).toBe("https://arnaud.dufour.build/contact");
   });
 
   it("normalise localizedUrl quel que soit le format du pathname", () => {

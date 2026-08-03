@@ -21,6 +21,28 @@ describe("Experience", () => {
     expect(screen.getByText("UTT Net Group")).toBeInTheDocument();
   });
 
+  it("fusionne la formation dans la timeline (entrées études à la fin, non-accordéon)", () => {
+    wrap();
+    // les diplômes sont désormais rendus dans la même timeline
+    expect(
+      screen.getAllByText(/Université de Technologie de Troyes/)[0]
+    ).toBeInTheDocument();
+    // label "Formation" présent sur les entrées études
+    expect(screen.getAllByText("Formation").length).toBeGreaterThan(0);
+    // une entrée études n'est pas un accordéon (pas de bouton pour le diplôme)
+    expect(
+      screen.queryByRole("button", { name: /Diplôme d'ingénieur SRT/ })
+    ).not.toBeInTheDocument();
+  });
+
+  it("affiche le logo de l'app avant le libellé du tag", () => {
+    wrap();
+    const tag = screen.getByRole("link", { name: /Unlockt/ });
+    const logo = tag.querySelector("img.tag-app-logo");
+    expect(logo).not.toBeNull();
+    expect(logo).toHaveAttribute("src", "/logos/unlockt.png");
+  });
+
   it("expose les tags d'apps qui pointent vers /projets#<id>", () => {
     wrap();
     const tag = screen.getByRole("link", { name: /Unlockt/ });
