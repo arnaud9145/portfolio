@@ -108,7 +108,7 @@ export const en: CvContent = {
       "Contributions to the web front end as needed",
       "CI/CD & monitoring: Fastlane, AppCenter, Firebase, Sentry",
     ], companyUrl: "https://www.linkedin.com/company/get-roger/" },
-    { id: "freelance", company: "Freelance", role: "Occasional missions", period: "since 2022", tag: "Freelance · alongside", summary: "Very occasional freelance development, alongside my employed roles.", highlights: [
+    { id: "freelance", company: "Freelance", role: "Occasional missions", companyUrl: "https://www.linkedin.com/company/kroptek/", period: "since 2022", tag: "Freelance · alongside", summary: "Very occasional freelance development, alongside my employed roles.", highlights: [
       "Kroptek: a tool that automates monthly impact reports — PDF generation (Puppeteer) and automatic emailing (Nodemailer). Next.js / TypeORM / PostgreSQL stack, hosted on Heroku; recent rebranding.",
     ] },
     { id: "happliness", company: "Happliness", role: "CTO & co-founder", period: "Nov. 2021 → Feb. 2023", summary: "", highlights: [
@@ -131,8 +131,8 @@ export const en: CvContent = {
     ], companyUrl: "https://uttnetgroup.fr/" },
   ],
   education: [
-    { title: "Engineering degree, SRT — Systems, Networks & Telecommunications", org: "University of Technology of Troyes", period: "2020", details: "TMSE specialization — Mobile Technologies & Embedded Systems." },
-    { title: "Master's in Information Systems Security", org: "University of Technology of Troyes", period: "2020" },
+    { title: "Engineering degree, SRT — Systems, Networks & Telecommunications", org: "University of Technology of Troyes", orgUrl: "https://www.utt.fr/", period: "2020", details: "TMSE specialization — Mobile Technologies & Embedded Systems." },
+    { title: "Master's in Information Systems Security", org: "University of Technology of Troyes", orgUrl: "https://www.utt.fr/", period: "2020" },
   ],
   languages: [
     { name: "French", level: "Native", flag: "🇫🇷" },

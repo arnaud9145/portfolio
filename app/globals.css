@@ -525,6 +525,14 @@ select {
 .xp-org--study {
   color: var(--edu);
 }
+.xp-org--link {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.xp-org--link:hover {
+  color: color-mix(in oklab, var(--edu) 70%, white);
+  border-bottom-color: currentColor;
+}
 /* small "Formation / Education" badge on study entries */
 .xp-edu-label {
   display: inline-block;

@@ -108,7 +108,7 @@ export const fr: CvContent = {
       "Contributions au front web selon les besoins",
       "CI/CD & monitoring : Fastlane, AppCenter, Firebase, Sentry",
     ], companyUrl: "https://www.linkedin.com/company/get-roger/" },
-    { id: "freelance", company: "Freelance", role: "Missions ponctuelles", period: "depuis 2022", tag: "Freelance · en parallèle", summary: "Développement freelance très ponctuel, en parallèle de mes postes salariés.", highlights: [
+    { id: "freelance", company: "Freelance", role: "Missions ponctuelles", companyUrl: "https://www.linkedin.com/company/kroptek/", period: "depuis 2022", tag: "Freelance · en parallèle", summary: "Développement freelance très ponctuel, en parallèle de mes postes salariés.", highlights: [
       "Kroptek : outil d'automatisation de rapports d'impact mensuels — génération des PDF (Puppeteer) et envoi automatique par email (Nodemailer). Stack Next.js / TypeORM / PostgreSQL, hébergé sur Heroku ; rebranding récent.",
     ] },
     { id: "happliness", company: "Happliness", role: "CTO & cofondateur", period: "nov. 2021 → févr. 2023", summary: "", highlights: [
@@ -131,8 +131,8 @@ export const fr: CvContent = {
     ], companyUrl: "https://uttnetgroup.fr/" },
   ],
   education: [
-    { title: "Diplôme d'ingénieur SRT — Systèmes Réseaux et Télécommunications", org: "Université de Technologie de Troyes", period: "2020", details: "Spécialité TMSE — Technologie Mobile et Système Embarqué." },
-    { title: "Master Sécurité des Systèmes d'Information", org: "Université de Technologie de Troyes", period: "2020" },
+    { title: "Diplôme d'ingénieur SRT — Systèmes Réseaux et Télécommunications", org: "Université de Technologie de Troyes", orgUrl: "https://www.utt.fr/", period: "2020", details: "Spécialité TMSE — Technologie Mobile et Système Embarqué." },
+    { title: "Master Sécurité des Systèmes d'Information", org: "Université de Technologie de Troyes", orgUrl: "https://www.utt.fr/", period: "2020" },
   ],
   languages: [
     { name: "Français", level: "Natif", flag: "🇫🇷" },

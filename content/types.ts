@@ -67,6 +67,7 @@ export interface ExperienceItem {
 export interface EducationItem {
   title: string;
   org: string;
+  orgUrl?: string;       // lien vers l'établissement
   period: string;
   details?: string;
 }

@@ -302,7 +302,18 @@ function StudyRow({
       <span className="block font-display text-lg font-semibold text-fg">
         {edu.title}
       </span>
-      <span className="mt-1 block text-sm xp-org--study">{edu.org}</span>
+      {edu.orgUrl ? (
+        <a
+          href={edu.orgUrl}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="xp-org--study xp-org--link mt-1 inline-block text-sm"
+        >
+          {edu.org}
+        </a>
+      ) : (
+        <span className="mt-1 block text-sm xp-org--study">{edu.org}</span>
+      )}
       {edu.details && (
         <span className="mt-1.5 block text-sm text-muted">{edu.details}</span>
       )}
